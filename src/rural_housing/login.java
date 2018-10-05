@@ -219,11 +219,11 @@ public class login extends javax.swing.JFrame {
         
         conn c = new conn();
         con=c.getconn();
-        String sql = "select * from login where username = ? and password = ? ";
+        String sql = "select * from APPLICANTS where Applicant_no = ? and First_name = ? ";
         try{
                 pst = con.prepareStatement(sql);
                 pst.setString(1, user.getText());
-                pst.setString(2, Arrays.toString(pass.getPassword()));
+                pst.setString(2, pass.getText());
                
                 rs = pst.executeQuery();
                 if (rs.next())
@@ -256,7 +256,7 @@ public class login extends javax.swing.JFrame {
                         applicant_main app = new applicant_main(user.getText());
                         app.setVisible(true);
                         System.out.println("Applicant is selected");
-                        JOptionPane.showMessageDialog(null, "APP done");      
+                        //JOptionPane.showMessageDialog(null, "APP done");      
                     }
                     else  if(user.getText().toUpperCase().startsWith("COM"))
                     {

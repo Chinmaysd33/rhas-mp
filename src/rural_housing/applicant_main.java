@@ -50,6 +50,7 @@ Connection con = null;
     con=c.getconn();
     app_no.setText(abc);
     app_no1.setText(abc);
+    app_no2.setText(abc);
     add_detail.setVisible(false);
     view.setVisible(false);
     app_home.setVisible(true);
@@ -1492,21 +1493,24 @@ add_detail.setSelectedIndex(2);
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT first_name,middle_name,Gender,last_name,Maratial_status,state,district,taluka,village,Annual_Income FROM APPLICANTS WHERE  Appl_no = 11 ";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,District,State,Income_annum,Gender,Marital_status FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
     while(rs.next()) { 
         
-        f_name2.setText(rs.getString("first_name"));
-        m_name2.setText(rs.getString("middle_name"));
-       gen1.setText(rs.getString("Gender")); 
-        l_name2.setText(rs.getString("last_name"));
-        ms2.setText(rs.getString("Maratial_status"));
-       s2.setText(rs.getString("state"));
-        d2.setText(rs.getString("district"));
-        t2.setText(rs.getString("taluka"));
-        v2.setText(rs.getString("village"));
-        inc1.setText(rs.getString("Annual_Income"));
-
+        f_name2.setText(rs.getString("First_name"));
+        m_name2.setText(rs.getString("Middle_name"));
+        l_name2.setText(rs.getString("Last_name"));
+        v2.setText(rs.getString("VILLAGE"));
+        t2.setText(rs.getString("TALUKA"));
+        d2.setText(rs.getString("District"));
+        
+        s2.setText(rs.getString("State"));
+        inc1.setText(rs.getString("Income_annum"));
+gen1.setText(rs.getString("Gender")); 
+       
+        ms2.setText(rs.getString("Marital_status"));
+       
+        
 
     }
     } catch (SQLException e ) {

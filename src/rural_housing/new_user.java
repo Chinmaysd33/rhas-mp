@@ -1140,10 +1140,15 @@ public class new_user extends javax.swing.JFrame {
         {
             ms_pass = "MARRIED";
         }
-        else
+              else if(unma.isSelected())
                     {
             ms_pass = "UNMARRIED";
         }
+              else
+              {
+            ms_pass = "WIDOWED";
+                  
+              }
         BigInteger bi = new BigInteger(a_no.getText());
         String query = "Insert into APPLICANTS(Aadhar_no,First_name,Middle_name,Last_name,VILLAGE,TALUKA,District,State,Income_annum,DOB,Gender,Marital_status,Agent_ID) values(?,?,?,?,?,?,?,?,?,?,?,?,'SAG001');";
         
