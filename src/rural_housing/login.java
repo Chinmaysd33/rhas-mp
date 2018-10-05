@@ -219,8 +219,30 @@ public class login extends javax.swing.JFrame {
         
         conn c = new conn();
         con=c.getconn();
-        String sql = "select * from APPLICANTS where Applicant_no = ? and First_name = ? ";
-        try{
+        String sql = null;
+        if(user.getText().startsWith("MOH"))
+        {
+            sql = "select * from MOH where Officer_code = ? and F_name = ? ";
+        }
+        if(user.getText().startsWith("CSM"))
+        {
+            sql = "select * from CSMC where Officer_ID = ? and F_name = ? ";
+        }
+        if(user.getText().startsWith("SAG"))
+        {
+            sql = "select * from SURVEY_AGENT where Employee_ID = ? and First_name = ? ";
+        }
+        if(user.getText().startsWith("APP"))
+        {
+            sql = "select * from APPLICANTS where Applicant_no = ? and First_name = ? ";
+        }
+        if(user.getText().startsWith("COM"))
+        {
+            sql = "select * from COMPANY where Company_ID = ? and Name = ? ";
+        }
+        
+        
+             try{
                 pst = con.prepareStatement(sql);
                 pst.setString(1, user.getText());
                 pst.setString(2, pass.getText());
@@ -229,28 +251,28 @@ public class login extends javax.swing.JFrame {
                 if (rs.next())
                 {
 
-                    if(user.getText().toUpperCase().startsWith("MOH"))
+                    if(user.getText().startsWith("MOH"))
                     {
                         this.setVisible(false);
                         MoH_main f4 = new MoH_main();
                         f4.setVisible(true);
                         System.out.println("Ministry is selected");
                     }
-                    else  if(user.getText().toUpperCase().startsWith("CSM"))
+                    else  if(user.getText().startsWith("CSM"))
                     {
                         this.setVisible(false);
                         CSMC_main f4 = new CSMC_main();
                         f4.setVisible(true);
                         System.out.println("CSMC is selected");
                     }
-                    else if(user.getText().toUpperCase().startsWith("SAG"))
+                    else if(user.getText().startsWith("SAG"))
                     {
                         this.setVisible(false);
                         survey_agent_main f4 = new survey_agent_main();
                         f4.setVisible(true);
                         System.out.println("Survey Agent is selected");
                     }
-                    else  if(user.getText().toUpperCase().startsWith("APP"))
+                    else  if(user.getText().startsWith("APP"))
                     {
                         this.setVisible(false);
                         applicant_main app = new applicant_main(user.getText());
@@ -258,18 +280,11 @@ public class login extends javax.swing.JFrame {
                         System.out.println("Applicant is selected");
                         //JOptionPane.showMessageDialog(null, "APP done");      
                     }
-                    else  if(user.getText().toUpperCase().startsWith("COM"))
+                    else  if(user.getText().startsWith("COM"))
                     {
-                        company_main app = new company_main();
+                        company_main app = new company_main(user.getText());
                         app.setVisible(true);
                         System.out.println("Development Company is selected");
-                    }
-                    else  if(user.getText().toUpperCase().startsWith("SUA"))
-                    {
-                        this.setVisible(false);
-                        survey_agency f4 = new survey_agency();
-                        f4.setVisible(true);
-                        System.out.println("Survey Agency is selected");
                     }
                 }              
                 else

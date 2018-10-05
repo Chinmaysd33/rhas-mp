@@ -4,13 +4,19 @@
  * and open the template in the editor.
  */
 package rural_housing;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Abhik
  */
 public class company_main extends javax.swing.JFrame {
-
+Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    Statement stmt;
     /**
      * Creates new form company_main
      */
@@ -20,6 +26,20 @@ public class company_main extends javax.swing.JFrame {
         sub_tender.setVisible(false);
         com_main.setVisible(false);
         com_main.setVisible(true);
+         submit2.setVisible(false);
+        viewproj.setVisible(false);
+
+    }
+    
+    public company_main(String abc) {
+        initComponents();
+        v_detail.setVisible(false);
+        sub_tender.setVisible(false);
+        com_main.setVisible(false);
+        com_main.setVisible(true);
+         submit2.setVisible(false);
+        viewproj.setVisible(false);
+        com_no.setText(abc);
 
     }
 
@@ -43,6 +63,7 @@ public class company_main extends javax.swing.JFrame {
         com_main = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        com_no = new javax.swing.JLabel();
         v_detail = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -67,6 +88,9 @@ public class company_main extends javax.swing.JFrame {
         t = new javax.swing.JComboBox<>();
         v = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
+        viewproj = new javax.swing.JScrollPane();
+        view_proj = new javax.swing.JTable();
+        submit2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -189,6 +213,9 @@ public class company_main extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel16.setText("Company Login");
 
+        com_no.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        com_no.setText("Label");
+
         javax.swing.GroupLayout com_mainLayout = new javax.swing.GroupLayout(com_main);
         com_main.setLayout(com_mainLayout);
         com_mainLayout.setHorizontalGroup(
@@ -201,7 +228,11 @@ public class company_main extends javax.swing.JFrame {
                     .addGroup(com_mainLayout.createSequentialGroup()
                         .addGap(352, 352, 352)
                         .addComponent(jLabel16)))
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, com_mainLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(com_no)
+                .addGap(395, 395, 395))
         );
         com_mainLayout.setVerticalGroup(
             com_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +241,9 @@ public class company_main extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(537, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(com_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(467, Short.MAX_VALUE))
         );
 
         getContentPane().add(com_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
@@ -409,6 +442,11 @@ public class company_main extends javax.swing.JFrame {
                 dItemStateChanged(evt);
             }
         });
+        d.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dMouseClicked(evt);
+            }
+        });
 
         t.setBackground(new java.awt.Color(0, 204, 204));
         t.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
@@ -418,10 +456,20 @@ public class company_main extends javax.swing.JFrame {
                 tItemStateChanged(evt);
             }
         });
+        t.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tMouseClicked(evt);
+            }
+        });
 
         v.setBackground(new java.awt.Color(0, 204, 204));
         v.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         v.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Village-" }));
+        v.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vMouseClicked(evt);
+            }
+        });
         v.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vActionPerformed(evt);
@@ -430,6 +478,49 @@ public class company_main extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel3.setText("Submit Project Tender");
+
+        view_proj.setBackground(new java.awt.Color(0, 153, 153));
+        view_proj.setFont(new java.awt.Font("Courier 10 Pitch", 1, 18)); // NOI18N
+        view_proj.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Click", "Site Code", "GDP"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.String.class, java.lang.Float.class
+            };
+            boolean[] canEdit = new boolean [] {
+                true, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        view_proj.getTableHeader().setReorderingAllowed(false);
+        viewproj.setViewportView(view_proj);
+        if (view_proj.getColumnModel().getColumnCount() > 0) {
+            view_proj.getColumnModel().getColumn(0).setResizable(false);
+            view_proj.getColumnModel().getColumn(1).setResizable(false);
+            view_proj.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        submit2.setBackground(new java.awt.Color(0, 153, 153));
+        submit2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        submit2.setMnemonic('S');
+        submit2.setText("SUBMIT");
+        submit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout sub_tenderLayout = new javax.swing.GroupLayout(sub_tender);
         sub_tender.setLayout(sub_tenderLayout);
@@ -458,7 +549,13 @@ public class company_main extends javax.swing.JFrame {
                             .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(sub_tenderLayout.createSequentialGroup()
                         .addGap(199, 199, 199)
-                        .addComponent(jLabel3)))
+                        .addComponent(jLabel3))
+                    .addGroup(sub_tenderLayout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(submit2))
+                    .addGroup(sub_tenderLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(viewproj, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(142, Short.MAX_VALUE))
         );
         sub_tenderLayout.setVerticalGroup(
@@ -484,7 +581,11 @@ public class company_main extends javax.swing.JFrame {
                     .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(submit)
-                .addContainerGap(438, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(viewproj, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(submit2)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         getContentPane().add(sub_tender, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 860, 780));
@@ -523,11 +624,37 @@ public class company_main extends javax.swing.JFrame {
     }//GEN-LAST:event_sub_tenActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-
+        submit2.setVisible(true);
+        viewproj.setVisible(true);
+        conn c = new conn();
+        con=c.getconn();
+//        String state = s.getSelectedItem().toString();
+  //      String dist = d.getSelectedItem().toString();
+    //    String talu = t.getSelectedItem().toString();
+        String vill = v.getSelectedItem().toString();
+        String sql = "SELECT SITE_CODE , REGION_GDP from PROJECT WHERE VILLAGE = '"+vill+"';";
+        try{
+                stmt=con.createStatement();
+                rs = stmt.executeQuery(sql);
+                if (rs.next())
+                {
+                    String code = rs.getString("SITE_CODE");
+                    Float sf_name = rs.getFloat("REGION_GDP");
+ 
+                Object[] o =  { null , code, sf_name };
+                DefaultTableModel model = (DefaultTableModel) view_proj.getModel();
+                model.addRow(o);
+                
+                }
+        }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
     }//GEN-LAST:event_submitActionPerformed
 
     private void sItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sItemStateChanged
-        if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+        /*if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
         {
             d.removeAllItems();
             d.addItem("Buldhana");
@@ -554,7 +681,7 @@ public class company_main extends javax.swing.JFrame {
             d.addItem("Dhar");
             d.addItem("Guna");
             d.addItem("Panna");
-        }  
+        } */ 
         // TODO add your handling code here:
     }//GEN-LAST:event_sItemStateChanged
 
@@ -591,7 +718,7 @@ public class company_main extends javax.swing.JFrame {
     }//GEN-LAST:event_cn1ActionPerformed
 
     private void dItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_dItemStateChanged
-       if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
+       /*if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
         {
             t.removeAllItems();
             t.addItem("Deulgaon Raja");
@@ -655,11 +782,11 @@ public class company_main extends javax.swing.JFrame {
         {
             t.removeAllItems();
             t.addItem("Gunor");
-        } // TODO add your handling code here:
+        }*/ // TODO add your handling code here:
     }//GEN-LAST:event_dItemStateChanged
 
     private void tItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tItemStateChanged
-if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+/*if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
         {
             v.removeAllItems();
             v.addItem("Aaland");
@@ -755,9 +882,249 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
         {
             v.removeAllItems();
             v.addItem("Rampur");
-        }
+        }*/
         // TODO add your handling code here:
     }//GEN-LAST:event_tItemStateChanged
+
+    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
+        Boolean chked = Boolean.valueOf(view_proj.getValueAt(0, 0).toString());
+        String dataCol1 = view_proj.getValueAt(0, 1).toString();
+        
+        if (chked)
+        {
+            conn c = new conn();
+            con=c.getconn();
+        String a  = com_no.getText();
+ 
+        System.out.print(a);
+        System.out.print(dataCol1);
+            String sql = "INSERT INTO TENDER VALUES ('MOH001','"+a+"','"+dataCol1+"')";
+        try{
+                pst=con.prepareStatement(sql);
+                Boolean b = pst.execute();
+                
+        if(!b)
+        {
+              System.out.println("success");
+        v_detail.setVisible(false);
+        sub_tender.setVisible(false);
+        com_main.setVisible(false);
+        com_main.setVisible(true);
+         submit2.setVisible(false);
+        viewproj.setVisible(false);
+              
+        }
+              else
+        {
+             System.out.println("stuck somewhere");
+
+        }
+        }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            } 
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_submit2ActionPerformed
+
+    private void dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dMouseClicked
+       if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+        {
+            d.removeAllItems();
+            d.addItem("Buldhana");
+            d.addItem("Nashik");
+            d.addItem("Dhule");
+        }
+        else if(s.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
+        {
+            d.removeAllItems();
+            d.addItem("Bilaspur");
+            d.addItem("Korba");
+            d.addItem("Raipur");
+        }
+        else if(s.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
+        {
+            d.removeAllItems();
+            d.addItem("Hoogly");
+            d.addItem("Birbhum");
+            d.addItem("South 24 Parganas");
+        }
+        else if(s.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
+        {
+            d.removeAllItems();
+            d.addItem("Dhar");
+            d.addItem("Guna");
+            d.addItem("Panna");
+        }   // TODO add your handling code here:
+    }//GEN-LAST:event_dMouseClicked
+
+    private void tMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tMouseClicked
+    if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
+        {
+            t.removeAllItems();
+            t.addItem("Deulgaon Raja");
+            t.addItem("Lonar");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            t.removeAllItems();
+            t.addItem("Nashik");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhule"))
+        {
+            t.removeAllItems();
+            t.addItem("Shirpur");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Bilaspur"))
+        {
+            t.removeAllItems();
+            t.addItem("Marwani");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Korba"))
+        {
+            t.removeAllItems();
+            t.addItem("Pali");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Raipur"))
+        {
+            t.removeAllItems();
+            t.addItem("Arang");
+            t.addItem("Tilda");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Hoogly"))
+        {
+            t.removeAllItems();
+            t.addItem("Haripal");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Birbhum"))
+        {
+            t.removeAllItems();
+            t.addItem("Nanoor");
+            t.addItem("Labpur");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("South 24 Paraganas"))
+        {
+            t.removeAllItems();
+            t.addItem("Kulpi");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhar"))
+        {
+            t.removeAllItems();
+            t.addItem("Bagh");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Guna"))
+        {
+            t.removeAllItems();
+            t.addItem("Aron");
+            t.addItem("Chanchoda");
+            t.addItem("Bamori");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Panna"))
+        {
+            t.removeAllItems();
+            t.addItem("Gunor");
+        }    // TODO add your handling code here:
+    }//GEN-LAST:event_tMouseClicked
+
+    private void vMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vMouseClicked
+       if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+        {
+            v.removeAllItems();
+            v.addItem("Aaland");
+            v.addItem("Umbarkhed");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Lonar"))
+        {
+            v.removeAllItems();
+            v.addItem("Hirdav");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            v.removeAllItems();
+            v.addItem("Matori");
+            v.addItem("Dari");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Shirpur"))
+        {
+            v.removeAllItems();
+            v.addItem("Jalod");
+            v.addItem("Mandal");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Marwahi"))
+        {
+            v.removeAllItems();
+            v.addItem("Dhanpur");
+            v.addItem("Lohari");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Pali"))
+        {
+            v.removeAllItems();
+            v.addItem("Batra");
+            v.addItem("Sirli");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Arang"))
+        {
+            v.removeAllItems();
+            v.addItem("Ameri");
+            v.addItem("Nisda");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Haripal"))
+        {
+            v.removeAllItems();
+            v.addItem("Kaikala");
+            v.addItem("Jejur");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nanoor"))
+        {
+            v.removeAllItems();
+            v.addItem("Thupsara");
+            v.addItem("Jalundi");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Kulpi"))
+        {
+            v.removeAllItems();
+            v.addItem("Dhola");
+            v.addItem("Ramkishore");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bagh"))
+        {
+            v.removeAllItems();
+            v.addItem("Devdha");
+            v.addItem("Jali");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Aron"))
+        {
+            v.removeAllItems();
+            v.addItem("Davri");
+            v.addItem("Patan");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Gunor"))
+        {
+            v.removeAllItems();
+            v.addItem("Ganj");
+            v.addItem("Kamtana");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Tilda"))
+        {
+            v.removeAllItems();
+            v.addItem("Bhiloni");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Labpur"))
+        {
+            v.removeAllItems();
+            v.addItem("Jamna");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Chanchoda"))
+        {
+            v.removeAllItems();
+            v.addItem("Murela");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bamori"))
+        {
+            v.removeAllItems();
+            v.addItem("Rampur");
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_vMouseClicked
 
     /**
      * @param args the command line arguments
@@ -798,6 +1165,7 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
     private javax.swing.JTextField cn1;
     private javax.swing.JTextField cn2;
     private javax.swing.JPanel com_main;
+    private javax.swing.JLabel com_no;
     private javax.swing.JTextField comp_name;
     private javax.swing.JComboBox<String> d;
     private javax.swing.JTextField gst_no;
@@ -826,9 +1194,12 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
     private javax.swing.JPanel sub_tender;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
+    private javax.swing.JButton submit2;
     private javax.swing.JComboBox<String> t;
     private javax.swing.JComboBox<String> v;
     private javax.swing.JPanel v_detail;
     private javax.swing.JButton view_det;
+    private javax.swing.JTable view_proj;
+    private javax.swing.JScrollPane viewproj;
     // End of variables declaration//GEN-END:variables
 }

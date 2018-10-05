@@ -1506,7 +1506,7 @@ add_detail.setSelectedIndex(2);
         
         s2.setText(rs.getString("State"));
         inc1.setText(rs.getString("Income_annum"));
-gen1.setText(rs.getString("Gender")); 
+        gen1.setText(rs.getString("Gender")); 
        
         ms2.setText(rs.getString("Marital_status"));
        
