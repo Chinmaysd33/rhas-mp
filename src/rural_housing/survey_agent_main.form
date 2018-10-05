@@ -99,7 +99,13 @@
                           <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="sag_no" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace min="-2" pref="298" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -113,6 +119,8 @@
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel16" min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="sag_no" min="-2" pref="65" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="368" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -133,6 +141,14 @@
               <Font name="Comic Sans MS" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Survey Agent Login"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="sag_no">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Comic Sans MS" size="24" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Label"/>
           </Properties>
         </Component>
       </SubComponents>

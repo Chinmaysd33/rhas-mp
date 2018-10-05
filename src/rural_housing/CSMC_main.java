@@ -21,6 +21,13 @@ public class CSMC_main extends javax.swing.JFrame {
       csmc_home.setVisible(true);
       
     }
+ public CSMC_main(String aa) {
+        initComponents();
+        app_sua.setVisible(false);
+        cpr.setVisible(false);
+      csmc_home.setVisible(true);
+      csmc_no.setText(aa);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +50,7 @@ public class CSMC_main extends javax.swing.JFrame {
         csmc_home = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        csmc_no = new javax.swing.JLabel();
         app_sua = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -210,6 +218,9 @@ public class CSMC_main extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel16.setText("CSMC Login");
 
+        csmc_no.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        csmc_no.setText("Label");
+
         javax.swing.GroupLayout csmc_homeLayout = new javax.swing.GroupLayout(csmc_home);
         csmc_home.setLayout(csmc_homeLayout);
         csmc_homeLayout.setHorizontalGroup(
@@ -220,7 +231,9 @@ public class CSMC_main extends javax.swing.JFrame {
                 .addGap(98, 98, 98))
             .addGroup(csmc_homeLayout.createSequentialGroup()
                 .addGap(366, 366, 366)
-                .addComponent(jLabel16)
+                .addGroup(csmc_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
+                    .addComponent(csmc_no))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         csmc_homeLayout.setVerticalGroup(
@@ -230,7 +243,9 @@ public class CSMC_main extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(csmc_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(485, Short.MAX_VALUE))
         );
 
         getContentPane().add(csmc_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
@@ -916,6 +931,7 @@ public class CSMC_main extends javax.swing.JFrame {
     private javax.swing.JPanel app_sua;
     private javax.swing.JPanel cpr;
     private javax.swing.JPanel csmc_home;
+    private javax.swing.JLabel csmc_no;
     private javax.swing.JComboBox<String> d;
     private javax.swing.JButton home;
     private javax.swing.JButton jButton7;

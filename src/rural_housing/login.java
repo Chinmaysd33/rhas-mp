@@ -240,8 +240,6 @@ public class login extends javax.swing.JFrame {
         {
             sql = "select * from COMPANY where Company_ID = ? and Name = ? ";
         }
-        
-        
              try{
                 pst = con.prepareStatement(sql);
                 pst.setString(1, user.getText());
@@ -261,14 +259,14 @@ public class login extends javax.swing.JFrame {
                     else  if(user.getText().startsWith("CSM"))
                     {
                         this.setVisible(false);
-                        CSMC_main f4 = new CSMC_main();
+                        CSMC_main f4 = new CSMC_main(user.getText());
                         f4.setVisible(true);
                         System.out.println("CSMC is selected");
                     }
                     else if(user.getText().startsWith("SAG"))
                     {
                         this.setVisible(false);
-                        survey_agent_main f4 = new survey_agent_main();
+                        survey_agent_main f4 = new survey_agent_main(user.getText());
                         f4.setVisible(true);
                         System.out.println("Survey Agent is selected");
                     }

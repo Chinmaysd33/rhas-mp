@@ -21,6 +21,14 @@ public class survey_agent_main extends javax.swing.JFrame {
     s_agent_home.setVisible(true); 
      s_rep_reg.setVisible(false);
     }
+public survey_agent_main(String aa) {
+        initComponents();
+      s_agent_home.setVisible(false); 
+        s_rep_app.setVisible(false);
+    s_agent_home.setVisible(true); 
+     s_rep_reg.setVisible(false);
+     sag_no.setText(aa);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,6 +44,7 @@ public class survey_agent_main extends javax.swing.JFrame {
         s_agent_home = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        sag_no = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         view_det1 = new javax.swing.JButton();
         home1 = new javax.swing.JButton();
@@ -129,6 +138,9 @@ public class survey_agent_main extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel16.setText("Survey Agent Login");
 
+        sag_no.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        sag_no.setText("Label");
+
         javax.swing.GroupLayout s_agent_homeLayout = new javax.swing.GroupLayout(s_agent_home);
         s_agent_home.setLayout(s_agent_homeLayout);
         s_agent_homeLayout.setHorizontalGroup(
@@ -140,7 +152,11 @@ public class survey_agent_main extends javax.swing.JFrame {
                         .addComponent(jLabel2)
                         .addGap(87, 87, 87))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, s_agent_homeLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
+                        .addGroup(s_agent_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel16)
+                            .addGroup(s_agent_homeLayout.createSequentialGroup()
+                                .addComponent(sag_no)
+                                .addGap(84, 84, 84)))
                         .addGap(298, 298, 298))))
         );
         s_agent_homeLayout.setVerticalGroup(
@@ -150,6 +166,8 @@ public class survey_agent_main extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sag_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(368, 368, 368))
         );
 
@@ -1005,6 +1023,7 @@ public class survey_agent_main extends javax.swing.JFrame {
     private javax.swing.JPanel s_agent_home;
     private javax.swing.JPanel s_rep_app;
     private javax.swing.JPanel s_rep_reg;
+    private javax.swing.JLabel sag_no;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
     private javax.swing.JButton sur_app;

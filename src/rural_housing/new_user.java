@@ -84,7 +84,7 @@ public class new_user extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         inc = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        inc_grp = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -262,6 +262,11 @@ public class new_user extends javax.swing.JFrame {
         age.setBackground(new java.awt.Color(0, 204, 204));
         age.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         age.setText("Your Age");
+        age.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ageMouseClicked(evt);
+            }
+        });
         age.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ageActionPerformed(evt);
@@ -291,7 +296,7 @@ public class new_user extends javax.swing.JFrame {
 
         wi.setBackground(new java.awt.Color(0, 153, 153));
         wi.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        wi.setText("Widowed");
+        wi.setText("WIDOWED");
 
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel12.setText("Address:");
@@ -523,12 +528,18 @@ public class new_user extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel14.setText("Ration Card Type");
 
-        jTextField12.setBackground(new java.awt.Color(0, 204, 204));
-        jTextField12.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jTextField12.setText("Your Income Group");
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        inc_grp.setEditable(false);
+        inc_grp.setBackground(new java.awt.Color(0, 204, 204));
+        inc_grp.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        inc_grp.setText("Your Income Group");
+        inc_grp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inc_grpMouseClicked(evt);
+            }
+        });
+        inc_grp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                inc_grpActionPerformed(evt);
             }
         });
 
@@ -595,7 +606,7 @@ public class new_user extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField12)
+                                .addComponent(inc_grp)
                                 .addComponent(inc)
                                 .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(incomeLayout.createSequentialGroup()
@@ -620,7 +631,7 @@ public class new_user extends javax.swing.JFrame {
                     .addComponent(inc, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inc_grp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -632,7 +643,7 @@ public class new_user extends javax.swing.JFrame {
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton6)
                     .addComponent(jRadioButton7))
-                .addGap(56, 56, 56)
+                .addGap(65, 65, 65)
                 .addComponent(nexti)
                 .addGap(317, 317, 317))
         );
@@ -1037,17 +1048,7 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_a_noMouseClicked
 
     private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
-        Date date = dob.getDate();
-        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
-        String szDate = oDateFormat.format(date);
-        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println(szDate);
-        Period p = Period.between( ld , LocalDate.now());
-        String aged = Integer.toString(p.getYears());
-        System.out.println("Age" + aged);
-        System.out.println(p.getYears());
-        age.setText(aged);
-
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_ageActionPerformed
 
@@ -1103,9 +1104,9 @@ public class new_user extends javax.swing.JFrame {
         } // TODO add your handling code here:
     }//GEN-LAST:event_c_no1MouseClicked
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void inc_grpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inc_grpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_inc_grpActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
@@ -1665,6 +1666,46 @@ public class new_user extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mActionPerformed
 
+    private void ageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ageMouseClicked
+        Date date = dob.getDate();
+        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
+        String szDate = oDateFormat.format(date);
+        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println(szDate);
+        Period p = Period.between( ld , LocalDate.now());
+        String aged = Integer.toString(p.getYears());
+        System.out.println("Age " + aged);
+        System.out.println(p.getYears());
+        age.setText(aged);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageMouseClicked
+
+    private void inc_grpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inc_grpMouseClicked
+    String inc1 = inc.getText();
+    int inco = Integer.parseInt(inc1);
+    if(inco<300000)
+    {
+        inc_grp.setText("Below Poverty Line");
+        submit.setEnabled(false);
+    }
+    else if(inco>=300000 && inco<600000)
+    {
+            inc_grp.setText("Low Income Group");
+        submit.setEnabled(true);
+    }
+        else if(inco>=600000 && inco<1200000)
+    {
+            inc_grp.setText("Medium Income Group");
+        submit.setEnabled(true);
+    }
+    else
+    {
+        inc_grp.setText("High Income Group");
+        submit.setEnabled(false);
+    }        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inc_grpMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1720,6 +1761,7 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JRadioButton icn;
     private javax.swing.JRadioButton icy;
     private javax.swing.JTextField inc;
+    private javax.swing.JTextField inc_grp;
     private javax.swing.JPanel income;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
@@ -1761,7 +1803,6 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField l_name;
     private javax.swing.JRadioButton m;
     private javax.swing.JTextField m_name;

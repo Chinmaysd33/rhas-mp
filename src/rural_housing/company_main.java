@@ -5,6 +5,8 @@
  */
 package rural_housing;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,6 +18,7 @@ public class company_main extends javax.swing.JFrame {
 Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+     PreparedStatement pst1 = null;
     Statement stmt;
     /**
      * Creates new form company_main
@@ -483,7 +486,7 @@ Connection con = null;
         view_proj.setFont(new java.awt.Font("Courier 10 Pitch", 1, 18)); // NOI18N
         view_proj.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null}
             },
             new String [] {
                 "Click", "Site Code", "GDP"
@@ -582,8 +585,8 @@ Connection con = null;
                 .addGap(18, 18, 18)
                 .addComponent(submit)
                 .addGap(64, 64, 64)
-                .addComponent(viewproj, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addComponent(viewproj, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
                 .addComponent(submit2)
                 .addContainerGap(236, Short.MAX_VALUE))
         );
@@ -626,6 +629,8 @@ Connection con = null;
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         submit2.setVisible(true);
         viewproj.setVisible(true);
+        DefaultTableModel model = (DefaultTableModel) view_proj.getModel();
+        model.setRowCount(0);
         conn c = new conn();
         con=c.getconn();
 //        String state = s.getSelectedItem().toString();
@@ -640,11 +645,10 @@ Connection con = null;
                 {
                     String code = rs.getString("SITE_CODE");
                     Float sf_name = rs.getFloat("REGION_GDP");
- 
-                Object[] o =  { null , code, sf_name };
-                DefaultTableModel model = (DefaultTableModel) view_proj.getModel();
-                model.addRow(o);
-                
+                    Object[] o =  { null , code, sf_name };
+                  
+                    model.addRow(o);
+                    
                 }
         }
             catch (Exception e)
@@ -892,39 +896,66 @@ Connection con = null;
         
         if (chked)
         {
+        try
+        {
             conn c = new conn();
             con=c.getconn();
-        String a  = com_no.getText();
- 
-        System.out.print(a);
-        System.out.print(dataCol1);
-            String sql = "INSERT INTO TENDER VALUES ('MOH001','"+a+"','"+dataCol1+"')";
-        try{
-                pst=con.prepareStatement(sql);
-                Boolean b = pst.execute();
-                
-        if(!b)
-        {
-              System.out.println("success");
-        v_detail.setVisible(false);
-        sub_tender.setVisible(false);
-        com_main.setVisible(false);
-        com_main.setVisible(true);
-         submit2.setVisible(false);
-        viewproj.setVisible(false);
-              
-        }
-              else
-        {
-             System.out.println("stuck somewhere");
-
-        }
-        }
-            catch (Exception e)
+            String a  = com_no.getText();
+            String chk = "SELECT * FROM TENDER WHERE com = '"+a+"' AND project = '"+dataCol1+"'";
+            pst1 = con.prepareStatement(chk);
+            ResultSet ab = pst1.executeQuery();
+            int count = 0;
+            while(ab.next())
             {
-                JOptionPane.showMessageDialog(null, e);
+                count++;
+            }
+            if(count == 0)
+            {
+              String sql = "INSERT INTO TENDER VALUES ('MOH001','"+a+"','"+dataCol1+"')";
+                try{
+                        pst=con.prepareStatement(sql);
+                        Boolean b = pst.execute();
+
+                        if(!b)
+                        {
+                            JOptionPane.showMessageDialog(null, "Tender submitted ");            
+                            System.out.println("success");
+                            v_detail.setVisible(false);
+                            sub_tender.setVisible(false);
+                            com_main.setVisible(false);
+                            submit2.setVisible(false);
+                            viewproj.setVisible(false);
+                            com_main.setVisible(true);
+
+                        }
+                        else
+                        {
+                            System.out.println("stuck somewhere");
+
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null, "Tender already submitted for this Project"); 
+                    v_detail.setVisible(false);
+                    sub_tender.setVisible(false);
+                    com_main.setVisible(false);
+                    submit2.setVisible(false);
+                    viewproj.setVisible(false);
+                    com_main.setVisible(true);          
+                }
+            }// TODO add your handling code here:
+
+            catch (SQLException ex)
+            {
+                Logger.getLogger(company_main.class.getName()).log(Level.SEVERE,null, ex);
             } 
-        }// TODO add your handling code here:
+        }
     }//GEN-LAST:event_submit2ActionPerformed
 
     private void dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dMouseClicked
