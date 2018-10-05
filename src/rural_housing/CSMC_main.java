@@ -153,7 +153,7 @@ public class CSMC_main extends javax.swing.JFrame {
         prj_rep1.setBackground(new java.awt.Color(0, 204, 204));
         prj_rep1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         prj_rep1.setMnemonic('A');
-        prj_rep1.setText("Appoint Survey Agency");
+        prj_rep1.setText("Appoint Survey Agent");
         prj_rep1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 prj_rep1ActionPerformed(evt);

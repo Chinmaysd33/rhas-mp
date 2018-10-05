@@ -5,6 +5,7 @@
  */
 package rural_housing;
 import java.awt.Color;
+import java.math.BigInteger;
 import java.sql.*;
 
 import java.text.DateFormat;
@@ -14,6 +15,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author Abhik
@@ -22,6 +24,7 @@ public class new_user extends javax.swing.JFrame {
     Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    Statement st = null;
     /**
      * Creates new form new_user
      */
@@ -76,9 +79,10 @@ public class new_user extends javax.swing.JFrame {
         g_wrong = new javax.swing.JLabel();
         d = new javax.swing.JComboBox<>();
         dob = new org.jdesktop.swingx.JXDatePicker();
+        add_con = new javax.swing.JCheckBox();
         income = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        inc = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jTextField12 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
@@ -213,16 +217,21 @@ public class new_user extends javax.swing.JFrame {
 
         m.setBackground(new java.awt.Color(0, 153, 153));
         m.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        m.setText("Male");
+        m.setText("MALE");
         m.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 mMouseClicked(evt);
             }
         });
+        m.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mActionPerformed(evt);
+            }
+        });
 
         f.setBackground(new java.awt.Color(0, 153, 153));
         f.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        f.setText("Female");
+        f.setText("FEMALE");
         f.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 fMouseClicked(evt);
@@ -264,11 +273,16 @@ public class new_user extends javax.swing.JFrame {
 
         ma.setBackground(new java.awt.Color(0, 153, 153));
         ma.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        ma.setText("Married");
+        ma.setText("MARRIED");
+        ma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maActionPerformed(evt);
+            }
+        });
 
         unma.setBackground(new java.awt.Color(0, 153, 153));
         unma.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        unma.setText("Un-Married");
+        unma.setText("UNMARRIED");
         unma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unmaActionPerformed(evt);
@@ -309,10 +323,20 @@ public class new_user extends javax.swing.JFrame {
                 tItemStateChanged(evt);
             }
         });
+        t.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tMouseClicked(evt);
+            }
+        });
 
         v.setBackground(new java.awt.Color(0, 204, 204));
         v.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         v.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Village-" }));
+        v.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vMouseClicked(evt);
+            }
+        });
         v.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vActionPerformed(evt);
@@ -338,6 +362,28 @@ public class new_user extends javax.swing.JFrame {
                 dItemStateChanged(evt);
             }
         });
+        d.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dMouseClicked(evt);
+            }
+        });
+        d.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dActionPerformed(evt);
+            }
+        });
+
+        add_con.setText("+");
+        add_con.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                add_conItemStateChanged(evt);
+            }
+        });
+        add_con.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_conActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout personalLayout = new javax.swing.GroupLayout(personal);
         personal.setLayout(personalLayout);
@@ -360,16 +406,19 @@ public class new_user extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel4))
-                                .addGap(51, 51, 51))
+                                .addGap(49, 49, 49))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel12)
                                 .addGap(92, 92, 92)))
                         .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(c_no1)
-                                .addComponent(a_no, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(personalLayout.createSequentialGroup()
+                                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(c_no1)
+                                    .addComponent(a_no, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(29, 29, 29)
+                                .addComponent(add_con))
                             .addGroup(personalLayout.createSequentialGroup()
                                 .addComponent(m)
                                 .addGap(18, 18, 18)
@@ -398,7 +447,7 @@ public class new_user extends javax.swing.JFrame {
                                 .addComponent(unma)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(wi)))))
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(nextp)
@@ -408,55 +457,56 @@ public class new_user extends javax.swing.JFrame {
             personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(m_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
                     .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(m)
                         .addComponent(f)
                         .addComponent(g_wrong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(a_no))
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(c_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(c_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_con))
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ma, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ma, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(unma)
-                        .addComponent(wi, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(wi))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addComponent(nextp)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
 
         add_detail.addTab("Personal Details", personal);
@@ -466,9 +516,9 @@ public class new_user extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel13.setText("Income Per Annum");
 
-        jTextField11.setBackground(new java.awt.Color(0, 204, 204));
-        jTextField11.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jTextField11.setText("Enter Income Per Annum");
+        inc.setBackground(new java.awt.Color(0, 204, 204));
+        inc.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        inc.setText("Enter Income Per Annum");
 
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel14.setText("Ration Card Type");
@@ -546,7 +596,7 @@ public class new_user extends javax.swing.JFrame {
                         .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField12)
-                                .addComponent(jTextField11)
+                                .addComponent(inc)
                                 .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(incomeLayout.createSequentialGroup()
                                 .addComponent(jRadioButton2)
@@ -557,7 +607,7 @@ public class new_user extends javax.swing.JFrame {
                     .addGroup(incomeLayout.createSequentialGroup()
                         .addGap(327, 327, 327)
                         .addComponent(nexti)))
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         incomeLayout.setVerticalGroup(
             incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -567,7 +617,7 @@ public class new_user extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inc, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -768,7 +818,7 @@ public class new_user extends javax.swing.JFrame {
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel33)))))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         docLayout.setVerticalGroup(
             docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1070,122 +1120,181 @@ public class new_user extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nextiActionPerformed
 
+    @SuppressWarnings("empty-statement")
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-        
-        conn c = new conn();
+       // Date pas_date =dob.setFormats(new String[]{"yyyy-MM-dd"});
+         java.util.Date date = dob.getDate();
+         java.sql.Date sqldate = new java.sql.Date(date.getTime());
+     String gender,ms_pass;
+     conn c = new conn();
         con=c.getconn();
-        String query = "Insert into app_table_name (f_name,m_name,l_name,village,taluka,district,state,gender,marital_status) values(?,?,?,?,?,?,?,?,?)" ;
+        if(m.isSelected())
+        {
+           gender = "MALE";
+        }
+        else
+                    {
+           gender = "FEMALE";
+        }
+              if(ma.isSelected())
+        {
+            ms_pass = "MARRIED";
+        }
+        else
+                    {
+            ms_pass = "UNMARRIED";
+        }
+        BigInteger bi = new BigInteger(a_no.getText());
+        String query = "Insert into APPLICANTS(Aadhar_no,First_name,Middle_name,Last_name,VILLAGE,TALUKA,District,State,Income_annum,DOB,Gender,Marital_status,Agent_ID) values(?,?,?,?,?,?,?,?,?,?,?,?,'SAG001');";
+        
         try
         {
             pst = con.prepareStatement(query);
         
-            pst.setString(1,f_name.getText());
-            pst.setString(2, m_name.getText());
-            pst.setString(3,l_name.getText());
-            pst.setString(4, v.getSelectedItem().toString());
-            pst.setString(5, t.getSelectedItem().toString());
-            pst.setString(6, d.getSelectedItem().toString());
-            pst.setString(7, s.getSelectedItem().toString());
-            pst.setString(8, g.getSelection().toString());
-            pst.setString(9, ms.getSelection().toString());
+            pst.setObject(1,bi,Types.BIGINT);
+            pst.setString(2,f_name.getText());
+            pst.setString(3, m_name.getText());
+            pst.setString(4,l_name.getText());
+            pst.setString(5, v.getSelectedItem().toString());
+            pst.setString(6, t.getSelectedItem().toString());
+            pst.setString(7, d.getSelectedItem().toString());
+            pst.setString(8, s.getSelectedItem().toString());
+            pst.setString(9, inc.getText());
+            pst.setDate(10, sqldate);
+            pst.setString(11, gender);
+            pst.setString(12, ms_pass);
 
             pst.execute();
+            String user_no;
+            String q1 = "Select Applicant_no from APPLICANTS where Aadhar_no ="+bi+";";
+             st = con.createStatement();
+            rs = st.executeQuery(q1);
+            while(rs.next())
+            {
+                user_no = rs.getString("Applicant_no");
+            
+                JOptionPane.showMessageDialog(null, "Data Entered \nUser Name - "+user_no+" \n Password - "+f_name.getText());
+            }
         }
         catch (Exception e)
         {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Aadhar no already Exists");
         }
     }//GEN-LAST:event_submitActionPerformed
 
     private void sItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sItemStateChanged
-      if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+      /*if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
         {
             d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
+            d.addItem("-Select District-");
             d.addItem("Buldhana");
             d.addItem("Nashik");
             d.addItem("Dhule");
+            d.setSelectedIndex(0);
         }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
+        if(s.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
         {
             d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
             d.addItem("Bilaspur");
             d.addItem("Korba");
             d.addItem("Raipur");
+            d.setSelectedIndex(0);
         }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
+        if(s.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
         {
             d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
             d.addItem("Hoogly");
             d.addItem("Birbhum");
             d.addItem("South 24 Parganas");
+            d.setSelectedIndex(0);
         }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
+        if(s.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
         {
             d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
             d.addItem("Dhar");
             d.addItem("Guna");
             d.addItem("Panna");
+            d.setSelectedIndex(0);
         }
-        // TODO add your handling code here:
+       */ // TODO add your handling code here:
     }//GEN-LAST:event_sItemStateChanged
 
     private void dItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_dItemStateChanged
-        if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
+        /*if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Deulgaon Raja");
             t.addItem("Lonar");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Nashik");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhule"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Shirpur");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Bilaspur"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Marwani");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Korba"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Pali");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Raipur"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Arang");
             t.addItem("Tilda");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Hoogly"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Haripal");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Birbhum"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Nanoor");
             t.addItem("Labpur");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("South 24 Paraganas"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Kulpi");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhar"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Bagh");
         }
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Guna"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Aron");
             t.addItem("Chanchoda");
             t.addItem("Bamori");
@@ -1193,12 +1302,13 @@ public class new_user extends javax.swing.JFrame {
         else if(d.getSelectedItem().toString().equalsIgnoreCase("Panna"))
         {
             t.removeAllItems();
+            v.removeAllItems();
             t.addItem("Gunor");
-        }// TODO add your handling code here:
+        }*/// TODO add your handling code here:
     }//GEN-LAST:event_dItemStateChanged
 
     private void tItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tItemStateChanged
-if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+/*if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
         {
             v.removeAllItems();
             v.addItem("Aaland");
@@ -1295,8 +1405,260 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
             v.removeAllItems();
             v.addItem("Rampur");
         }
-        // TODO add your handling code here:
+*/        // TODO add your handling code here:
     }//GEN-LAST:event_tItemStateChanged
+
+    private void add_conActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_conActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_conActionPerformed
+
+    private void add_conItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_add_conItemStateChanged
+        if(add_con.isSelected())
+        {
+            //personal.
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_conItemStateChanged
+
+    private void maActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_maActionPerformed
+
+    private void dActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dActionPerformed
+
+    private void dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dMouseClicked
+        if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+        {
+            d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
+            d.addItem("-Select District-");
+            d.addItem("Buldhana");
+            d.addItem("Nashik");
+            d.addItem("Dhule");
+            d.setSelectedIndex(0);
+        }
+        if(s.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
+        {
+            d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
+            d.addItem("Bilaspur");
+            d.addItem("Korba");
+            d.addItem("Raipur");
+            d.setSelectedIndex(0);
+        }
+        if(s.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
+        {
+            d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
+            d.addItem("Hoogly");
+            d.addItem("Birbhum");
+            d.addItem("South 24 Parganas");
+            d.setSelectedIndex(0);
+        }
+        if(s.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
+        {
+            d.removeAllItems();
+            t.removeAllItems();
+            v.removeAllItems();
+            d.addItem("Dhar");
+            d.addItem("Guna");
+            d.addItem("Panna");
+            d.setSelectedIndex(0);
+        }
+       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dMouseClicked
+
+    private void tMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tMouseClicked
+        if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Deulgaon Raja");
+            t.addItem("Lonar");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Nashik");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhule"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Shirpur");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Bilaspur"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Marwani");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Korba"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Pali");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Raipur"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Arang");
+            t.addItem("Tilda");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Hoogly"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Haripal");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Birbhum"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Nanoor");
+            t.addItem("Labpur");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("South 24 Paraganas"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Kulpi");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhar"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Bagh");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Guna"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Aron");
+            t.addItem("Chanchoda");
+            t.addItem("Bamori");
+        }
+        else if(d.getSelectedItem().toString().equalsIgnoreCase("Panna"))
+        {
+            t.removeAllItems();
+            v.removeAllItems();
+            t.addItem("Gunor");
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_tMouseClicked
+
+    private void vMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vMouseClicked
+    if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+        {
+            v.removeAllItems();
+            v.addItem("Aaland");
+            v.addItem("Umbarkhed");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Lonar"))
+        {
+            v.removeAllItems();
+            v.addItem("Hirdav");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            v.removeAllItems();
+            v.addItem("Matori");
+            v.addItem("Dari");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Shirpur"))
+        {
+            v.removeAllItems();
+            v.addItem("Jalod");
+            v.addItem("Mandal");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Marwahi"))
+        {
+            v.removeAllItems();
+            v.addItem("Dhanpur");
+            v.addItem("Lohari");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Pali"))
+        {
+            v.removeAllItems();
+            v.addItem("Batra");
+            v.addItem("Sirli");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Arang"))
+        {
+            v.removeAllItems();
+            v.addItem("Ameri");
+            v.addItem("Nisda");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Haripal"))
+        {
+            v.removeAllItems();
+            v.addItem("Kaikala");
+            v.addItem("Jejur");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nanoor"))
+        {
+            v.removeAllItems();
+            v.addItem("Thupsara");
+            v.addItem("Jalundi");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Kulpi"))
+        {
+            v.removeAllItems();
+            v.addItem("Dhola");
+            v.addItem("Ramkishore");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bagh"))
+        {
+            v.removeAllItems();
+            v.addItem("Devdha");
+            v.addItem("Jali");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Aron"))
+        {
+            v.removeAllItems();
+            v.addItem("Davri");
+            v.addItem("Patan");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Gunor"))
+        {
+            v.removeAllItems();
+            v.addItem("Ganj");
+            v.addItem("Kamtana");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Tilda"))
+        {
+            v.removeAllItems();
+            v.addItem("Bhiloni");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Labpur"))
+        {
+            v.removeAllItems();
+            v.addItem("Jamna");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Chanchoda"))
+        {
+            v.removeAllItems();
+            v.addItem("Murela");
+        }
+        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bamori"))
+        {
+            v.removeAllItems();
+            v.addItem("Rampur");
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vMouseClicked
+
+    private void mActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1337,6 +1699,7 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
     private javax.swing.JTextField a_no;
     private javax.swing.JRadioButton acn;
     private javax.swing.JRadioButton acy;
+    private javax.swing.JCheckBox add_con;
     private javax.swing.JTabbedPane add_detail;
     private javax.swing.JTextField age;
     private javax.swing.JRadioButton bcn;
@@ -1351,6 +1714,7 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
     private javax.swing.JLabel g_wrong;
     private javax.swing.JRadioButton icn;
     private javax.swing.JRadioButton icy;
+    private javax.swing.JTextField inc;
     private javax.swing.JPanel income;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
@@ -1392,7 +1756,6 @@ if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField l_name;
     private javax.swing.JRadioButton m;

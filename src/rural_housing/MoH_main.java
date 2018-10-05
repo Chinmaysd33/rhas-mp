@@ -256,7 +256,7 @@ public class MoH_main extends javax.swing.JFrame {
                     .addGroup(v_detailLayout.createSequentialGroup()
                         .addGap(366, 366, 366)
                         .addComponent(submit)))
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         v_detailLayout.setVerticalGroup(
             v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +393,7 @@ public class MoH_main extends javax.swing.JFrame {
         app_companyLayout.setHorizontalGroup(
             app_companyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_companyLayout.createSequentialGroup()
-                .addGap(0, 69, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_companyLayout.createSequentialGroup()

@@ -204,7 +204,7 @@
               <Font name="Comic Sans MS" size="24" style="1"/>
             </Property>
             <Property name="mnemonic" type="int" value="65"/>
-            <Property name="text" type="java.lang.String" value="Appoint Survey Agency"/>
+            <Property name="text" type="java.lang.String" value="Appoint Survey Agent"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="prj_rep1ActionPerformed"/>
