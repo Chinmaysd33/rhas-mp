@@ -37,23 +37,23 @@ Connection con = null;
    doc1.setVisible(false);
     view.setVisible(false);
     app_home.setVisible(true);
-        ac.add(acy);
-        ac.add(acn);
-        bc.add(bcy);
-        bc.add(bcn);
-        ic.add(icy);
-        ic.add(icn);
-        rc.add(rcy);
-        rc.add(rcy);
-        mc.add(dcy);
-        mc.add(mcn);
-        dc.add(dcy);
-        dc.add(dcn);
+        ac.add(acy2);
+        ac.add(acn2);
+        bc.add(bcy2);
+        bc.add(bcn2);
+        ic.add(icy2);
+        ic.add(icn2);
+        rc.add(rcy2);
+        rc.add(rcy2);
+        mc.add(dcy2);
+        mc.add(mcn2);
+        dc.add(dcy2);
+        dc.add(dcn2);
         
-            dcn.setEnabled(false);
-            dcy.setEnabled(false);
-            mcn.setEnabled(false);
-            mcy.setEnabled(false);
+            dcn2.setEnabled(false);
+            dcy2.setEnabled(false);
+            mcn2.setEnabled(false);
+            mcy2.setEnabled(false);
     view1.setVisible(false);
     }
 
@@ -64,109 +64,29 @@ Connection con = null;
     app_no.setText(abc);
     app_no1.setText(abc);
     app_no2.setText(abc);
+     app_no3.setText(abc);
    doc1.setVisible(false);
     view.setVisible(false);
     app_home.setVisible(true);
     view1.setVisible(false);
-    ac.add(acy);
-        ac.add(acn);
-        bc.add(bcy);
-        bc.add(bcn);
-        ic.add(icy);
-        ic.add(icn);
-        rc.add(rcy);
-        rc.add(rcy);
-        mc.add(dcy);
-        mc.add(mcn);
-        dc.add(dcy);
-        dc.add(dcn);
+    ac.add(acy2);
+        ac.add(acn2);
+        bc.add(bcy2);
+        bc.add(bcn2);
+        ic.add(icy2);
+        ic.add(icn2);
+        rc.add(rcy2);
+        rc.add(rcn2);
+        mc.add(mcy2);
+        mc.add(mcn2);
+        dc.add(dcy2);
+        dc.add(dcn2);
         
-            dcn.setEnabled(false);
-            dcy.setEnabled(false);
-            mcn.setEnabled(false);
-            mcy.setEnabled(false);
-             String mc_pass=null,rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass=null;
-        String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
-        try
-        {
-                st = con.createStatement();
-                rs = st.executeQuery(q2);
-              
-                while(rs.next()) 
-                { 
-                    ac_pass = (rs.getString("aadhar_copy"));
-                    bc_pass = (rs.getString("birth_cert_copy"));
-                    ic_pass = (rs.getString("income_cert_copy")); 
-                    rc_pass = (rs.getString("ration_copy"));
-                    mc_pass = (rs.getString("marriage_copy"));
-                    dc_pass = (rs.getString("death_copy"));  
-                }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        if(ac_pass == "YES")
-        {
-            ac.setSelected(acy.getModel(),true);
-        }
-        else
-        {
-           ac.setSelected(acn.getModel(),true);
-        }
-        if(bc_pass == "YES")
-        {
-            bc.setSelected(bcy.getModel(),true);
-        }
-        else
-        {
-           bc.setSelected(bcn.getModel(),true);
-        }
-        if(ic_pass == "YES")
-        {
-            ic.setSelected(icy.getModel(),true);
-        }
-        else
-        {
-           ic.setSelected(icn.getModel(),true);
-        }
-        if(rc_pass == "YES")
-        {
-            rc.setSelected(rcy.getModel(),true);
-        }
-        else
-        {
-           rc.setSelected(rcn.getModel(),true);
-        }
-        if(mc_pass == "YES")
-        {
-            mc.setSelected(mcy.getModel(),true);
-        }
-        else if(mc_pass == "NO")
-        {
-           mc.setSelected(mcn.getModel(),true);
-        }
-        else
-        {
-            dcn.setEnabled(false);
-            dcy.setEnabled(false);
-            mcn.setEnabled(false);
-            mcy.setEnabled(false); 
-        }
-        if(dc_pass == "YES")
-        {
-            dc.setSelected(dcy.getModel(),true);
-        }
-        else if(dc_pass == "NO")
-        {
-           dc.setSelected(dcn.getModel(),true);
-        }
-        else
-        {
-            dcn.setEnabled(false);
-            dcy.setEnabled(false);   
-        }
+            dcn2.setEnabled(true);
+            dcy2.setEnabled(true);
+            mcn2.setEnabled(true);
+            mcy2.setEnabled(true);
+         
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -228,6 +148,7 @@ Connection con = null;
         dob1 = new javax.swing.JTextField();
         age1 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
+        inc2 = new javax.swing.JTextField();
         doc1 = new javax.swing.JPanel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
@@ -260,6 +181,7 @@ Connection con = null;
         jLabel83 = new javax.swing.JLabel();
         mcy2 = new javax.swing.JRadioButton();
         dcn2 = new javax.swing.JRadioButton();
+        app_no3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 960));
@@ -426,7 +348,7 @@ Connection con = null;
 
         view_main.setBackground(new java.awt.Color(0, 153, 153));
         view_main.setFont(new java.awt.Font("Courier 10 Pitch", 0, 18)); // NOI18N
-        view_main.setText("get");
+        view_main.setText("Get Details");
         view_main.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 view_mainActionPerformed(evt);
@@ -444,8 +366,8 @@ Connection con = null;
                 .addGap(159, 159, 159)
                 .addComponent(app_no1)
                 .addGap(245, 245, 245)
-                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(246, Short.MAX_VALUE))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -496,28 +418,34 @@ Connection con = null;
         jLabel49.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel49.setText("Address:");
 
+        a_no1.setEditable(false);
         a_no1.setBackground(new java.awt.Color(0, 204, 204));
         a_no1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         a_no1.setMinimumSize(new java.awt.Dimension(99, 32));
         a_no1.setName(""); // NOI18N
 
+        ms2.setEditable(false);
         ms2.setBackground(new java.awt.Color(0, 204, 204));
         ms2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         ms2.setMinimumSize(new java.awt.Dimension(105, 32));
         ms2.setPreferredSize(new java.awt.Dimension(105, 32));
 
+        v2.setEditable(false);
         v2.setBackground(new java.awt.Color(0, 204, 204));
         v2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         v2.setText(" ");
 
+        d2.setEditable(false);
         d2.setBackground(new java.awt.Color(0, 204, 204));
         d2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         d2.setText(" ");
 
+        s2.setEditable(false);
         s2.setBackground(new java.awt.Color(0, 204, 204));
         s2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         s2.setText(" ");
 
+        t2.setEditable(false);
         t2.setBackground(new java.awt.Color(0, 204, 204));
         t2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         t2.setText(" ");
@@ -525,13 +453,13 @@ Connection con = null;
         jLabel50.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel50.setText("Income Per Annum");
 
+        inc1.setEditable(false);
         inc1.setBackground(new java.awt.Color(0, 204, 204));
         inc1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        inc1.setText("12 Digit Aadhar Number");
 
         view_sub.setBackground(new java.awt.Color(0, 153, 153));
         view_sub.setFont(new java.awt.Font("Courier 10 Pitch", 0, 18)); // NOI18N
-        view_sub.setText("get");
+        view_sub.setText("Get Details");
         view_sub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 view_subActionPerformed(evt);
@@ -547,6 +475,7 @@ Connection con = null;
         jLabel16.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel16.setText("Aadhar Number:");
 
+        gen1.setEditable(false);
         gen1.setBackground(new java.awt.Color(0, 204, 204));
         gen1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         gen1.setMinimumSize(new java.awt.Dimension(99, 32));
@@ -555,6 +484,7 @@ Connection con = null;
         jLabel38.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel38.setText("Contact Number:");
 
+        c_no.setEditable(false);
         c_no.setBackground(new java.awt.Color(0, 204, 204));
         c_no.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         c_no.setMinimumSize(new java.awt.Dimension(99, 32));
@@ -564,13 +494,15 @@ Connection con = null;
         jLabel42.setText("DOB:");
 
         jLabel43.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel43.setText("DOB:");
+        jLabel43.setText("AGE:");
 
+        dob1.setEditable(false);
         dob1.setBackground(new java.awt.Color(0, 204, 204));
         dob1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         dob1.setMinimumSize(new java.awt.Dimension(99, 32));
         dob1.setName(""); // NOI18N
 
+        age1.setEditable(false);
         age1.setBackground(new java.awt.Color(0, 204, 204));
         age1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         age1.setMinimumSize(new java.awt.Dimension(99, 32));
@@ -579,29 +511,33 @@ Connection con = null;
         jLabel39.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel39.setText("Income Group");
 
+        inc2.setEditable(false);
+        inc2.setBackground(new java.awt.Color(0, 204, 204));
+        inc2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout view1Layout = new javax.swing.GroupLayout(view1);
         view1.setLayout(view1Layout);
         view1Layout.setHorizontalGroup(
             view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(view1Layout.createSequentialGroup()
-                .addGap(159, 159, 159)
+                .addGap(111, 111, 111)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(view1Layout.createSequentialGroup()
                         .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(view1Layout.createSequentialGroup()
-                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(view1Layout.createSequentialGroup()
-                                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel40)
-                                            .addComponent(jLabel49)
-                                            .addComponent(jLabel16)
-                                            .addComponent(jLabel38))
-                                        .addGap(24, 24, 24))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view1Layout.createSequentialGroup()
-                                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel41)
-                                            .addComponent(jLabel42))
-                                        .addGap(18, 18, 18)))
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel40)
+                                    .addComponent(jLabel49)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel38))
+                                .addGap(24, 24, 24))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view1Layout.createSequentialGroup()
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel41)
+                                    .addComponent(jLabel42))
+                                .addGap(18, 18, 18)))
+                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(view1Layout.createSequentialGroup()
                                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(view1Layout.createSequentialGroup()
                                         .addComponent(f_name2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -618,33 +554,38 @@ Connection con = null;
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(v2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(a_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(c_no, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(c_no, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(86, 86, 86))
+                            .addGroup(view1Layout.createSequentialGroup()
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(gen1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(view1Layout.createSequentialGroup()
-                                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(gen1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(24, 24, 24)
-                                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(view1Layout.createSequentialGroup()
-                                                .addComponent(jLabel43)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(view1Layout.createSequentialGroup()
-                                                .addComponent(jLabel48)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(ms2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(jLabel43)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(view1Layout.createSequentialGroup()
+                                        .addComponent(jLabel48)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ms2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))))
+                    .addGroup(view1Layout.createSequentialGroup()
+                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(view1Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
                                 .addComponent(app_no2)
                                 .addGap(201, 201, 201)
-                                .addComponent(view_sub, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(view1Layout.createSequentialGroup()
-                        .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel50))
-                        .addGap(18, 18, 18)
-                        .addComponent(inc1)))
+                                .addComponent(view_sub, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(view1Layout.createSequentialGroup()
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel39)
+                                    .addComponent(jLabel50))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(inc1, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                                    .addComponent(inc2))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(29, 29, 29))
             .addGroup(view1Layout.createSequentialGroup()
                 .addGap(306, 306, 306)
@@ -688,21 +629,26 @@ Connection con = null;
                     .addComponent(jLabel38)
                     .addComponent(c_no, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(s2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(view1Layout.createSequentialGroup()
+                        .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(v2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addGap(18, 18, 18)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel39)
-                .addGap(242, 242, 242))
+                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(inc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(267, 267, 267))
         );
 
         getContentPane().add(view1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
@@ -830,6 +776,9 @@ Connection con = null;
         dcn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         dcn2.setText("Not Submitted");
 
+        app_no3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        app_no3.setText("Label");
+
         javax.swing.GroupLayout doc1Layout = new javax.swing.GroupLayout(doc1);
         doc1.setLayout(doc1Layout);
         doc1Layout.setHorizontalGroup(
@@ -876,7 +825,9 @@ Connection con = null;
                                     .addComponent(bcn2)
                                     .addComponent(dcn2)))))
                     .addGroup(doc1Layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
+                        .addGap(31, 31, 31)
+                        .addComponent(app_no3)
+                        .addGap(194, 194, 194)
                         .addComponent(jLabel66))
                     .addGroup(doc1Layout.createSequentialGroup()
                         .addGap(149, 149, 149)
@@ -894,8 +845,10 @@ Connection con = null;
             doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(doc1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabel66)
-                .addGap(0, 0, 0)
+                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(app_no3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel69)
                     .addComponent(jLabel68))
@@ -907,13 +860,14 @@ Connection con = null;
                     .addComponent(jLabel75))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(bcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bcn2))
-                    .addGroup(doc1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, doc1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel76)))
+                        .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel76, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -935,15 +889,15 @@ Connection con = null;
                         .addComponent(mcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addGap(0, 0, 0)
+                .addComponent(jLabel73)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dcy2)
                     .addComponent(dcn2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addGap(2, 2, 2)
+                .addComponent(jLabel83)
+                .addGap(71, 71, 71)
                 .addComponent(submit2)
                 .addGap(39, 39, 39)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -963,6 +917,97 @@ Connection con = null;
     app_home.setVisible(false);     // TODO add your handling code here:
     view.setVisible(false);
    doc1.setVisible(true);
+   
+    conn c = new conn();
+    con=c.getconn();
+   
+   String mc_pass,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass;
+        String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
+        try
+        {
+                st = con.createStatement();
+                rs = st.executeQuery(q2);
+              
+                while(rs.next()) 
+                { 
+                    ac_pass = (rs.getString("aadhar_copy"));
+                    bc_pass = (rs.getString("birth_cert_copy"));
+                    ic_pass = (rs.getString("income_cert_copy")); 
+                    rc_pass = (rs.getString("ration_copy"));
+                    mc_pass = (rs.getString("marriage_copy"));
+                    dc_pass = (rs.getString("death_copy"));  
+                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
+    
+                    if(ac_pass.equalsIgnoreCase("YES"))
+                    {
+                       acy2.setSelected(true);
+                       System.out.print("acy2");
+                    }
+                    else
+                    {
+                       acn2.setSelected(true);
+                       System.out.print("acn2");
+                    }
+                    if(bc_pass.equalsIgnoreCase("YES"))
+                    {
+                        bcy2.setSelected(true);
+                                   System.out.print("bcy2");
+                    }
+                    else
+                    {
+                       bcn2.setSelected(true);
+                                  System.out.print("bcn2");
+                    }
+                    if(ic_pass.equalsIgnoreCase("YES"))
+                    {
+                        icy2.setSelected(true);
+                    }
+                    else
+                    {
+                       icn2.setSelected(true);
+                    }
+                    if(rc_pass.equalsIgnoreCase("YES"))
+                    {
+                        rcy2.setSelected(true);
+                    }
+                    else
+                    {
+                       rcn2.setSelected(true);
+                    }
+                    if(mc_pass .equalsIgnoreCase("YES"))
+                    {
+                        mcn2.setSelected(true);
+                    }
+                    else if(mc_pass.equalsIgnoreCase("NO"))
+                    {
+                       mcn2.setSelected(true);
+                    }
+                    else
+                    {
+                        mcn2.setEnabled(false);
+                        mcy2.setEnabled(false); 
+                    }
+                    if(dc_pass.equalsIgnoreCase("YES"))
+                    {
+                        dcy2.setSelected(true);
+                    }
+                    else if(dc_pass.equalsIgnoreCase("NO"))
+                    {
+                       dcn2.setSelected(true);
+                    }
+                    else
+                    {
+                        dcn2.setEnabled(false);
+                        dcy2.setEnabled(false);   
+                    }
+                }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+    
     }//GEN-LAST:event_add_detActionPerformed
 
     private void view_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_detActionPerformed
@@ -998,25 +1043,49 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,District,State,Income_annum,Gender,Marital_status FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,DOB,Aadhar_no FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
-    while(rs.next()) { 
-        
+    while(rs.next())
+    {     
         f_name2.setText(rs.getString("First_name"));
         m_name2.setText(rs.getString("Middle_name"));
         l_name2.setText(rs.getString("Last_name"));
         v2.setText(rs.getString("VILLAGE"));
         t2.setText(rs.getString("TALUKA"));
-        d2.setText(rs.getString("District"));
-        
+        d2.setText(rs.getString("District"));  
         s2.setText(rs.getString("State"));
         inc1.setText(rs.getString("Income_annum"));
-        a_no1.setText(rs.getString("Gender")); 
-       
+        a_no1.setText(rs.getString("Gender"));        
         ms2.setText(rs.getString("Marital_status"));
-       
-        
-
+       int inco = Integer.parseInt(inc1.getText());
+        if(inco<300000)
+        {
+            inc2.setText("Below Poverty Line");
+        }
+        else if(inco>=300000 && inco<600000)
+        {
+            inc2.setText("Low Income Group");
+        }
+        else if(inco>=600000 && inco<1200000)
+        {
+            inc2.setText("Medium Income Group");
+        }
+        else
+        {
+            inc2.setText("High Income Group");
+        }
+        dob1.setText(rs.getDate("DOB").toString());
+        a_no1.setText(rs.getString("Aadhar_no"));
+        Date date = rs.getDate("DOB");
+        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
+        String szDate = oDateFormat.format(date);
+        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println(szDate);
+        Period p = Period.between( ld , LocalDate.now());
+        String aged = Integer.toString(p.getYears());
+        System.out.println("Age" + aged);
+        System.out.println(p.getYears());
+        age1.setText(aged);       
     }
     } catch (SQLException e ) {
     JOptionPane.showMessageDialog(null, e); 
@@ -1028,32 +1097,58 @@ Connection con = null;
     
     
     private void view_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_subActionPerformed
-          try {
+        try {
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT first_name,middle_name,Gender,last_name,Maratial_status,state,district,taluka,village,Annual_Income FROM APPLICANTS WHERE  Appl_no = 11 ";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,DOB,Aadhar_no FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
-    while(rs.next()) { 
-        
-        f_name2.setText(rs.getString("first_name"));
-        m_name2.setText(rs.getString("middle_name"));
-        a_no1.setText(rs.getString("Gender")); 
-        l_name2.setText(rs.getString("last_name"));
-        ms2.setText(rs.getString("Maratial_status"));
-        s2.setText(rs.getString("state"));
-        d2.setText(rs.getString("district"));
-        t2.setText(rs.getString("taluka"));
-        v2.setText(rs.getString("village"));
-        inc1.setText(rs.getString("Annual_Income"));
-
-
+    while(rs.next())
+    {     
+        f_name2.setText(rs.getString("First_name"));
+        m_name2.setText(rs.getString("Middle_name"));
+        l_name2.setText(rs.getString("Last_name"));
+        v2.setText(rs.getString("VILLAGE"));
+        t2.setText(rs.getString("TALUKA"));
+        d2.setText(rs.getString("District"));  
+        s2.setText(rs.getString("State"));
+        inc1.setText(rs.getString("Income_annum"));
+        a_no1.setText(rs.getString("Gender"));        
+        ms2.setText(rs.getString("Marital_status"));
+       int inco = Integer.parseInt(inc1.getText());
+        if(inco<300000)
+        {
+            inc2.setText("Below Poverty Line");
+        }
+        else if(inco>=300000 && inco<600000)
+        {
+            inc2.setText("Low Income Group");
+        }
+        else if(inco>=600000 && inco<1200000)
+        {
+            inc2.setText("Medium Income Group");
+        }
+        else
+        {
+            inc2.setText("High Income Group");
+        }
+        dob1.setText(rs.getDate("DOB").toString());
+        a_no1.setText(rs.getString("Aadhar_no"));
+        Date date = rs.getDate("DOB");
+        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
+        String szDate = oDateFormat.format(date);
+        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println(szDate);
+        Period p = Period.between( ld , LocalDate.now());
+        String aged = Integer.toString(p.getYears());
+        System.out.println("Age" + aged);
+        System.out.println(p.getYears());
+        age1.setText(aged);       
     }
     } catch (SQLException e ) {
     JOptionPane.showMessageDialog(null, e); 
 
-    }    
-            view1.setVisible(true);
+    }                view1.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_view_subActionPerformed
 
@@ -1124,9 +1219,7 @@ Connection con = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField a_no1;
     private javax.swing.ButtonGroup ac;
-    private javax.swing.JRadioButton acn;
     private javax.swing.JRadioButton acn2;
-    private javax.swing.JRadioButton acy;
     private javax.swing.JRadioButton acy2;
     private javax.swing.JButton add_det;
     private javax.swing.JTextField age1;
@@ -1134,53 +1227,30 @@ Connection con = null;
     private javax.swing.JLabel app_no;
     private javax.swing.JLabel app_no1;
     private javax.swing.JLabel app_no2;
+    private javax.swing.JLabel app_no3;
     private javax.swing.ButtonGroup bc;
-    private javax.swing.JRadioButton bcn;
     private javax.swing.JRadioButton bcn2;
-    private javax.swing.JRadioButton bcy;
     private javax.swing.JRadioButton bcy2;
     private javax.swing.JTextField c_no;
     private javax.swing.JTextField d2;
     private javax.swing.ButtonGroup dc;
-    private javax.swing.JRadioButton dcn;
     private javax.swing.JRadioButton dcn2;
-    private javax.swing.JRadioButton dcy;
     private javax.swing.JRadioButton dcy2;
     private javax.swing.JTextField dob1;
-    private javax.swing.JPanel doc;
     private javax.swing.JPanel doc1;
     private javax.swing.JTextField f_name2;
     private javax.swing.ButtonGroup g;
     private javax.swing.JTextField gen1;
     private javax.swing.JButton home;
     private javax.swing.ButtonGroup ic;
-    private javax.swing.JRadioButton icn;
     private javax.swing.JRadioButton icn2;
-    private javax.swing.JRadioButton icy;
     private javax.swing.JRadioButton icy2;
     private javax.swing.JTextField inc1;
+    private javax.swing.JTextField inc2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -1216,19 +1286,14 @@ Connection con = null;
     private javax.swing.JButton log_out;
     private javax.swing.JTextField m_name2;
     private javax.swing.ButtonGroup mc;
-    private javax.swing.JRadioButton mcn;
     private javax.swing.JRadioButton mcn2;
-    private javax.swing.JRadioButton mcy;
     private javax.swing.JRadioButton mcy2;
     private javax.swing.ButtonGroup ms;
     private javax.swing.JTextField ms2;
     private javax.swing.ButtonGroup rc;
-    private javax.swing.JRadioButton rcn;
     private javax.swing.JRadioButton rcn2;
-    private javax.swing.JRadioButton rcy;
     private javax.swing.JRadioButton rcy2;
     private javax.swing.JTextField s2;
-    private javax.swing.JButton submit;
     private javax.swing.JButton submit2;
     private javax.swing.JTextField t2;
     private javax.swing.JTextField v2;
