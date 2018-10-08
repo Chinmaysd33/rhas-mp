@@ -212,14 +212,29 @@ public class MoH_main extends javax.swing.JFrame {
         district.setBackground(new java.awt.Color(0, 204, 204));
         district.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         district.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select District-" }));
+        district.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                districtMouseClicked(evt);
+            }
+        });
 
         taluka.setBackground(new java.awt.Color(0, 204, 204));
         taluka.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         taluka.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Taluka-" }));
+        taluka.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                talukaMouseClicked(evt);
+            }
+        });
 
         village.setBackground(new java.awt.Color(0, 204, 204));
         village.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         village.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Village-" }));
+        village.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                villageMouseClicked(evt);
+            }
+        });
         village.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 villageActionPerformed(evt);
@@ -826,7 +841,42 @@ public class MoH_main extends javax.swing.JFrame {
     }//GEN-LAST:event_app_csmActionPerformed
 
     private void click1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_click1ActionPerformed
-        // TODO add your handling code here:
+        int rc = view_ten.getRowCount();
+        int i=0;
+        for( i=0;i<=rc;i++)
+        {
+            Boolean chked = Boolean.valueOf(view_ten.getValueAt(i, 0).toString());
+            if(chked==true)
+                break;
+        }
+        String dataCol1 = view_ten.getValueAt(i, 1).toString();
+        
+        String vill = village2.getSelectedItem().toString();
+        JOptionPane.showMessageDialog(null, "Company Appointed for Project\nTender Accepted");
+        v_detail.setVisible(false);
+      app_company.setVisible(false);
+      app_csmc.setVisible(false);
+      
+       app_csmc.setVisible(false);
+       moh_home.setVisible(true);
+       conn c = new conn();
+        con=c.getconn();
+        String sql = "update PROJECT SET COMPANY_CODE = ? WHERE  VILLAGE = '"+vill+"'    ";
+         try{
+                pst = con.prepareStatement(sql);
+                pst.setString(1,dataCol1 );
+                pst.executeUpdate();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+      v_detail.setVisible(false);
+      app_company.setVisible(false);
+      app_csmc.setVisible(false);
+      moh_home.setVisible(false);
+      moh_home.setVisible(true);
+         // TODO add your handling code here:
     }//GEN-LAST:event_click1ActionPerformed
 
     private void village2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_village2MouseClicked
@@ -1027,6 +1077,205 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
             taluka2.addItem("Gunor");
         }    // TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_taluka2MouseClicked
+
+    private void districtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_districtMouseClicked
+        if(state2.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+        {
+            district2.removeAllItems();
+            district2.addItem("Buldhana");
+            district2.addItem("Nashik");
+            district2.addItem("Dhule");
+        }
+        else if(state2.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
+        {
+            district2.removeAllItems();
+            district2.addItem("Bilaspur");
+            district2.addItem("Korba");
+            district2.addItem("Raipur");
+        }
+        else if(state2.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
+        {
+            district2.removeAllItems();
+            district2.addItem("Hoogly");
+            district2.addItem("Birbhum");
+            district2.addItem("South 24 Parganas");
+        }
+        else if(state2.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
+        {
+            district2.removeAllItems();
+            district2.addItem("Dhar");
+            district2.addItem("Guna");
+            district2.addItem("Panna");
+        }   // TODO add your handling code here:        // TODO add your handling code here:  // TODO add your handling code here:
+    }//GEN-LAST:event_districtMouseClicked
+
+    private void talukaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_talukaMouseClicked
+      if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Deulgaon Raja");
+            taluka2.addItem("Lonar");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Nashik");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Dhule"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Shirpur");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Bilaspur"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Marwani");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Korba"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Pali");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Raipur"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Arang");
+            taluka2.addItem("Tilda");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Hoogly"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Haripal");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Birbhum"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Nanoor");
+            taluka2.addItem("Labpur");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("South 24 Paraganas"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Kulpi");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Dhar"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Bagh");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Guna"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Aron");
+            taluka2.addItem("Chanchoda");
+            taluka2.addItem("Bamori");
+        }
+        else if(district2.getSelectedItem().toString().equalsIgnoreCase("Panna"))
+        {
+            taluka2.removeAllItems();
+            taluka2.addItem("Gunor");
+        }    // TODO add your handling code here:        // TODO add your handling code here:  // TODO add your handling code here:
+    }//GEN-LAST:event_talukaMouseClicked
+
+    private void villageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_villageMouseClicked
+       if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Aaland");
+            village2.addItem("Umbarkhed");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Lonar"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Hirdav");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Matori");
+            village2.addItem("Dari");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Shirpur"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Jalod");
+            village2.addItem("Mandal");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Marwahi"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Dhanpur");
+            village2.addItem("Lohari");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Pali"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Batra");
+            village2.addItem("Sirli");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Arang"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Ameri");
+            village2.addItem("Nisda");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Haripal"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Kaikala");
+            village2.addItem("Jejur");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Nanoor"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Thupsara");
+            village2.addItem("Jalundi");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Kulpi"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Dhola");
+            village2.addItem("Ramkishore");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Bagh"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Devdha");
+            village2.addItem("Jali");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Aron"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Davri");
+            village2.addItem("Patan");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Gunor"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Ganj");
+            village2.addItem("Kamtana");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Tilda"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Bhiloni");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Labpur"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Jamna");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Chanchoda"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Murela");
+        }
+        else if(taluka2.getSelectedItem().toString().equalsIgnoreCase("Bamori"))
+        {
+            village2.removeAllItems();
+            village2.addItem("Rampur");
+        }   // TODO add your handling code here: // TODO add your handling code here:
+    }//GEN-LAST:event_villageMouseClicked
 
     /**
      * @param args the command line arguments

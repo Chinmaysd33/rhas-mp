@@ -366,8 +366,8 @@ Connection con = null;
                 .addGap(159, 159, 159)
                 .addComponent(app_no1)
                 .addGap(245, 245, 245)
-                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(232, Short.MAX_VALUE))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -786,7 +786,7 @@ Connection con = null;
             .addGroup(doc1Layout.createSequentialGroup()
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(doc1Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
+                        .addGap(126, 126, 126)
                         .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel82)
                             .addComponent(jLabel70)
@@ -1038,15 +1038,20 @@ Connection con = null;
     }//GEN-LAST:event_log_outActionPerformed
 
     private void view_mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_mainActionPerformed
+        doc1.setVisible(false);
+    app_home.setVisible(false);
         view.setVisible(false);
+         view1.setVisible(true);
         try {
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,DOB,Aadhar_no FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,DOB,Aadhar_no,Contact FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
     while(rs.next())
-    {     
+    {   
+        c_no.setText(rs.getString("Contact"));
+        a_no1.setText(rs.getString("Aadhar_no"));
         f_name2.setText(rs.getString("First_name"));
         m_name2.setText(rs.getString("Middle_name"));
         l_name2.setText(rs.getString("Last_name"));
@@ -1055,9 +1060,7 @@ Connection con = null;
         d2.setText(rs.getString("District"));  
         s2.setText(rs.getString("State"));
         inc1.setText(rs.getString("Income_annum"));
-        a_no1.setText(rs.getString("Gender"));        
-        ms2.setText(rs.getString("Marital_status"));
-       int inco = Integer.parseInt(inc1.getText());
+        int inco = Integer.parseInt(inc1.getText());
         if(inco<300000)
         {
             inc2.setText("Below Poverty Line");
@@ -1074,29 +1077,37 @@ Connection con = null;
         {
             inc2.setText("High Income Group");
         }
-        dob1.setText(rs.getDate("DOB").toString());
-        a_no1.setText(rs.getString("Aadhar_no"));
-        Date date = rs.getDate("DOB");
+        gen1.setText(rs.getString("Gender"));        
+        ms2.setText(rs.getString("Marital_status"));
+         Date date = rs.getDate("DOB");
+         if(!(date.toString().matches("")))
+         {
+             dob1.setText(date.toString());
         DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
         String szDate = oDateFormat.format(date);
         LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         System.out.println(szDate);
         Period p = Period.between( ld , LocalDate.now());
         String aged = Integer.toString(p.getYears());
-        System.out.println("Age" + aged);
+        System.out.println("Age " + aged);
         System.out.println(p.getYears());
-        age1.setText(aged);       
+        age1.setText(aged);     
+         }
     }
     } catch (SQLException e ) {
     JOptionPane.showMessageDialog(null, e); 
 
     }    
-            view1.setVisible(true);
+           
 // TODO add your handling code here:
     }//GEN-LAST:event_view_mainActionPerformed
     
     
     private void view_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_subActionPerformed
+         doc1.setVisible(false);
+    app_home.setVisible(false);
+        view.setVisible(false);
+        view1.setVisible(true);   
         try {
         conn c = new conn();
         con=c.getconn();
@@ -1105,6 +1116,7 @@ Connection con = null;
         rs = st.executeQuery(sql);
     while(rs.next())
     {     
+         a_no1.setText(rs.getString("Aadhar_no"));
         f_name2.setText(rs.getString("First_name"));
         m_name2.setText(rs.getString("Middle_name"));
         l_name2.setText(rs.getString("Last_name"));
@@ -1113,9 +1125,20 @@ Connection con = null;
         d2.setText(rs.getString("District"));  
         s2.setText(rs.getString("State"));
         inc1.setText(rs.getString("Income_annum"));
-        a_no1.setText(rs.getString("Gender"));        
+        gen1.setText(rs.getString("Gender"));        
         ms2.setText(rs.getString("Marital_status"));
-       int inco = Integer.parseInt(inc1.getText());
+         Date date = rs.getDate("DOB");
+         dob1.setText(date.toString());  
+        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
+        String szDate = oDateFormat.format(date);
+        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        System.out.println(szDate);
+        Period p = Period.between( ld , LocalDate.now());
+        String aged = Integer.toString(p.getYears());
+        System.out.println("Age " + aged);
+        System.out.println(p.getYears());
+        age1.setText(aged);     
+         int inco = Integer.parseInt(inc1.getText());
         if(inco<300000)
         {
             inc2.setText("Below Poverty Line");
@@ -1132,23 +1155,12 @@ Connection con = null;
         {
             inc2.setText("High Income Group");
         }
-        dob1.setText(rs.getDate("DOB").toString());
-        a_no1.setText(rs.getString("Aadhar_no"));
-        Date date = rs.getDate("DOB");
-        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
-        String szDate = oDateFormat.format(date);
-        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println(szDate);
-        Period p = Period.between( ld , LocalDate.now());
-        String aged = Integer.toString(p.getYears());
-        System.out.println("Age" + aged);
-        System.out.println(p.getYears());
-        age1.setText(aged);       
     }
     } catch (SQLException e ) {
     JOptionPane.showMessageDialog(null, e); 
 
-    }                view1.setVisible(true);
+    }    
+         
         // TODO add your handling code here:
     }//GEN-LAST:event_view_subActionPerformed
 
@@ -1158,6 +1170,92 @@ Connection con = null;
 
         String valid="true";
         String mc_pass=null,rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass=null,user_no = app_no.getText();
+       
+        String q1 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
+        try
+        {
+                st = con.createStatement();
+                rs = st.executeQuery(q1);
+              
+                while(rs.next()) 
+                { 
+                    ac_pass = (rs.getString("aadhar_copy"));
+                    bc_pass = (rs.getString("birth_cert_copy"));
+                    ic_pass = (rs.getString("income_cert_copy")); 
+                    rc_pass = (rs.getString("ration_copy"));
+                    mc_pass = (rs.getString("marriage_copy"));
+                    dc_pass = (rs.getString("death_copy"));  
+                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
+    
+                    if(ac_pass.equalsIgnoreCase("YES"))
+                    {
+                       acy2.setSelected(true);
+                       System.out.print("acy2");
+                    }
+                    else
+                    {
+                       acn2.setSelected(true);
+                       System.out.print("acn2");
+                    }
+                    if(bc_pass.equalsIgnoreCase("YES"))
+                    {
+                        bcy2.setSelected(true);
+                                   System.out.print("bcy2");
+                    }
+                    else
+                    {
+                       bcn2.setSelected(true);
+                                  System.out.print("bcn2");
+                    }
+                    if(ic_pass.equalsIgnoreCase("YES"))
+                    {
+                        icy2.setSelected(true);
+                    }
+                    else
+                    {
+                       icn2.setSelected(true);
+                    }
+                    if(rc_pass.equalsIgnoreCase("YES"))
+                    {
+                        rcy2.setSelected(true);
+                    }
+                    else
+                    {
+                       rcn2.setSelected(true);
+                    }
+                    if(mc_pass .equalsIgnoreCase("YES"))
+                    {
+                        mcn2.setSelected(true);
+                    }
+                    else if(mc_pass.equalsIgnoreCase("NO"))
+                    {
+                       mcn2.setSelected(true);
+                    }
+                    else
+                    {
+                        mcn2.setEnabled(false);
+                        mcy2.setEnabled(false); 
+                    }
+                    if(dc_pass.equalsIgnoreCase("YES"))
+                    {
+                        dcy2.setSelected(true);
+                    }
+                    else if(dc_pass.equalsIgnoreCase("NO"))
+                    {
+                       dcn2.setSelected(true);
+                    }
+                    else
+                    {
+                        dcn2.setEnabled(false);
+                        dcy2.setEnabled(false);   
+                    }
+                }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
         String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
         try
         {

@@ -124,6 +124,11 @@ public class login extends javax.swing.JFrame {
         reset.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         reset.setMnemonic('R');
         reset.setText("RESET");
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel6.setText("to Sign UP.");
@@ -324,6 +329,12 @@ public class login extends javax.swing.JFrame {
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_passMouseClicked
+
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
+        user.setText("");
+        pass.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resetActionPerformed
     
 
     /**
