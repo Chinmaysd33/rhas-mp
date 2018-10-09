@@ -269,7 +269,7 @@ public class login extends javax.swing.JFrame {
                     else  if(user.getText().startsWith("CSM"))
                     {
                         this.setVisible(false);
-                        CSMC_main f4 = new CSMC_main(user.getText());
+                        CSMC_main1 f4 = new CSMC_main1(user.getText());
                         f4.setVisible(true);
                         System.out.println("CSMC is selected");
                     }

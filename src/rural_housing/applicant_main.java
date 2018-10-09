@@ -886,7 +886,7 @@ Connection con = null;
                         .addComponent(rcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(rcn2))
                     .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel74)
                         .addComponent(jLabel78)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1260,6 +1260,64 @@ Connection con = null;
         catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        
+        mc_pass="NOT APPLICABLE";
+        dc_pass="NOT APPLICABLE";
+        
+            if(mcy2.isSelected())
+            {
+                mc_pass = "YES";
+            }
+            else
+            {
+                mc_pass = "NO";
+            }
+        
+            if(dcy2.isSelected())
+            {
+                dc_pass = "YES";
+            }
+            else if(dcn2.isSelected())
+            {
+                dc_pass = "NO";
+            }
+        
+        if(acy2.isSelected())
+        {
+            ac_pass = "YES";
+        }
+        else
+        {
+            ac_pass = "NO";
+        }
+
+        if(bcy2.isSelected())
+        {
+            bc_pass = "YES";
+        }
+        else
+        {
+            bc_pass = "NO";
+        }
+        if(icy2.isSelected())
+        {
+            ic_pass = "YES";
+        }
+        else
+        {
+            ic_pass = "NO";
+        }
+
+        if(rcy2.isSelected())
+        {
+            rc_pass = "YES";
+        }
+        else
+        {
+            rc_pass = "NO";
         }
         
         String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";

@@ -5,28 +5,59 @@
  */
 package rural_housing;
 
+import java.sql.*;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Abhik
  */
 public class survey_agent_main extends javax.swing.JFrame {
-
+Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    Statement st = null;
     /**
      * Creates new form survey_agent_main
      */
     public survey_agent_main() {
         initComponents();
-      s_agent_home.setVisible(false); 
-        s_rep_app.setVisible(false);
-    s_agent_home.setVisible(true); 
-     s_rep_reg.setVisible(false);
+        s_agent_home.setVisible(false); 
+        reg_sp.setVisible(false); 
+        app_sp.setVisible(false);
+        s_agent_home.setVisible(true);
+       ac.add(acy);
+        ac.add(acn);
+        bc.add(bcy);
+        bc.add(bcn);
+        ic.add(icy);
+        ic.add(icn);
+        rc.add(rcy);
+        rc.add(rcy);
+        mc.add(dcy);
+        mc.add(mcn);
+        dc.add(dcy);
+        dc.add(dcn);
     }
 public survey_agent_main(String aa) {
         initComponents();
-      s_agent_home.setVisible(false); 
-        s_rep_app.setVisible(false);
-    s_agent_home.setVisible(true); 
-     s_rep_reg.setVisible(false);
+        s_agent_home.setVisible(false); 
+        reg_sp.setVisible(false); 
+        app_sp.setVisible(false);
+        s_agent_home.setVisible(true);
+         ac.add(acy);
+        ac.add(acn);
+        bc.add(bcy);
+        bc.add(bcn);
+        ic.add(icy);
+        ic.add(icn);
+        rc.add(rcy);
+        rc.add(rcy);
+        mc.add(dcy);
+        mc.add(mcn);
+        dc.add(dcy);
+        dc.add(dcn);
      sag_no.setText(aa);
     }
 
@@ -39,6 +70,12 @@ public survey_agent_main(String aa) {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ac = new javax.swing.ButtonGroup();
+        bc = new javax.swing.ButtonGroup();
+        ic = new javax.swing.ButtonGroup();
+        rc = new javax.swing.ButtonGroup();
+        mc = new javax.swing.ButtonGroup();
+        dc = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         s_agent_home = new javax.swing.JPanel();
@@ -52,11 +89,9 @@ public survey_agent_main(String aa) {
         sur_reg = new javax.swing.JButton();
         sur_app = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        app_sp = new javax.swing.JScrollPane();
         s_rep_app = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         submit = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         app_no = new javax.swing.JTextField();
@@ -74,14 +109,17 @@ public survey_agent_main(String aa) {
         icn = new javax.swing.JRadioButton();
         mcn = new javax.swing.JRadioButton();
         acn = new javax.swing.JRadioButton();
-        jLabel13 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        t = new javax.swing.JComboBox<>();
-        jLabel25 = new javax.swing.JLabel();
-        s = new javax.swing.JComboBox<>();
-        d = new javax.swing.JComboBox<>();
         v = new javax.swing.JComboBox<>();
+        jLabel82 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        dcy = new javax.swing.JRadioButton();
+        dcn = new javax.swing.JRadioButton();
+        jLabel73 = new javax.swing.JLabel();
+        rcy = new javax.swing.JRadioButton();
+        rcn = new javax.swing.JRadioButton();
+        jLabel74 = new javax.swing.JLabel();
+        submit2 = new javax.swing.JButton();
+        reg_sp = new javax.swing.JScrollPane();
         s_rep_reg = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -102,9 +140,14 @@ public survey_agent_main(String aa) {
         remark = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1200, 960));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1200, 180));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1200, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rural_housing/Logo.JPG"))); // NOI18N
 
@@ -128,9 +171,9 @@ public survey_agent_main(String aa) {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 180));
 
         s_agent_home.setBackground(new java.awt.Color(0, 153, 153));
-        s_agent_home.setMaximumSize(new java.awt.Dimension(870, 780));
-        s_agent_home.setMinimumSize(new java.awt.Dimension(870, 780));
-        s_agent_home.setPreferredSize(new java.awt.Dimension(870, 780));
+        s_agent_home.setMaximumSize(new java.awt.Dimension(870, 580));
+        s_agent_home.setMinimumSize(new java.awt.Dimension(870, 580));
+        s_agent_home.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 29)); // NOI18N
         jLabel2.setText("Welcome To Rural Housing Allocation System.");
@@ -162,7 +205,7 @@ public survey_agent_main(String aa) {
         s_agent_homeLayout.setVerticalGroup(
             s_agent_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(s_agent_homeLayout.createSequentialGroup()
-                .addGap(97, 97, 97)
+                .addGap(106, 106, 106)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,9 +214,12 @@ public survey_agent_main(String aa) {
                 .addGap(368, 368, 368))
         );
 
-        getContentPane().add(s_agent_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 830, 780));
+        getContentPane().add(s_agent_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 830, -1));
 
         jPanel5.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel5.setMaximumSize(new java.awt.Dimension(370, 780));
+        jPanel5.setMinimumSize(new java.awt.Dimension(370, 580));
+        jPanel5.setPreferredSize(new java.awt.Dimension(370, 580));
 
         view_det1.setBackground(new java.awt.Color(0, 204, 204));
         view_det1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -257,13 +303,13 @@ public survey_agent_main(String aa) {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
+                .addGap(28, 28, 28)
                 .addComponent(view_det1)
-                .addGap(51, 51, 51)
+                .addGap(36, 36, 36)
                 .addComponent(sur_reg)
-                .addGap(53, 53, 53)
+                .addGap(35, 35, 35)
                 .addComponent(sur_app)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                .addGap(102, 102, 102)
                 .addComponent(home1)
                 .addGap(49, 49, 49)
                 .addComponent(log_out1)
@@ -272,21 +318,17 @@ public survey_agent_main(String aa) {
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 370, -1));
 
+        app_sp.setMaximumSize(new java.awt.Dimension(870, 780));
+        app_sp.setMinimumSize(new java.awt.Dimension(870, 580));
+        app_sp.setPreferredSize(new java.awt.Dimension(870, 580));
+
         s_rep_app.setBackground(new java.awt.Color(0, 153, 153));
         s_rep_app.setMaximumSize(new java.awt.Dimension(870, 780));
-        s_rep_app.setMinimumSize(new java.awt.Dimension(870, 780));
+        s_rep_app.setMinimumSize(new java.awt.Dimension(870, 580));
+        s_rep_app.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel3.setText("Survey Report (Applicant)");
-
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel4.setText("Project State:");
-
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel5.setText("Project Village:");
-
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel6.setText("Project District:");
 
         submit.setBackground(new java.awt.Color(0, 153, 153));
         submit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -303,7 +345,8 @@ public survey_agent_main(String aa) {
 
         app_no.setBackground(new java.awt.Color(0, 204, 204));
         app_no.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        app_no.setText("Enter The Applicant Number");
+        app_no.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        app_no.setText("Project No");
         app_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 app_noActionPerformed(evt);
@@ -360,49 +403,47 @@ public survey_agent_main(String aa) {
         acn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         acn.setText("Not Submitted");
 
-        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel13.setText("Remarks (if any):");
-
-        jTextArea1.setBackground(new java.awt.Color(0, 204, 204));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        t.setBackground(new java.awt.Color(0, 204, 204));
-        t.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        t.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Taluka-" }));
-        t.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                tItemStateChanged(evt);
-            }
-        });
-
-        jLabel25.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel25.setText("Project Taluka:");
-
-        s.setBackground(new java.awt.Color(0, 204, 204));
-        s.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        s.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select State-", "Chhattisgarh", "Maharashtra", "Madhya Pradesh", "West Bengal" }));
-        s.setToolTipText("");
-        s.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                sItemStateChanged(evt);
-            }
-        });
-
-        d.setBackground(new java.awt.Color(0, 204, 204));
-        d.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        d.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select District-" }));
-        d.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                dItemStateChanged(evt);
-            }
-        });
-
         v.setBackground(new java.awt.Color(0, 204, 204));
         v.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        v.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Village-" }));
+        v.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Applicant number-" }));
+
+        jLabel82.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel82.setText("Death Certificate");
+
+        jLabel83.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel83.setText("(for widowed applicant only)");
+
+        dcy.setBackground(new java.awt.Color(0, 153, 153));
+        dcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        dcy.setText("Submitted");
+
+        dcn.setBackground(new java.awt.Color(0, 153, 153));
+        dcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        dcn.setText("Not Submitted");
+
+        jLabel73.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel73.setText("(if applicable)");
+
+        rcy.setBackground(new java.awt.Color(0, 153, 153));
+        rcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        rcy.setText("Submitted");
+
+        rcn.setBackground(new java.awt.Color(0, 153, 153));
+        rcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        rcn.setText("Not Submitted");
+
+        jLabel74.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel74.setText("Ration Card ");
+
+        submit2.setBackground(new java.awt.Color(0, 153, 153));
+        submit2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        submit2.setMnemonic('S');
+        submit2.setText("SUBMIT");
+        submit2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout s_rep_appLayout = new javax.swing.GroupLayout(s_rep_app);
         s_rep_app.setLayout(s_rep_appLayout);
@@ -411,54 +452,65 @@ public survey_agent_main(String aa) {
             .addGroup(s_rep_appLayout.createSequentialGroup()
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(s_rep_appLayout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel25))
-                        .addGap(127, 127, 127)
-                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(app_no)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                                .addGroup(s_rep_appLayout.createSequentialGroup()
-                                    .addGap(101, 101, 101)
-                                    .addComponent(jLabel11)))
-                            .addGroup(s_rep_appLayout.createSequentialGroup()
-                                .addComponent(icy)
-                                .addGap(18, 18, 18)
-                                .addComponent(icn))
-                            .addGroup(s_rep_appLayout.createSequentialGroup()
-                                .addComponent(bcy)
-                                .addGap(18, 18, 18)
-                                .addComponent(bcn))
-                            .addGroup(s_rep_appLayout.createSequentialGroup()
-                                .addComponent(mcy)
-                                .addGap(18, 18, 18)
-                                .addComponent(mcn))
-                            .addGroup(s_rep_appLayout.createSequentialGroup()
-                                .addComponent(acy)
-                                .addGap(18, 18, 18)
-                                .addComponent(acn))
-                            .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(s_rep_appLayout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(jLabel3))
                     .addGroup(s_rep_appLayout.createSequentialGroup()
-                        .addGap(326, 326, 326)
-                        .addComponent(submit)))
-                .addContainerGap(20, Short.MAX_VALUE))
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel10))
+                    .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, s_rep_appLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(submit2))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, s_rep_appLayout.createSequentialGroup()
+                            .addGap(100, 100, 100)
+                            .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel83)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel9)
+                                .addComponent(jLabel15)
+                                .addComponent(jLabel73)
+                                .addComponent(jLabel82)
+                                .addComponent(jLabel74))
+                            .addGap(53, 53, 53)
+                            .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(submit)
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addGap(101, 101, 101)
+                                    .addComponent(jLabel11))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(icy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(icn))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(bcy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(bcn))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(mcy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(mcn))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(acy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(acn))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(rcy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(rcn))
+                                .addGroup(s_rep_appLayout.createSequentialGroup()
+                                    .addComponent(dcy)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(dcn))))))
+                .addContainerGap(97, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, s_rep_appLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(app_no, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(315, 315, 315))
         );
         s_rep_appLayout.setVerticalGroup(
             s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,25 +518,12 @@ public survey_agent_main(String aa) {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
+                .addComponent(app_no, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
-                    .addComponent(app_no, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(submit2))
                 .addGap(18, 18, 18)
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -502,31 +541,51 @@ public survey_agent_main(String aa) {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(s_rep_appLayout.createSequentialGroup()
-                        .addGap(0, 32, Short.MAX_VALUE)
-                        .addComponent(jLabel9))
-                    .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(icy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(icn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(icy)
+                            .addComponent(icn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rcn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(rcy))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(s_rep_appLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel74)
+                        .addGap(8, 8, 8)))
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(mcy)
                         .addComponent(mcn)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addGap(23, 23, 23)
-                .addComponent(submit)
-                .addGap(32, 32, 32))
+                    .addGroup(s_rep_appLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(submit))
+                    .addGroup(s_rep_appLayout.createSequentialGroup()
+                        .addComponent(jLabel73)
+                        .addGap(18, 18, 18)
+                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dcy)
+                            .addComponent(dcn))
+                        .addComponent(jLabel83)
+                        .addContainerGap(55, Short.MAX_VALUE))))
         );
 
-        getContentPane().add(s_rep_app, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
+        app_sp.setViewportView(s_rep_app);
+
+        getContentPane().add(app_sp, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
+
+        reg_sp.setMaximumSize(new java.awt.Dimension(870, 780));
+        reg_sp.setMinimumSize(new java.awt.Dimension(870, 580));
 
         s_rep_reg.setBackground(new java.awt.Color(0, 153, 153));
-        s_rep_reg.setMaximumSize(new java.awt.Dimension(870, 780));
-        s_rep_reg.setMinimumSize(new java.awt.Dimension(870, 780));
+        s_rep_reg.setMaximumSize(new java.awt.Dimension(870, 580));
+        s_rep_reg.setMinimumSize(new java.awt.Dimension(870, 580));
+        s_rep_reg.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel14.setText("Survey Report (Region)");
@@ -677,7 +736,9 @@ public survey_agent_main(String aa) {
                 .addGap(146, 146, 146))
         );
 
-        getContentPane().add(s_rep_reg, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 830, 780));
+        reg_sp.setViewportView(s_rep_reg);
+
+        getContentPane().add(reg_sp, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -687,10 +748,11 @@ public survey_agent_main(String aa) {
     }//GEN-LAST:event_view_det1ActionPerformed
 
     private void home1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home1ActionPerformed
-  s_agent_home.setVisible(false); 
-        s_rep_app.setVisible(false);
+  reg_sp.setVisible(false);
+        s_agent_home.setVisible(false); 
+        app_sp.setVisible(false);
     s_agent_home.setVisible(true); 
-    s_rep_reg.setVisible(false);
+      
     }//GEN-LAST:event_home1ActionPerformed
 
     private void log_out1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_log_out1ActionPerformed
@@ -701,20 +763,97 @@ public survey_agent_main(String aa) {
 
     private void sur_regActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sur_regActionPerformed
         s_agent_home.setVisible(false); 
-      s_rep_reg.setVisible(false);
-        s_rep_app.setVisible(false);
-      s_rep_reg.setVisible(true);
+      reg_sp.setVisible(false);
+        app_sp.setVisible(false);
+      reg_sp.setVisible(true);
     }//GEN-LAST:event_sur_regActionPerformed
 
     private void sur_appActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sur_appActionPerformed
-      s_rep_reg.setVisible(false);
+      reg_sp.setVisible(false);
         s_agent_home.setVisible(false); 
-        s_rep_app.setVisible(false);
-      s_rep_app.setVisible(true);
+        app_sp.setVisible(false);
+      app_sp.setVisible(true);
     }//GEN-LAST:event_sur_appActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
+        conn c = new conn();
+        con=c.getconn();
+       
+        String gender,ms_pass,mc_pass="NOT APPLICABLE",rc_pass,ac_pass,bc_pass,ic_pass,dc_pass="NOT APPLICABLE";
+        
+            if(mcy.isSelected())
+            {
+                mc_pass = "YES";
+            }
+            else
+            {
+                mc_pass = "NO";
+            }
+        
+            if(dcy.isSelected())
+            {
+                dc_pass = "YES";
+            }
+            else if(dcn.isSelected())
+            {
+                dc_pass = "NO";
+            }
+        
+        if(acy.isSelected())
+        {
+            ac_pass = "YES";
+        }
+        else
+        {
+            ac_pass = "NO";
+        }
 
+        if(bcy.isSelected())
+        {
+            bc_pass = "YES";
+        }
+        else
+        {
+            bc_pass = "NO";
+        }
+        if(icy.isSelected())
+        {
+            ic_pass = "YES";
+        }
+        else
+        {
+            ic_pass = "NO";
+        }
+
+        if(rcy.isSelected())
+        {
+            rc_pass = "YES";
+        }
+        else
+        {
+            rc_pass = "NO";
+        }
+          String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
+        try
+        {
+            pst = con.prepareStatement(q2);
+
+            pst.setObject(1,ac_pass);
+            pst.setString(2,bc_pass);
+            pst.setString(3,ic_pass);
+            pst.setString(4,rc_pass);
+            pst.setString(5, mc_pass);
+            pst.setString(6, dc_pass);
+            pst.setString(7,v.getSelectedItem().toString());
+           
+            pst.execute();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }   
+            
+          
     }//GEN-LAST:event_submitActionPerformed
 
     private void app_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_app_noActionPerformed
@@ -733,206 +872,94 @@ public survey_agent_main(String aa) {
         // TODO add your handling code here:
     }//GEN-LAST:event_nofActionPerformed
 
-    private void tItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tItemStateChanged
-        if(t.getSelectedItem().toString().equalsIgnoreCase("Deulgaon Raja"))
+    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
+    conn c = new conn();
+    con=c.getconn();
+   
+   String mc_pass,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass;
+        String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
+        try
         {
-            v.removeAllItems();
-            v.addItem("Aaland");
-            v.addItem("Umbarkhed");
+                st = con.createStatement();
+                rs = st.executeQuery(q2);
+              
+                while(rs.next()) 
+                { 
+                    ac_pass = (rs.getString("aadhar_copy"));
+                    bc_pass = (rs.getString("birth_cert_copy"));
+                    ic_pass = (rs.getString("income_cert_copy")); 
+                    rc_pass = (rs.getString("ration_copy"));
+                    mc_pass = (rs.getString("marriage_copy"));
+                    dc_pass = (rs.getString("death_copy"));  
+                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
+    
+                    if(ac_pass.equalsIgnoreCase("YES"))
+                    {
+                       acy.setSelected(true);
+                    }
+                    else
+                    {
+                       acn.setSelected(true);
+                    }
+                    if(bc_pass.equalsIgnoreCase("YES"))
+                    {
+                        bcy.setSelected(true);
+                    }
+                    else
+                    {
+                       bcn.setSelected(true);
+                    }
+                    if(ic_pass.equalsIgnoreCase("YES"))
+                    {
+                        icy.setSelected(true);
+                    }
+                    else
+                    {
+                       icn.setSelected(true);
+                    }
+                    if(rc_pass.equalsIgnoreCase("YES"))
+                    {
+                        rcy.setSelected(true);
+                    }
+                    else
+                    {
+                       rcn.setSelected(true);
+                    }
+                    if(mc_pass .equalsIgnoreCase("YES"))
+                    {
+                        mcn.setSelected(true);
+                    }
+                    else if(mc_pass.equalsIgnoreCase("NO"))
+                    {
+                       mcn.setSelected(true);
+                    }
+                    else
+                    {
+                        mcn.setEnabled(false);
+                        mcy.setEnabled(false); 
+                    }
+                    if(dc_pass.equalsIgnoreCase("YES"))
+                    {
+                        dcy.setSelected(true);
+                    }
+                    else if(dc_pass.equalsIgnoreCase("NO"))
+                    {
+                       dcn.setSelected(true);
+                    }
+                    else
+                    {
+                        dcn.setEnabled(false);
+                        dcy.setEnabled(false);   
+                    }
+                }
         }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Lonar"))
+        catch (Exception e)
         {
-            v.removeAllItems();
-            v.addItem("Hirdav");
+            JOptionPane.showMessageDialog(null, e);
         }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
-        {
-            v.removeAllItems();
-            v.addItem("Matori");
-            v.addItem("Dari");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Shirpur"))
-        {
-            v.removeAllItems();
-            v.addItem("Jalod");
-            v.addItem("Mandal");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Marwahi"))
-        {
-            v.removeAllItems();
-            v.addItem("Dhanpur");
-            v.addItem("Lohari");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Pali"))
-        {
-            v.removeAllItems();
-            v.addItem("Batra");
-            v.addItem("Sirli");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Arang"))
-        {
-            v.removeAllItems();
-            v.addItem("Ameri");
-            v.addItem("Nisda");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Haripal"))
-        {
-            v.removeAllItems();
-            v.addItem("Kaikala");
-            v.addItem("Jejur");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Nanoor"))
-        {
-            v.removeAllItems();
-            v.addItem("Thupsara");
-            v.addItem("Jalundi");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Kulpi"))
-        {
-            v.removeAllItems();
-            v.addItem("Dhola");
-            v.addItem("Ramkishore");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bagh"))
-        {
-            v.removeAllItems();
-            v.addItem("Devdha");
-            v.addItem("Jali");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Aron"))
-        {
-            v.removeAllItems();
-            v.addItem("Davri");
-            v.addItem("Patan");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Gunor"))
-        {
-            v.removeAllItems();
-            v.addItem("Ganj");
-            v.addItem("Kamtana");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Tilda"))
-        {
-            v.removeAllItems();
-            v.addItem("Bhiloni");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Labpur"))
-        {
-            v.removeAllItems();
-            v.addItem("Jamna");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Chanchoda"))
-        {
-            v.removeAllItems();
-            v.addItem("Murela");
-        }
-        else if(t.getSelectedItem().toString().equalsIgnoreCase("Bamori"))
-        {
-            v.removeAllItems();
-            v.addItem("Rampur");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tItemStateChanged
 
-    private void sItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_sItemStateChanged
-        if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
-        {
-            d.removeAllItems();
-            d.addItem("Buldhana");
-            d.addItem("Nashik");
-            d.addItem("Dhule");
-        }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("Chhattisgarh"))
-        {
-            d.removeAllItems();
-            d.addItem("Bilaspur");
-            d.addItem("Korba");
-            d.addItem("Raipur");
-        }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("West Bengal"))
-        {
-            d.removeAllItems();
-            d.addItem("Hoogly");
-            d.addItem("Birbhum");
-            d.addItem("South 24 Parganas");
-        }
-        else if(s.getSelectedItem().toString().equalsIgnoreCase("Madhya pradesh"))
-        {
-            d.removeAllItems();
-            d.addItem("Dhar");
-            d.addItem("Guna");
-            d.addItem("Panna");
-        }        // TODO add your handling code here:
-    }//GEN-LAST:event_sItemStateChanged
-
-    private void dItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_dItemStateChanged
-        if(d.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
-        {
-            t.removeAllItems();
-            t.addItem("Deulgaon Raja");
-            t.addItem("Lonar");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Nashik"))
-        {
-            t.removeAllItems();
-            t.addItem("Nashik");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhule"))
-        {
-            t.removeAllItems();
-            t.addItem("Shirpur");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Bilaspur"))
-        {
-            t.removeAllItems();
-            t.addItem("Marwani");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Korba"))
-        {
-            t.removeAllItems();
-            t.addItem("Pali");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Raipur"))
-        {
-            t.removeAllItems();
-            t.addItem("Arang");
-            t.addItem("Tilda");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Hoogly"))
-        {
-            t.removeAllItems();
-            t.addItem("Haripal");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Birbhum"))
-        {
-            t.removeAllItems();
-            t.addItem("Nanoor");
-            t.addItem("Labpur");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("South 24 Paraganas"))
-        {
-            t.removeAllItems();
-            t.addItem("Kulpi");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Dhar"))
-        {
-            t.removeAllItems();
-            t.addItem("Bagh");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Guna"))
-        {
-            t.removeAllItems();
-            t.addItem("Aron");
-            t.addItem("Chanchoda");
-            t.addItem("Bamori");
-        }
-        else if(d.getSelectedItem().toString().equalsIgnoreCase("Panna"))
-        {
-            t.removeAllItems();
-            t.addItem("Gunor");
-        }
         // TODO add your handling code here:
-    }//GEN-LAST:event_dItemStateChanged
+    }//GEN-LAST:event_submit2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -970,21 +997,26 @@ public survey_agent_main(String aa) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup ac;
     private javax.swing.JRadioButton acn;
     private javax.swing.JRadioButton acy;
     private javax.swing.JTextField app_no;
+    private javax.swing.JScrollPane app_sp;
+    private javax.swing.ButtonGroup bc;
     private javax.swing.JRadioButton bcn;
     private javax.swing.JRadioButton bcy;
-    private javax.swing.JComboBox<String> d;
+    private javax.swing.ButtonGroup dc;
+    private javax.swing.JRadioButton dcn;
+    private javax.swing.JRadioButton dcy;
     private javax.swing.JTextField gdp;
     private javax.swing.JButton home1;
+    private javax.swing.ButtonGroup ic;
     private javax.swing.JRadioButton icn;
     private javax.swing.JRadioButton icy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -997,38 +1029,40 @@ public survey_agent_main(String aa) {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JComboBox<String> landtype;
     private javax.swing.JButton log_out1;
+    private javax.swing.ButtonGroup mc;
     private javax.swing.JRadioButton mcn;
     private javax.swing.JRadioButton mcy;
     private javax.swing.JTextField nof;
     private javax.swing.JComboBox<String> p_dist;
     private javax.swing.JComboBox<String> p_state1;
     private javax.swing.JComboBox<String> p_vil;
+    private javax.swing.ButtonGroup rc;
+    private javax.swing.JRadioButton rcn;
+    private javax.swing.JRadioButton rcy;
+    private javax.swing.JScrollPane reg_sp;
     private javax.swing.JTextArea remark;
-    private javax.swing.JComboBox<String> s;
     private javax.swing.JPanel s_agent_home;
     private javax.swing.JPanel s_rep_app;
     private javax.swing.JPanel s_rep_reg;
     private javax.swing.JLabel sag_no;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
+    private javax.swing.JButton submit2;
     private javax.swing.JButton sur_app;
     private javax.swing.JButton sur_reg;
-    private javax.swing.JComboBox<String> t;
     private javax.swing.JComboBox<String> v;
     private javax.swing.JButton view_det1;
     // End of variables declaration//GEN-END:variables

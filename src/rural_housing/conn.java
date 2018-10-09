@@ -20,7 +20,7 @@ public class conn {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tp1", "root","csd@3398" );
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tp1?autoReconnect=true&useSSL=false", "root","csd@3398" );
             return con;
         }
         catch (ClassNotFoundException | SQLException e)
