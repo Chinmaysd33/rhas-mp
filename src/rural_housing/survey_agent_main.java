@@ -122,12 +122,7 @@ public survey_agent_main(String aa) {
         reg_sp = new javax.swing.JScrollPane();
         s_rep_reg = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        p_vil = new javax.swing.JComboBox<>();
-        jLabel19 = new javax.swing.JLabel();
-        p_state1 = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
-        p_dist = new javax.swing.JComboBox<>();
         submit1 = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         gdp = new javax.swing.JTextField();
@@ -138,6 +133,7 @@ public survey_agent_main(String aa) {
         jLabel24 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         remark = new javax.swing.JTextArea();
+        app_no1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 960));
@@ -172,7 +168,7 @@ public survey_agent_main(String aa) {
 
         s_agent_home.setBackground(new java.awt.Color(0, 153, 153));
         s_agent_home.setMaximumSize(new java.awt.Dimension(870, 580));
-        s_agent_home.setMinimumSize(new java.awt.Dimension(870, 580));
+        s_agent_home.setMinimumSize(new java.awt.Dimension(870, 550));
         s_agent_home.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 29)); // NOI18N
@@ -218,7 +214,7 @@ public survey_agent_main(String aa) {
 
         jPanel5.setBackground(new java.awt.Color(0, 204, 204));
         jPanel5.setMaximumSize(new java.awt.Dimension(370, 780));
-        jPanel5.setMinimumSize(new java.awt.Dimension(370, 580));
+        jPanel5.setMinimumSize(new java.awt.Dimension(370, 550));
         jPanel5.setPreferredSize(new java.awt.Dimension(370, 580));
 
         view_det1.setBackground(new java.awt.Color(0, 204, 204));
@@ -319,8 +315,8 @@ public survey_agent_main(String aa) {
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 370, -1));
 
         app_sp.setMaximumSize(new java.awt.Dimension(870, 780));
-        app_sp.setMinimumSize(new java.awt.Dimension(870, 580));
-        app_sp.setPreferredSize(new java.awt.Dimension(870, 580));
+        app_sp.setMinimumSize(new java.awt.Dimension(870, 550));
+        app_sp.setPreferredSize(new java.awt.Dimension(870, 550));
 
         s_rep_app.setBackground(new java.awt.Color(0, 153, 153));
         s_rep_app.setMaximumSize(new java.awt.Dimension(870, 780));
@@ -580,36 +576,18 @@ public survey_agent_main(String aa) {
         getContentPane().add(app_sp, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, -1, -1));
 
         reg_sp.setMaximumSize(new java.awt.Dimension(870, 780));
-        reg_sp.setMinimumSize(new java.awt.Dimension(870, 580));
+        reg_sp.setMinimumSize(new java.awt.Dimension(830, 580));
+        reg_sp.setPreferredSize(new java.awt.Dimension(832, 580));
 
         s_rep_reg.setBackground(new java.awt.Color(0, 153, 153));
-        s_rep_reg.setMaximumSize(new java.awt.Dimension(870, 580));
-        s_rep_reg.setMinimumSize(new java.awt.Dimension(870, 580));
-        s_rep_reg.setPreferredSize(new java.awt.Dimension(870, 580));
+        s_rep_reg.setMaximumSize(new java.awt.Dimension(830, 580));
+        s_rep_reg.setMinimumSize(new java.awt.Dimension(830, 550));
+        s_rep_reg.setPreferredSize(new java.awt.Dimension(830, 550));
 
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel14.setText("Survey Report (Region)");
 
-        jLabel18.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel18.setText("Project State:");
-
-        p_vil.setBackground(new java.awt.Color(0, 204, 204));
-        p_vil.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        p_vil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Village 1", "Village 2", "Village 3", "Village 4" }));
-
-        jLabel19.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel19.setText("Project Village:");
-
-        p_state1.setBackground(new java.awt.Color(0, 204, 204));
-        p_state1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        p_state1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chhattisgarh", "Maharashtra", "Madhya Pradesh", "West Bengal" }));
-
         jLabel20.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel20.setText("Project District:");
-
-        p_dist.setBackground(new java.awt.Color(0, 204, 204));
-        p_dist.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        p_dist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "District 1", "District 2", "District 3", "District 4" }));
 
         submit1.setBackground(new java.awt.Color(0, 153, 153));
         submit1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -662,6 +640,16 @@ public survey_agent_main(String aa) {
         remark.setText("\n");
         jScrollPane2.setViewportView(remark);
 
+        app_no1.setBackground(new java.awt.Color(0, 204, 204));
+        app_no1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        app_no1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        app_no1.setText("Project No");
+        app_no1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                app_no1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout s_rep_regLayout = new javax.swing.GroupLayout(s_rep_reg);
         s_rep_reg.setLayout(s_rep_regLayout);
         s_rep_regLayout.setHorizontalGroup(
@@ -671,51 +659,41 @@ public survey_agent_main(String aa) {
                     .addGroup(s_rep_regLayout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(s_rep_regLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(jLabel24)
+                                .addGap(127, 127, 127)
+                                .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(gdp)
+                                    .addComponent(nof)
+                                    .addComponent(landtype, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2)))
                             .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel18)
-                                .addComponent(jLabel19)
                                 .addComponent(jLabel20)
                                 .addComponent(jLabel21)
                                 .addComponent(jLabel22)
                                 .addComponent(jLabel23))
                             .addGroup(s_rep_regLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel24)))
-                        .addGap(127, 127, 127)
-                        .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(p_dist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(p_state1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(p_vil, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(gdp)
-                            .addComponent(nof)
-                            .addComponent(landtype, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2)))
+                                .addGap(257, 257, 257)
+                                .addComponent(app_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(s_rep_regLayout.createSequentialGroup()
                         .addGap(324, 324, 324)
                         .addComponent(submit1))
                     .addGroup(s_rep_regLayout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(jLabel14)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         s_rep_regLayout.setVerticalGroup(
             s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(s_rep_regLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(p_state1))
-                .addGap(16, 16, 16)
-                .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(p_dist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
-                .addGap(18, 18, 18)
-                .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(p_vil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(app_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20)
+                .addGap(54, 54, 54)
                 .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(gdp, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -961,6 +939,10 @@ public survey_agent_main(String aa) {
         // TODO add your handling code here:
     }//GEN-LAST:event_submit2ActionPerformed
 
+    private void app_no1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_app_no1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_app_no1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1001,6 +983,7 @@ public survey_agent_main(String aa) {
     private javax.swing.JRadioButton acn;
     private javax.swing.JRadioButton acy;
     private javax.swing.JTextField app_no;
+    private javax.swing.JTextField app_no1;
     private javax.swing.JScrollPane app_sp;
     private javax.swing.ButtonGroup bc;
     private javax.swing.JRadioButton bcn;
@@ -1021,8 +1004,6 @@ public survey_agent_main(String aa) {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1046,9 +1027,6 @@ public survey_agent_main(String aa) {
     private javax.swing.JRadioButton mcn;
     private javax.swing.JRadioButton mcy;
     private javax.swing.JTextField nof;
-    private javax.swing.JComboBox<String> p_dist;
-    private javax.swing.JComboBox<String> p_state1;
-    private javax.swing.JComboBox<String> p_vil;
     private javax.swing.ButtonGroup rc;
     private javax.swing.JRadioButton rcn;
     private javax.swing.JRadioButton rcy;

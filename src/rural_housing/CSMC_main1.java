@@ -124,9 +124,12 @@ Connection con = null;
         sa1 = new javax.swing.JTable();
         submit7 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        flat = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1200, 960));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
@@ -429,6 +432,9 @@ Connection con = null;
         getContentPane().add(cpr, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setMaximumSize(new java.awt.Dimension(330, 580));
+        jPanel1.setMinimumSize(new java.awt.Dimension(330, 550));
+        jPanel1.setPreferredSize(new java.awt.Dimension(330, 550));
 
         view_det.setBackground(new java.awt.Color(0, 204, 204));
         view_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -540,7 +546,8 @@ Connection con = null;
 
         app_sua1.setBackground(new java.awt.Color(0, 153, 153));
         app_sua1.setMaximumSize(new java.awt.Dimension(880, 780));
-        app_sua1.setMinimumSize(new java.awt.Dimension(880, 580));
+        app_sua1.setMinimumSize(new java.awt.Dimension(880, 550));
+        app_sua1.setPreferredSize(new java.awt.Dimension(880, 580));
 
         jLabel15.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel15.setText("Appoint Survey Agent");
@@ -593,14 +600,15 @@ Connection con = null;
                     .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addComponent(submit5)
-                .addContainerGap(588, Short.MAX_VALUE))
+                .addContainerGap(388, Short.MAX_VALUE))
         );
 
-        getContentPane().add(app_sua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
+        getContentPane().add(app_sua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         app_sua.setBackground(new java.awt.Color(0, 153, 153));
         app_sua.setMaximumSize(new java.awt.Dimension(880, 780));
         app_sua.setMinimumSize(new java.awt.Dimension(880, 580));
+        app_sua.setPreferredSize(new java.awt.Dimension(880, 580));
 
         jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel13.setText("Appoint Survey Agent");
@@ -762,14 +770,15 @@ Connection con = null;
                 .addComponent(spsa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(submit4)
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
-        getContentPane().add(app_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
+        getContentPane().add(app_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         app_flats.setBackground(new java.awt.Color(0, 153, 153));
         app_flats.setMaximumSize(new java.awt.Dimension(880, 780));
         app_flats.setMinimumSize(new java.awt.Dimension(880, 580));
+        app_flats.setPreferredSize(new java.awt.Dimension(880, 580));
 
         jLabel14.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel14.setText("Allocate Flats");
@@ -823,10 +832,10 @@ Connection con = null;
                     .addComponent(jLabel22))
                 .addGap(18, 18, 18)
                 .addComponent(submit3)
-                .addContainerGap(609, Short.MAX_VALUE))
+                .addContainerGap(409, Short.MAX_VALUE))
         );
 
-        getContentPane().add(app_flats, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
+        getContentPane().add(app_flats, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         app_flats1.setBackground(new java.awt.Color(0, 153, 153));
         app_flats1.setMaximumSize(new java.awt.Dimension(880, 780));
@@ -950,7 +959,7 @@ Connection con = null;
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        flat.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -973,11 +982,11 @@ Connection con = null;
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        flat.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(flat);
+        if (flat.getColumnModel().getColumnCount() > 0) {
+            flat.getColumnModel().getColumn(0).setResizable(false);
+            flat.getColumnModel().getColumn(1).setResizable(false);
         }
 
         javax.swing.GroupLayout app_flats1Layout = new javax.swing.GroupLayout(app_flats1);
@@ -1150,8 +1159,8 @@ Connection con = null;
         csmc_home.setVisible(false);
         app_flats.setVisible(false);
       app_flats1.setVisible(false);
+        app_flats.setVisible(true);
      
-        app_sua1.setVisible(true);
         p3.removeAllItems();
         conn c = new conn();
         con=c.getconn();
@@ -1328,13 +1337,6 @@ Connection con = null;
     }//GEN-LAST:event_vtMouseEntered
 
     private void submit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit4ActionPerformed
-      app_sua1.setVisible(false);
-        cpr.setVisible(false);
-        app_flats.setVisible(false);
-        csmc_home.setVisible(false);
-        app_sua.setVisible(true);
-       app_flats1.setVisible(false);
-     
         int rc = sa.getRowCount();
         int i=0;
         for( i=0;i<=rc;i++)
@@ -1372,60 +1374,57 @@ Connection con = null;
         cpr.setVisible(false);
         app_flats.setVisible(false);
         csmc_home.setVisible(false);
- app_flats1.setVisible(false);
-     
+        app_flats1.setVisible(false);
         app_sua.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_submit4ActionPerformed
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-     
-        int rc = sa.getRowCount();
-        int i=0;
-        for( i=0;i<=rc;i++)
-        {
-            Boolean chked = Boolean.valueOf(sa.getValueAt(i, 0).toString());
-            if(chked==true)
-            break;
-        }
-        String dataCol1 = sa.getValueAt(i, 1).toString();
+
+         
+        DefaultTableModel model = (DefaultTableModel) sa.getModel();
+        model.setRowCount(0);
 
         conn c = new conn();
         con=c.getconn();
-        String sql = "update PROJECT SET SURVEY_AGENT_CODE = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
-        try{
-            pst = con.prepareStatement(sql);
-            pst.setString(1,dataCol1 );
-            pst.executeUpdate();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        String sql1 = "update APPLICANTS SET Agent_ID = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
-        try{
-            pst = con.prepareStatement(sql1);
-            pst.setString(1,dataCol1 );
-            pst.executeUpdate();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    app_flats1.setVisible(true);
-      app_sua1.setVisible(false);
-        cpr.setVisible(false);
-        app_flats.setVisible(false);
-        csmc_home.setVisible(false);
-        app_sua.setVisible(true);
-    
-             // TODO add your handling code here:
-    }//GEN-LAST:event_submit3ActionPerformed
 
-    private void submit6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit6ActionPerformed
+        
+        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p.getSelectedItem().toString()+"'";
+        try{
+            String dts="District";
+            String vts="Village";
+            String tts="Taluka";
+            int flo=0;
+            int fla=0;
+            st=con.createStatement();
+            rs = st.executeQuery(sql1);
+            while(rs.next())
+            {
+                dts = rs.getString("DISTRICT");
+                vts = rs.getString("TALUKA");
+                tts = rs.getString("VILLAGE");
+                flo = rs.getInt("Floor");
+                fla = rs.getInt("Flats");;
+            
+                flo=flo*4;
+            }
+            dt.setText(dts);
+            vt.setText(vts);
+            tt.setText(tts);
+            
+            Object[] o =  { flo , fla};
+            model.addRow(o);
+                    
+        
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+
         p3.removeAllItems();
-        conn c = new conn();
-        con=c.getconn();
+        
         String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
         try{
             st=con.createStatement();
@@ -1446,9 +1445,87 @@ Connection con = null;
         cpr.setVisible(false);
         csmc_home.setVisible(false);
         app_sua.setVisible(false);
-       app_flats1.setVisible(false);
-        app_flats.setVisible(true);
-                 // TODO add your handling code here:
+       app_flats1.setVisible(true);
+        app_flats.setVisible(false);
+             // TODO add your handling code here:
+    }//GEN-LAST:event_submit3ActionPerformed
+
+    private void submit6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit6ActionPerformed
+        
+        DefaultTableModel model = (DefaultTableModel) flat.getModel();
+        model.setRowCount(0);
+        DefaultTableModel model2 = (DefaultTableModel) sa1.getModel();
+        model2.setRowCount(0);
+        conn c = new conn();
+        con=c.getconn();
+
+        
+        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p3.getSelectedItem().toString()+"'";
+        try{
+            String dts="District";
+            String vts="Village";
+            String tts="Taluka";
+            int flo=0;
+            int fla=0;
+            st=con.createStatement();
+            rs = st.executeQuery(sql1);
+            while(rs.next())
+            {
+                dts = rs.getString("DISTRICT");
+                vts = rs.getString("TALUKA");
+                tts = rs.getString("VILLAGE");
+                flo = rs.getInt("Floor");
+                fla = rs.getInt("Flats");;
+            
+                flo=flo*4;
+            }
+            dt1.setText(dts);
+            vt1.setText(vts);
+            tt1.setText(tts);
+            
+            Object[] o =  { flo , fla};
+            model.addRow(o);
+                    
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String sql = "SELECT Applicant_no,First_name,Middle_name,Last_name,Income_annum,Gender,Marital_status FROM APPLICANTS WHERE PROJECT_ID ='"+p3.getSelectedItem().toString()+"'   ORDER BY Gender,Income,Marital_status DESC ";
+        try{
+            st=con.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next())
+            {
+                String pp1 = rs.getString("Applicant_no");
+                String pp2 = rs.getString("First_name");
+                String pp3 = rs.getString("Middle_name");
+                String pp4 = rs.getString("Last_name");
+                int pp5 = rs.getInt("Income_annum");
+                String pp6 = rs.getString("Gender");
+                String pp7 = rs.getString("Marital_status");
+            
+            
+                Object[] o =  { null , pp1,pp2+pp3+pp4,pp5,pp6,pp7};
+                model.addRow(o);
+       
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+   
+      app_sua1.setVisible(false);
+        cpr.setVisible(false);
+        csmc_home.setVisible(false);
+        app_sua.setVisible(false);
+       app_flats1.setVisible(true);
+        app_flats.setVisible(false);
+    
+        
+// TODO add your handling code here:
     }//GEN-LAST:event_submit6ActionPerformed
 
     private void dt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dt1MouseClicked
@@ -1586,6 +1663,7 @@ Connection con = null;
     private javax.swing.JLabel csmc_no;
     private javax.swing.JTextField dt;
     private javax.swing.JTextField dt1;
+    private javax.swing.JTable flat;
     private javax.swing.JButton home;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
@@ -1624,7 +1702,6 @@ Connection con = null;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton log_out;
     private javax.swing.JComboBox<String> p;
