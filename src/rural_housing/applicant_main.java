@@ -67,8 +67,9 @@ Connection con = null;
      app_no3.setText(abc);
    doc1.setVisible(false);
     view.setVisible(false);
-    app_home.setVisible(true);
     view1.setVisible(false);
+    app_home.setVisible(true);
+    
     ac.add(acy2);
         ac.add(acn2);
         bc.add(bcy2);
@@ -107,16 +108,16 @@ Connection con = null;
         dc = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        app_home = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        app_no = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         add_det = new javax.swing.JButton();
         view_det = new javax.swing.JButton();
         home = new javax.swing.JButton();
         log_out = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        app_home = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        app_no = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
         view = new javax.swing.JPanel();
         view_main = new javax.swing.JButton();
         app_no1 = new javax.swing.JLabel();
@@ -184,7 +185,9 @@ Connection con = null;
         app_no3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 960));
+        setMaximumSize(new java.awt.Dimension(1200, 760));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
@@ -210,53 +213,8 @@ Connection con = null;
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 180));
 
-        app_home.setBackground(new java.awt.Color(0, 153, 153));
-        app_home.setMaximumSize(new java.awt.Dimension(880, 780));
-        app_home.setMinimumSize(new java.awt.Dimension(880, 780));
-        app_home.setPreferredSize(new java.awt.Dimension(880, 780));
-
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 29)); // NOI18N
-        jLabel2.setText("Welcome To Rural Housing Allocation System.");
-
-        app_no.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        app_no.setText("Label");
-
-        jLabel37.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel37.setText("Applicant Login");
-
-        javax.swing.GroupLayout app_homeLayout = new javax.swing.GroupLayout(app_home);
-        app_home.setLayout(app_homeLayout);
-        app_homeLayout.setHorizontalGroup(
-            app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_homeLayout.createSequentialGroup()
-                .addGap(330, 330, 330)
-                .addComponent(jLabel37)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(95, 95, 95))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
-                        .addComponent(app_no)
-                        .addGap(403, 403, 403))))
-        );
-        app_homeLayout.setVerticalGroup(
-            app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_homeLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(app_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(465, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(app_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
-
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setPreferredSize(new java.awt.Dimension(320, 580));
 
         add_det.setBackground(new java.awt.Color(0, 204, 204));
         add_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -313,15 +271,15 @@ Connection con = null;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(log_out, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(94, 94, 94))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(view_det, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(add_det, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(25, 25, 25))))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(log_out)
+                            .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(94, 94, 94))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,19 +290,67 @@ Connection con = null;
                 .addComponent(add_det)
                 .addGap(51, 51, 51)
                 .addComponent(view_det)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 337, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(home)
-                .addGap(50, 50, 50)
+                .addGap(18, 18, 18)
                 .addComponent(log_out)
-                .addGap(83, 83, 83))
+                .addGap(101, 101, 101))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 320, 780));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 320, 570));
+
+        app_home.setBackground(new java.awt.Color(0, 153, 153));
+        app_home.setToolTipText("");
+        app_home.setMaximumSize(new java.awt.Dimension(880, 580));
+        app_home.setMinimumSize(new java.awt.Dimension(880, 580));
+        app_home.setPreferredSize(new java.awt.Dimension(880, 580));
+
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 29)); // NOI18N
+        jLabel2.setText("Welcome To Rural Housing Allocation System.");
+
+        app_no.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        app_no.setText("Label");
+
+        jLabel37.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel37.setText("Applicant Login");
+
+        javax.swing.GroupLayout app_homeLayout = new javax.swing.GroupLayout(app_home);
+        app_home.setLayout(app_homeLayout);
+        app_homeLayout.setHorizontalGroup(
+            app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(app_homeLayout.createSequentialGroup()
+                .addGap(330, 330, 330)
+                .addComponent(jLabel37)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addGroup(app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(95, 95, 95))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_homeLayout.createSequentialGroup()
+                        .addComponent(app_no)
+                        .addGap(403, 403, 403))))
+        );
+        app_homeLayout.setVerticalGroup(
+            app_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(app_homeLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(app_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(265, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(app_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
+        app_home.getAccessibleContext().setAccessibleParent(this);
 
         view.setBackground(new java.awt.Color(0, 153, 153));
-        view.setMaximumSize(new java.awt.Dimension(870, 780));
-        view.setMinimumSize(new java.awt.Dimension(870, 780));
-        view.setPreferredSize(new java.awt.Dimension(870, 780));
+        view.setMaximumSize(new java.awt.Dimension(870, 580));
+        view.setMinimumSize(new java.awt.Dimension(870, 580));
+        view.setPreferredSize(new java.awt.Dimension(870, 580));
 
         view_main.setBackground(new java.awt.Color(0, 153, 153));
         view_main.setFont(new java.awt.Font("Courier 10 Pitch", 0, 18)); // NOI18N
@@ -366,13 +372,13 @@ Connection con = null;
                 .addGap(159, 159, 159)
                 .addComponent(app_no1)
                 .addGap(245, 245, 245)
-                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addComponent(view_main, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addGroup(viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(app_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(view_main, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
@@ -573,7 +579,7 @@ Connection con = null;
                     .addGroup(view1Layout.createSequentialGroup()
                         .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(view1Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
+                                .addGap(70, 70, 70)
                                 .addComponent(app_no2)
                                 .addGap(201, 201, 201)
                                 .addComponent(view_sub, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -827,7 +833,7 @@ Connection con = null;
                     .addGroup(doc1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(app_no3)
-                        .addGap(194, 194, 194)
+                        .addGap(131, 131, 131)
                         .addComponent(jLabel66))
                     .addGroup(doc1Layout.createSequentialGroup()
                         .addGap(149, 149, 149)
@@ -839,7 +845,7 @@ Connection con = null;
                                 .addComponent(jLabel79)
                                 .addGap(0, 0, 0)
                                 .addComponent(jLabel80)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         doc1Layout.setVerticalGroup(
             doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

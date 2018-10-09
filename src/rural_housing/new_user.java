@@ -50,7 +50,7 @@ public class new_user extends javax.swing.JFrame {
         rct.add(type1);
         rct.add(type2);
         rct.add(type3);
-        
+        g_wrong.setVisible(false);
             dcn.setEnabled(false);
             dcy.setEnabled(false);
             mcn.setEnabled(false);
@@ -75,11 +75,13 @@ public class new_user extends javax.swing.JFrame {
         mc = new javax.swing.ButtonGroup();
         dc = new javax.swing.ButtonGroup();
         rct = new javax.swing.ButtonGroup();
+        dateChooserDialog1 = new datechooser.beans.DateChooserDialog();
+        dateChooserDialog2 = new datechooser.beans.DateChooserDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         add_detail = new javax.swing.JTabbedPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         personal = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         f_name = new javax.swing.JTextField();
         m_name = new javax.swing.JTextField();
@@ -105,8 +107,8 @@ public class new_user extends javax.swing.JFrame {
         c_no1 = new javax.swing.JTextField();
         g_wrong = new javax.swing.JLabel();
         d = new javax.swing.JComboBox<>();
-        dob = new org.jdesktop.swingx.JXDatePicker();
         jLabel2 = new javax.swing.JLabel();
+        dob = new org.jdesktop.swingx.JXDatePicker();
         income = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         inc = new javax.swing.JTextField();
@@ -120,7 +122,7 @@ public class new_user extends javax.swing.JFrame {
         type2 = new javax.swing.JRadioButton();
         type3 = new javax.swing.JRadioButton();
         nexti = new javax.swing.JButton();
-        jLabel38 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
         doc = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -153,15 +155,16 @@ public class new_user extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         mcy = new javax.swing.JRadioButton();
         dcn = new javax.swing.JRadioButton();
-        jLabel39 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 960));
+        setMaximumSize(new java.awt.Dimension(1200, 760));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setMaximumSize(new java.awt.Dimension(1200, 180));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1200, 180));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 180));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rural_housing/Logo.JPG"))); // NOI18N
@@ -171,19 +174,19 @@ public class new_user extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(349, Short.MAX_VALUE)
+                .addContainerGap(118, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(338, 338, 338))
+                .addGap(569, 569, 569))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 180));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 150));
 
         add_detail.setBackground(new java.awt.Color(0, 153, 51));
         add_detail.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -197,9 +200,6 @@ public class new_user extends javax.swing.JFrame {
         personal.setMaximumSize(new java.awt.Dimension(1200, 780));
         personal.setMinimumSize(new java.awt.Dimension(1200, 780));
         personal.setPreferredSize(new java.awt.Dimension(1200, 780));
-
-        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel11.setText("Add Details");
 
         jLabel17.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel17.setText("Name:");
@@ -419,7 +419,7 @@ public class new_user extends javax.swing.JFrame {
             .addGroup(personalLayout.createSequentialGroup()
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(personalLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
+                        .addGap(147, 147, 147)
                         .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel8)
                             .addComponent(jLabel9)
@@ -433,18 +433,9 @@ public class new_user extends javax.swing.JFrame {
                         .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(s, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(c_no1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(a_no, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(d, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(t, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(personalLayout.createSequentialGroup()
-                                .addComponent(ma)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(unma)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(wi))
                             .addGroup(personalLayout.createSequentialGroup()
                                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -457,54 +448,62 @@ public class new_user extends javax.swing.JFrame {
                                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(g_wrong)
                                     .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(personalLayout.createSequentialGroup()
+                                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(personalLayout.createSequentialGroup()
+                                        .addComponent(ma)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(unma))
+                                    .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(c_no1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(a_no, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(wi))))
                     .addGroup(personalLayout.createSequentialGroup()
                         .addGap(448, 448, 448)
                         .addComponent(nextp))
                     .addGroup(personalLayout.createSequentialGroup()
-                        .addGap(348, 348, 348)
-                        .addComponent(jLabel11))
-                    .addGroup(personalLayout.createSequentialGroup()
-                        .addGap(263, 263, 263)
+                        .addGap(323, 323, 323)
                         .addComponent(jLabel2)))
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(381, Short.MAX_VALUE))
         );
         personalLayout.setVerticalGroup(
             personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(m_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(m)
-                        .addComponent(g_wrong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(f))
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
-                        .addComponent(a_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(personalLayout.createSequentialGroup()
+                        .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel17))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(m_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(c_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(m)
+                                .addComponent(g_wrong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(f))
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(personalLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, personalLayout.createSequentialGroup()
+                                .addComponent(a_no, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17)
+                                .addComponent(c_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel7))
+                    .addGroup(personalLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
@@ -534,7 +533,9 @@ public class new_user extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        add_detail.addTab("Personal Details", personal);
+        jScrollPane1.setViewportView(personal);
+
+        add_detail.addTab("Personal Details", jScrollPane1);
 
         income.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -606,9 +607,6 @@ public class new_user extends javax.swing.JFrame {
             }
         });
 
-        jLabel38.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel38.setText("New User Registration");
-
         javax.swing.GroupLayout incomeLayout = new javax.swing.GroupLayout(income);
         income.setLayout(incomeLayout);
         incomeLayout.setHorizontalGroup(
@@ -639,17 +637,13 @@ public class new_user extends javax.swing.JFrame {
                                 .addComponent(type3))))
                     .addGroup(incomeLayout.createSequentialGroup()
                         .addGap(498, 498, 498)
-                        .addComponent(nexti))
-                    .addGroup(incomeLayout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(jLabel38)))
+                        .addComponent(nexti)))
                 .addContainerGap(383, Short.MAX_VALUE))
         );
         incomeLayout.setVerticalGroup(
             incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(incomeLayout.createSequentialGroup()
-                .addComponent(jLabel38)
-                .addGap(27, 27, 27)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -795,9 +789,6 @@ public class new_user extends javax.swing.JFrame {
         dcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         dcn.setText("Not Submitted");
 
-        jLabel39.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel39.setText("New User Registration");
-
         javax.swing.GroupLayout docLayout = new javax.swing.GroupLayout(doc);
         doc.setLayout(docLayout);
         docLayout.setHorizontalGroup(
@@ -857,18 +848,15 @@ public class new_user extends javax.swing.JFrame {
                                 .addComponent(jLabel33))))
                     .addGroup(docLayout.createSequentialGroup()
                         .addGap(292, 292, 292)
-                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel10))))
+                        .addComponent(jLabel10)))
                 .addContainerGap(299, Short.MAX_VALUE))
         );
         docLayout.setVerticalGroup(
             docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(docLayout.createSequentialGroup()
-                .addComponent(jLabel39)
-                .addGap(28, 28, 28)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel10)
-                .addGap(41, 41, 41)
+                .addGap(26, 26, 26)
                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jLabel21))
@@ -923,9 +911,11 @@ public class new_user extends javax.swing.JFrame {
                 .addGap(137, 137, 137))
         );
 
-        add_detail.addTab("Document List", doc);
+        jScrollPane2.setViewportView(doc);
 
-        getContentPane().add(add_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, -1, -1));
+        add_detail.addTab("Documents", jScrollPane2);
+
+        getContentPane().add(add_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, 530));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1080,7 +1070,7 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_a_noMouseClicked
 
     private void ageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ageMouseClicked
-        Date date = dob.getDate();
+        Date date = dob.getDate();    
         DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
         String szDate = oDateFormat.format(date);
         LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
@@ -1996,6 +1986,8 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JRadioButton bcy;
     private javax.swing.JTextField c_no1;
     private javax.swing.JComboBox<String> d;
+    private datechooser.beans.DateChooserDialog dateChooserDialog1;
+    private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private javax.swing.ButtonGroup dc;
     private javax.swing.JRadioButton dcn;
     private javax.swing.JRadioButton dcy;
@@ -2013,7 +2005,6 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JPanel income;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2039,8 +2030,6 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2048,6 +2037,8 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField l_name;
     private javax.swing.JRadioButton m;
     private javax.swing.JTextField m_name;
