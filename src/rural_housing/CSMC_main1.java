@@ -61,10 +61,6 @@ Connection con = null;
         csmc_no = new javax.swing.JLabel();
         cpr = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -79,10 +75,12 @@ Connection con = null;
         jRadioButton6 = new javax.swing.JRadioButton();
         jRadioButton7 = new javax.swing.JRadioButton();
         jRadioButton8 = new javax.swing.JRadioButton();
-        jLabel21 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jButton7 = new javax.swing.JButton();
+        info = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         view_det = new javax.swing.JButton();
         home = new javax.swing.JButton();
@@ -129,7 +127,6 @@ Connection con = null;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 960));
         setMinimumSize(new java.awt.Dimension(1200, 760));
-        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
@@ -205,18 +202,6 @@ Connection con = null;
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel3.setText("Detailed Project Report");
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel4.setText("Phase 4 - Completion of the rooms. Ready for possession.");
-
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel5.setText("Phase 1 - Completion of Foundation.");
-
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel6.setText("Phase 2 - Completion of half of the proposed floors.");
-
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel7.setText("Phase 3 - Completion of the complete structure.");
-
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel10.setText("Phase");
 
@@ -238,84 +223,34 @@ Connection con = null;
         jRadioButton1.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton1.setText("Yes");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
 
         jRadioButton2.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
 
         jRadioButton3.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton3.setText("No");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
 
         jRadioButton4.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton4.setText("No");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
 
         jRadioButton5.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton5.setText("No");
-        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton5ActionPerformed(evt);
-            }
-        });
 
         jRadioButton6.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton6.setText("Yes");
-        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton6ActionPerformed(evt);
-            }
-        });
 
         jRadioButton7.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton7.setText("Yes");
-        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton7ActionPerformed(evt);
-            }
-        });
 
         jRadioButton8.setBackground(new java.awt.Color(0, 153, 153));
         jRadioButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jRadioButton8.setText("Yes");
-        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton8ActionPerformed(evt);
-            }
-        });
-
-        jLabel21.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel21.setText("Remarks (if any):");
-
-        jTextArea1.setBackground(new java.awt.Color(0, 204, 204));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Remarks for the Phase completed");
-        jScrollPane1.setViewportView(jTextArea1);
 
         jButton7.setBackground(new java.awt.Color(0, 153, 153));
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -326,34 +261,74 @@ Connection con = null;
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel4.setText("Phase 4 - Completion of the rooms. Ready for possession.");
+
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel5.setText("Phase 1 - Completion of Foundation.");
+
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel6.setText("Phase 2 - Completion of half of the proposed floors.");
+
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        jLabel7.setText("Phase 3 - Completion of the complete structure.");
+
+        javax.swing.GroupLayout infoLayout = new javax.swing.GroupLayout(info);
+        info.setLayout(infoLayout);
+        infoLayout.setHorizontalGroup(
+            infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 708, Short.MAX_VALUE)
+            .addGroup(infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(infoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel7)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel5))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        infoLayout.setVerticalGroup(
+            infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 158, Short.MAX_VALUE)
+            .addGroup(infoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(infoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel5)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel6)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel7)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel4)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout cprLayout = new javax.swing.GroupLayout(cpr);
         cpr.setLayout(cprLayout);
         cprLayout.setHorizontalGroup(
             cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cprLayout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cprLayout.createSequentialGroup()
+                        .addGap(347, 347, 347)
+                        .addComponent(jButton7))
+                    .addGroup(cprLayout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(jLabel3)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(207, 207, 207))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
-                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel5)
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addComponent(jLabel18)
                             .addGroup(cprLayout.createSequentialGroup()
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(cprLayout.createSequentialGroup()
-                                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel10)
-                                            .addComponent(jLabel9))
-                                        .addGap(105, 105, 105))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
-                                        .addComponent(jLabel21)
-                                        .addGap(101, 101, 101)))
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel9))
+                                .addGap(57, 57, 57)
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
                                     .addGroup(cprLayout.createSequentialGroup()
@@ -362,42 +337,33 @@ Connection con = null;
                                             .addComponent(jRadioButton6)
                                             .addComponent(jRadioButton8)
                                             .addComponent(jRadioButton7))
-                                        .addGap(64, 64, 64)
+                                        .addGap(25, 25, 25)
                                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton3)
                                             .addComponent(jRadioButton2)
                                             .addComponent(jRadioButton4)
-                                            .addComponent(jRadioButton5)))
-                                    .addComponent(jScrollPane1)))
+                                            .addComponent(jRadioButton3)
+                                            .addComponent(jRadioButton5)))))
                             .addComponent(jLabel12))
-                        .addGap(95, 95, 95))))
-            .addGroup(cprLayout.createSequentialGroup()
-                .addGap(347, 347, 347)
-                .addComponent(jButton7)
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(212, 212, 212))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
+                        .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66))))
         );
         cprLayout.setVerticalGroup(
             cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cprLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(cprLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
                             .addComponent(jLabel8))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel9))
-                    .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jRadioButton1)
                         .addComponent(jRadioButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -411,9 +377,7 @@ Connection con = null;
                     .addGroup(cprLayout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel21))
+                        .addComponent(jLabel12))
                     .addGroup(cprLayout.createSequentialGroup()
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton3)
@@ -421,10 +385,8 @@ Connection con = null;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButton7))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(87, 87, 87))
         );
@@ -535,9 +497,9 @@ Connection con = null;
                 .addComponent(appt_sa)
                 .addGap(23, 23, 23)
                 .addComponent(appt_flats)
-                .addGap(45, 45, 45)
+                .addGap(75, 75, 75)
                 .addComponent(home)
-                .addGap(50, 50, 50)
+                .addGap(29, 29, 29)
                 .addComponent(log_out)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -639,14 +601,6 @@ Connection con = null;
         dt.setMinimumSize(new java.awt.Dimension(127, 32));
         dt.setName(""); // NOI18N
         dt.setPreferredSize(new java.awt.Dimension(127, 32));
-        dt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dtMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                dtMouseEntered(evt);
-            }
-        });
 
         tt.setEditable(false);
         tt.setBackground(new java.awt.Color(0, 204, 204));
@@ -656,14 +610,6 @@ Connection con = null;
         tt.setMinimumSize(new java.awt.Dimension(127, 32));
         tt.setName(""); // NOI18N
         tt.setPreferredSize(new java.awt.Dimension(127, 32));
-        tt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ttMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ttMouseEntered(evt);
-            }
-        });
 
         vt.setEditable(false);
         vt.setBackground(new java.awt.Color(0, 204, 204));
@@ -673,14 +619,6 @@ Connection con = null;
         vt.setMinimumSize(new java.awt.Dimension(127, 32));
         vt.setName(""); // NOI18N
         vt.setPreferredSize(new java.awt.Dimension(127, 32));
-        vt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vtMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                vtMouseEntered(evt);
-            }
-        });
 
         sa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -871,14 +809,6 @@ Connection con = null;
         dt1.setMinimumSize(new java.awt.Dimension(127, 32));
         dt1.setName(""); // NOI18N
         dt1.setPreferredSize(new java.awt.Dimension(127, 32));
-        dt1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dt1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                dt1MouseEntered(evt);
-            }
-        });
 
         tt1.setEditable(false);
         tt1.setBackground(new java.awt.Color(0, 204, 204));
@@ -888,14 +818,6 @@ Connection con = null;
         tt1.setMinimumSize(new java.awt.Dimension(127, 32));
         tt1.setName(""); // NOI18N
         tt1.setPreferredSize(new java.awt.Dimension(127, 32));
-        tt1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tt1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tt1MouseEntered(evt);
-            }
-        });
 
         vt1.setEditable(false);
         vt1.setBackground(new java.awt.Color(0, 204, 204));
@@ -905,14 +827,6 @@ Connection con = null;
         vt1.setMinimumSize(new java.awt.Dimension(127, 32));
         vt1.setName(""); // NOI18N
         vt1.setPreferredSize(new java.awt.Dimension(127, 32));
-        vt1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vt1MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                vt1MouseEntered(evt);
-            }
-        });
 
         sa1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1054,38 +968,6 @@ Connection con = null;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
-
-    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton5ActionPerformed
-
-    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton6ActionPerformed
-
-    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton7ActionPerformed
-
-    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton8ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
@@ -1306,36 +1188,6 @@ Connection con = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_submit2ActionPerformed
 
-    private void dtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dtMouseClicked
-        if(dt.getText().equalsIgnoreCase("First Name"))
-        {
-            dt.setText("");
-            dt.setForeground(Color.black);
-        }
-        dt.setBackground(Color.green);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dtMouseClicked
-
-    private void dtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dtMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dtMouseEntered
-
-    private void ttMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ttMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ttMouseClicked
-
-    private void ttMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ttMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ttMouseEntered
-
-    private void vtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vtMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vtMouseClicked
-
-    private void vtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vtMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vtMouseEntered
-
     private void submit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit4ActionPerformed
         int rc = sa.getRowCount();
         int i=0;
@@ -1528,30 +1380,6 @@ Connection con = null;
 // TODO add your handling code here:
     }//GEN-LAST:event_submit6ActionPerformed
 
-    private void dt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dt1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dt1MouseClicked
-
-    private void dt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dt1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dt1MouseEntered
-
-    private void tt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tt1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tt1MouseClicked
-
-    private void tt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tt1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tt1MouseEntered
-
-    private void vt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vt1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vt1MouseClicked
-
-    private void vt1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vt1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_vt1MouseEntered
-
     private void submit7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit7ActionPerformed
      
         int rc = sa1.getRowCount();
@@ -1665,6 +1493,7 @@ Connection con = null;
     private javax.swing.JTextField dt1;
     private javax.swing.JTable flat;
     private javax.swing.JButton home;
+    private javax.swing.JPanel info;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1679,7 +1508,6 @@ Connection con = null;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
@@ -1700,9 +1528,7 @@ Connection con = null;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton log_out;
     private javax.swing.JComboBox<String> p;
     private javax.swing.JComboBox<String> p1;

@@ -55,6 +55,7 @@ public class new_user extends javax.swing.JFrame {
             dcy.setEnabled(false);
             mcn.setEnabled(false);
             mcy.setEnabled(false);
+            exit.setVisible(false);
     }
 
     /**
@@ -122,6 +123,8 @@ public class new_user extends javax.swing.JFrame {
         type2 = new javax.swing.JRadioButton();
         type3 = new javax.swing.JRadioButton();
         nexti = new javax.swing.JButton();
+        exit_lbl = new javax.swing.JLabel();
+        exit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         doc = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -155,6 +158,7 @@ public class new_user extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         mcy = new javax.swing.JRadioButton();
         dcn = new javax.swing.JRadioButton();
+        nexti1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 760));
@@ -489,7 +493,7 @@ public class new_user extends javax.swing.JFrame {
                                 .addComponent(g_wrong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(f))
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(personalLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -607,6 +611,18 @@ public class new_user extends javax.swing.JFrame {
             }
         });
 
+        exit_lbl.setText(" ");
+
+        exit.setBackground(new java.awt.Color(0, 153, 153));
+        exit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        exit.setMnemonic('E');
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout incomeLayout = new javax.swing.GroupLayout(income);
         income.setLayout(incomeLayout);
         incomeLayout.setHorizontalGroup(
@@ -634,10 +650,13 @@ public class new_user extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(type2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(type3))))
+                                .addComponent(type3))
+                            .addComponent(exit_lbl)))
                     .addGroup(incomeLayout.createSequentialGroup()
                         .addGap(498, 498, 498)
-                        .addComponent(nexti)))
+                        .addComponent(nexti)
+                        .addGap(92, 92, 92)
+                        .addComponent(exit)))
                 .addContainerGap(383, Short.MAX_VALUE))
         );
         incomeLayout.setVerticalGroup(
@@ -653,7 +672,9 @@ public class new_user extends javax.swing.JFrame {
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inc_grp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(exit_lbl)
+                .addGap(13, 13, 13)
                 .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(poc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -664,8 +685,10 @@ public class new_user extends javax.swing.JFrame {
                     .addComponent(type2)
                     .addComponent(type3))
                 .addGap(57, 57, 57)
-                .addComponent(nexti)
-                .addGap(316, 316, 316))
+                .addGroup(incomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nexti)
+                    .addComponent(exit))
+                .addGap(414, 414, 414))
         );
 
         add_detail.addTab("Income Details", income);
@@ -789,6 +812,15 @@ public class new_user extends javax.swing.JFrame {
         dcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         dcn.setText("Not Submitted");
 
+        nexti1.setBackground(new java.awt.Color(0, 153, 153));
+        nexti1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        nexti1.setText("Next");
+        nexti1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nexti1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout docLayout = new javax.swing.GroupLayout(doc);
         doc.setLayout(docLayout);
         docLayout.setHorizontalGroup(
@@ -796,25 +828,29 @@ public class new_user extends javax.swing.JFrame {
             .addGroup(docLayout.createSequentialGroup()
                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(docLayout.createSequentialGroup()
-                        .addGap(180, 180, 180)
                         .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel35)
-                            .addComponent(jLabel23)
                             .addGroup(docLayout.createSequentialGroup()
+                                .addGap(162, 162, 162)
                                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel25))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel29)))
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel22))
+                                    .addComponent(jLabel23)
+                                    .addGroup(docLayout.createSequentialGroup()
+                                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel27)
+                                            .addComponent(jLabel26)
+                                            .addComponent(jLabel20)
+                                            .addComponent(jLabel24)
+                                            .addComponent(jLabel25))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel28)
+                                            .addComponent(jLabel31)
+                                            .addComponent(jLabel30)
+                                            .addComponent(jLabel29)))
+                                    .addComponent(jLabel36)
+                                    .addComponent(jLabel22)))
+                            .addGroup(docLayout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel35)))
                         .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(docLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
@@ -837,9 +873,14 @@ public class new_user extends javax.swing.JFrame {
                                 .addGap(168, 168, 168)
                                 .addComponent(jLabel21))))
                     .addGroup(docLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(jLabel34)
-                        .addGap(0, 0, 0)
+                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(docLayout.createSequentialGroup()
+                                .addGap(149, 149, 149)
+                                .addComponent(jLabel34))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, docLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(nexti1)
+                                .addGap(61, 61, 61)))
                         .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(submit)
                             .addGroup(docLayout.createSequentialGroup()
@@ -849,7 +890,7 @@ public class new_user extends javax.swing.JFrame {
                     .addGroup(docLayout.createSequentialGroup()
                         .addGap(292, 292, 292)
                         .addComponent(jLabel10)))
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         docLayout.setVerticalGroup(
             docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -902,8 +943,10 @@ public class new_user extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel36)
                 .addGap(32, 32, 32)
-                .addComponent(submit)
-                .addGap(18, 18, 18)
+                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(submit)
+                    .addComponent(nexti1))
+                .addGap(91, 91, 91)
                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
                     .addComponent(jLabel33)
@@ -1458,21 +1501,31 @@ public class new_user extends javax.swing.JFrame {
         {
             inc_grp.setText("Below Poverty Line");
             submit.setEnabled(false);
+
+            exit.setVisible(true);
+            exit_lbl.setText("You are NOT Eligible. Please EXIT");
         }
         else if(inco>=300000 && inco<600000)
         {
             inc_grp.setText("Low Income Group");
             submit.setEnabled(true);
+            exit_lbl.setText("");
+            exit.setVisible(false);
         }
         else if(inco>=600000 && inco<1200000)
         {
             inc_grp.setText("Medium Income Group");
             submit.setEnabled(true);
+            exit_lbl.setText("");
+            exit.setVisible(false);
         }
         else
         {
             inc_grp.setText("High Income Group");
             submit.setEnabled(false);
+        
+            exit.setVisible(true);
+            exit_lbl.setText("You are NOT Eligible. Please EXIT");
         }       // TODO add your handling code here:
     }//GEN-LAST:event_inc_grpMouseClicked
 
@@ -1939,6 +1992,17 @@ public class new_user extends javax.swing.JFrame {
         }    // TODO add your handling code here:
     }//GEN-LAST:event_vMouseClicked
 
+    private void nexti1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nexti1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nexti1ActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        this.setVisible(false);
+        login re = new login();
+        re.setVisible(true);                
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1993,6 +2057,8 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JRadioButton dcy;
     private org.jdesktop.swingx.JXDatePicker dob;
     private javax.swing.JPanel doc;
+    private javax.swing.JButton exit;
+    private javax.swing.JLabel exit_lbl;
     private javax.swing.JRadioButton f;
     private javax.swing.JTextField f_name;
     private javax.swing.ButtonGroup g;
@@ -2048,6 +2114,7 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JRadioButton mcy;
     private javax.swing.ButtonGroup ms;
     private javax.swing.JButton nexti;
+    private javax.swing.JButton nexti1;
     private javax.swing.JButton nextp;
     private javax.swing.JPanel personal;
     private javax.swing.JComboBox<String> poc;

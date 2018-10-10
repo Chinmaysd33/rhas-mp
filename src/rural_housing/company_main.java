@@ -96,6 +96,9 @@ Connection con = null;
         submit2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1200, 960));
+        setMinimumSize(new java.awt.Dimension(1200, 760));
+        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
@@ -122,6 +125,7 @@ Connection con = null;
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 180));
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setPreferredSize(new java.awt.Dimension(320, 580));
 
         view_det.setBackground(new java.awt.Color(0, 204, 204));
         view_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -192,23 +196,23 @@ Connection con = null;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(112, 112, 112)
+                .addGap(88, 88, 88)
                 .addComponent(view_det)
                 .addGap(51, 51, 51)
                 .addComponent(sub_ten)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addGap(108, 108, 108)
                 .addComponent(home)
                 .addGap(50, 50, 50)
                 .addComponent(log_out)
                 .addGap(83, 83, 83))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 320, 780));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 320, -1));
 
         com_main.setBackground(new java.awt.Color(0, 153, 153));
         com_main.setMaximumSize(new java.awt.Dimension(870, 780));
-        com_main.setMinimumSize(new java.awt.Dimension(870, 780));
-        com_main.setPreferredSize(new java.awt.Dimension(870, 780));
+        com_main.setMinimumSize(new java.awt.Dimension(870, 580));
+        com_main.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 29)); // NOI18N
         jLabel2.setText("Welcome To Rural Housing Allocation System.");
@@ -240,20 +244,22 @@ Connection con = null;
         com_mainLayout.setVerticalGroup(
             com_mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(com_mainLayout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(82, 82, 82)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(com_no, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(467, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
 
-        getContentPane().add(com_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
+        getContentPane().add(com_main, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         v_detail.setBackground(new java.awt.Color(0, 153, 153));
         v_detail.setMaximumSize(new java.awt.Dimension(870, 780));
-        v_detail.setMinimumSize(new java.awt.Dimension(870, 780));
+        v_detail.setMinimumSize(new java.awt.Dimension(870, 580));
+        v_detail.setName(""); // NOI18N
+        v_detail.setPreferredSize(new java.awt.Dimension(880, 580));
         v_detail.setRequestFocusEnabled(false);
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
@@ -340,40 +346,40 @@ Connection con = null;
         v_detailLayout.setHorizontalGroup(
             v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(v_detailLayout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addGap(26, 26, 26)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(v_detailLayout.createSequentialGroup()
-                        .addGap(354, 354, 354)
-                        .addComponent(submit1))
-                    .addGroup(v_detailLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(26, 26, 26)
-                        .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
-                                .addGroup(v_detailLayout.createSequentialGroup()
-                                    .addComponent(na)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(st))
-                                .addComponent(comp_name)
-                                .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING)))))
+                    .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                        .addGroup(v_detailLayout.createSequentialGroup()
+                            .addComponent(na)
+                            .addGap(26, 26, 26)
+                            .addComponent(st))
+                        .addComponent(comp_name)
+                        .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING)))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(175, 175, 175))
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(175, 175, 175))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
+                        .addComponent(submit1)
+                        .addGap(362, 362, 362))))
         );
         v_detailLayout.setVerticalGroup(
             v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(v_detailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(comp_name, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
@@ -393,17 +399,17 @@ Connection con = null;
                     .addComponent(cn1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71)
+                .addGap(31, 31, 31)
                 .addComponent(submit1)
-                .addContainerGap(360, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
-        getContentPane().add(v_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, 780));
+        getContentPane().add(v_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         sub_tender.setBackground(new java.awt.Color(0, 153, 153));
         sub_tender.setMaximumSize(new java.awt.Dimension(870, 780));
-        sub_tender.setMinimumSize(new java.awt.Dimension(870, 780));
-        sub_tender.setPreferredSize(new java.awt.Dimension(870, 780));
+        sub_tender.setMinimumSize(new java.awt.Dimension(870, 580));
+        sub_tender.setPreferredSize(new java.awt.Dimension(870, 580));
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel4.setText("Project State:");
@@ -588,10 +594,10 @@ Connection con = null;
                 .addComponent(viewproj, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52)
                 .addComponent(submit2)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        getContentPane().add(sub_tender, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 860, 780));
+        getContentPane().add(sub_tender, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 860, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

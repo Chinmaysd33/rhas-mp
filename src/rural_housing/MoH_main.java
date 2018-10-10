@@ -168,7 +168,7 @@ public class MoH_main extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(338, Short.MAX_VALUE))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
 
         getContentPane().add(moh_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
@@ -536,7 +536,6 @@ public class MoH_main extends javax.swing.JFrame {
         appoint.setBackground(new java.awt.Color(0, 153, 153));
 
         sp.setBackground(new java.awt.Color(0, 153, 153));
-        sp.setBorder(null);
 
         view_ag.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -718,9 +717,9 @@ public class MoH_main extends javax.swing.JFrame {
                     .addComponent(app_csm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(113, 113, 113)
                 .addComponent(jLabel17)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -729,13 +728,13 @@ public class MoH_main extends javax.swing.JFrame {
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(view)
-                .addGap(50, 50, 50)
+                .addGap(23, 23, 23)
                 .addComponent(app_com)
-                .addGap(51, 51, 51)
+                .addGap(21, 21, 21)
                 .addComponent(app_csm)
-                .addGap(42, 42, 42)
+                .addGap(108, 108, 108)
                 .addComponent(home)
-                .addGap(50, 50, 50)
+                .addGap(29, 29, 29)
                 .addComponent(log_out)
                 .addGap(83, 83, 83))
         );

@@ -1045,17 +1045,17 @@ Connection con = null;
 
     private void view_mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_mainActionPerformed
         doc1.setVisible(false);
-    app_home.setVisible(false);
+        app_home.setVisible(false);
         view.setVisible(false);
          view1.setVisible(true);
         try {
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,DOB,Aadhar_no,Contact FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,Aadhar_no,Contact FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
-    while(rs.next())
-    {   
+        while(rs.next())
+        {   
         c_no.setText(rs.getString("Contact"));
         a_no1.setText(rs.getString("Aadhar_no"));
         f_name2.setText(rs.getString("First_name"));
@@ -1085,26 +1085,26 @@ Connection con = null;
         }
         gen1.setText(rs.getString("Gender"));        
         ms2.setText(rs.getString("Marital_status"));
-         Date date = rs.getDate("DOB");
-         if(!(date.toString().matches("")))
-         {
-             dob1.setText(date.toString());
-        DateFormat oDateFormat = new SimpleDateFormat("dd-MM-yy");
-        String szDate = oDateFormat.format(date);
-        LocalDate ld = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        System.out.println(szDate);
-        Period p = Period.between( ld , LocalDate.now());
-        String aged = Integer.toString(p.getYears());
-        System.out.println("Age " + aged);
-        System.out.println(p.getYears());
-        age1.setText(aged);     
-         }
+       
     }
-    } catch (SQLException e ) {
+    } 
+    catch (SQLException e ) {
     JOptionPane.showMessageDialog(null, e); 
 
     }    
-           
+        
+    String s3 = " SELECT TIMESTAMPDIFF(YEAR,DOB,CURDATE())AS AGE FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        try
+        {
+            pst = con.prepareStatement(s3);
+            rs = pst.executeQuery();
+            while (rs.next()) 
+            {
+
+                int s2 = rs.getInt(1);
+                age1.setText(Integer.toString(s2));
+            }
+    }catch(Exception e){e.printStackTrace();}   
 // TODO add your handling code here:
     }//GEN-LAST:event_view_mainActionPerformed
     
