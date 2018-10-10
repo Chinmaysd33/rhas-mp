@@ -828,29 +828,25 @@ public class new_user extends javax.swing.JFrame {
             .addGroup(docLayout.createSequentialGroup()
                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(docLayout.createSequentialGroup()
+                        .addGap(162, 162, 162)
                         .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel23)
                             .addGroup(docLayout.createSequentialGroup()
-                                .addGap(162, 162, 162)
                                 .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel23)
-                                    .addGroup(docLayout.createSequentialGroup()
-                                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel27)
-                                            .addComponent(jLabel26)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel25))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel28)
-                                            .addComponent(jLabel31)
-                                            .addComponent(jLabel30)
-                                            .addComponent(jLabel29)))
-                                    .addComponent(jLabel36)
-                                    .addComponent(jLabel22)))
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel35)))
+                                    .addComponent(jLabel27)
+                                    .addComponent(jLabel26)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel25))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel28)
+                                    .addComponent(jLabel31)
+                                    .addComponent(jLabel30)
+                                    .addComponent(jLabel29)))
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel35))
                         .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(docLayout.createSequentialGroup()
                                 .addGap(60, 60, 60)
@@ -1501,7 +1497,7 @@ public class new_user extends javax.swing.JFrame {
         {
             inc_grp.setText("Below Poverty Line");
             submit.setEnabled(false);
-
+            nexti.setEnabled(false);
             exit.setVisible(true);
             exit_lbl.setText("You are NOT Eligible. Please EXIT");
         }
@@ -1509,6 +1505,7 @@ public class new_user extends javax.swing.JFrame {
         {
             inc_grp.setText("Low Income Group");
             submit.setEnabled(true);
+            nexti.setEnabled(true);
             exit_lbl.setText("");
             exit.setVisible(false);
         }
@@ -1516,6 +1513,7 @@ public class new_user extends javax.swing.JFrame {
         {
             inc_grp.setText("Medium Income Group");
             submit.setEnabled(true);
+            nexti.setEnabled(true);
             exit_lbl.setText("");
             exit.setVisible(false);
         }
@@ -1523,7 +1521,7 @@ public class new_user extends javax.swing.JFrame {
         {
             inc_grp.setText("High Income Group");
             submit.setEnabled(false);
-        
+            nexti.setEnabled(false);
             exit.setVisible(true);
             exit_lbl.setText("You are NOT Eligible. Please EXIT");
         }       // TODO add your handling code here:
@@ -1609,14 +1607,14 @@ public class new_user extends javax.swing.JFrame {
        {
         java.util.Date date = dob.getDate();
         java.sql.Date sqldate = new java.sql.Date(date.getTime());
-        String gender,ms_pass,mc_pass=null,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass=null;
+        String gender="OTHER",ms_pass,mc_pass=null,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass=null;
         conn c = new conn();
         con=c.getconn();
         if(m.isSelected())
         {
             gender = "MALE";
         }
-        else
+        else if(f.isSelected())
         {
             gender = "FEMALE";
         }
@@ -1713,7 +1711,7 @@ public class new_user extends javax.swing.JFrame {
         
         BigInteger bi = new BigInteger(a_no.getText());
         BigInteger bi2 = new BigInteger(c_no1.getText());
-        String query = "Insert into APPLICANTS(Aadhar_no,First_name,Middle_name,Last_name,Income_annum,DOB,Gender,Marital_status,STATE,DISTRICT,TALUKA,VILLAGE,PROJECT_ID,Contact) values(?,?,?,?,?,?,?,?,?,?,?,?,'"+proj_code+"',?);";
+        String query = "Insert into APPLICANTS(Aadhar_no,First_name,Middle_name,Last_name,Income_annum,DOB,Gender,Marital_status,STATE,DISTRICT,TALUKA,VILLAGE,Contact) values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         try
         {
@@ -1794,7 +1792,7 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_type1ActionPerformed
 
     private void dMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dMouseClicked
-    if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
+    /*if(s.getSelectedItem().toString().equalsIgnoreCase("Maharashtra"))
         {
             d.removeAllItems();
             d.addItem("Buldhana");
@@ -1821,7 +1819,35 @@ public class new_user extends javax.swing.JFrame {
             d.addItem("Dhar");
             d.addItem("Guna");
             d.addItem("Panna");
-        }    // TODO add your handling code here:
+        }  
+        */
+        switch(s.getSelectedItem().toString().toLowerCase())
+        {
+            case "maharashtra":  d.removeAllItems();
+            d.addItem("Buldhana");
+            d.addItem("Nashik");
+            d.addItem("Dhule");
+            break;
+            case "chhattisgarh": d.removeAllItems();
+            d.addItem("Bilaspur");
+            d.addItem("Korba");
+            d.addItem("Raipur");
+                break;
+            case "west bengal":
+                
+            d.removeAllItems();
+            d.addItem("Hoogly");
+            d.addItem("Birbhum");
+            d.addItem("South 24 Parganas");
+            break;
+            case "madhya pradesh":
+                 d.removeAllItems();
+            d.addItem("Dhar");
+            d.addItem("Guna");
+            d.addItem("Panna");
+                break;
+        }
+// TODO add your handling code here:
     }//GEN-LAST:event_dMouseClicked
 
     private void tMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tMouseClicked

@@ -81,6 +81,9 @@ Connection con = null;
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        p4 = new javax.swing.JComboBox<>();
+        jLabel25 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         view_det = new javax.swing.JButton();
         home = new javax.swing.JButton();
@@ -304,30 +307,53 @@ Connection con = null;
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        p4.setBackground(new java.awt.Color(0, 204, 204));
+        p4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Project-" }));
+        p4.setToolTipText("");
+
+        jLabel25.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel25.setText("Project :");
+
+        jButton8.setBackground(new java.awt.Color(0, 153, 153));
+        jButton8.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jButton8.setText("SUBMIT");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout cprLayout = new javax.swing.GroupLayout(cpr);
         cpr.setLayout(cprLayout);
         cprLayout.setHorizontalGroup(
             cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cprLayout.createSequentialGroup()
-                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cprLayout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(jButton7))
-                    .addGroup(cprLayout.createSequentialGroup()
-                        .addGap(197, 197, 197)
-                        .addComponent(jLabel3)))
+                .addGap(197, 197, 197)
+                .addComponent(jLabel3)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(cprLayout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addGap(223, 223, 223))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cprLayout.createSequentialGroup()
+                                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(p4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cprLayout.createSequentialGroup()
+                                        .addGap(54, 54, 54)
+                                        .addComponent(jButton8)))
+                                .addGap(123, 123, 123)))
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(jLabel18)
                             .addGroup(cprLayout.createSequentialGroup()
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel9))
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel18))
                                 .addGap(57, 57, 57)
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -344,10 +370,13 @@ Connection con = null;
                                             .addComponent(jRadioButton3)
                                             .addComponent(jRadioButton5)))))
                             .addComponent(jLabel12))
-                        .addGap(212, 212, 212))
+                        .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
                         .addComponent(info, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))))
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addGap(111, 111, 111))))
         );
         cprLayout.setVerticalGroup(
             cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,37 +387,46 @@ Connection con = null;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
-                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9))
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cprLayout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(jLabel25)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(p4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jRadioButton1)
                         .addComponent(jRadioButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jRadioButton4)
-                        .addComponent(jRadioButton8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cprLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jRadioButton4)
+                                .addComponent(jRadioButton8))
+                            .addComponent(jLabel18))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12))
-                    .addGroup(cprLayout.createSequentialGroup()
-                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton7))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                        .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cprLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))
+                            .addGroup(cprLayout.createSequentialGroup()
+                                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jRadioButton3)
+                                    .addComponent(jRadioButton6))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jRadioButton5)
+                                    .addComponent(jRadioButton7)))))
+                    .addComponent(jButton8))
+                .addGap(18, 18, 18)
                 .addComponent(jButton7)
-                .addGap(87, 87, 87))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         getContentPane().add(cpr, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
@@ -978,8 +1016,7 @@ Connection con = null;
     }//GEN-LAST:event_view_detActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
- app_flats1.setVisible(false);
-     
+        app_flats1.setVisible(false);
         app_sua.setVisible(false);
         cpr.setVisible(false);
         csmc_home.setVisible(true);
@@ -1012,6 +1049,8 @@ Connection con = null;
         app_flats.setVisible(false);
         app_sua1.setVisible(true);
         p.removeAllItems();
+        p1.removeAllItems();
+    
         conn c = new conn();
         con=c.getconn();
         String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
@@ -1021,6 +1060,7 @@ Connection con = null;
             while(rs.next())
             {
                 String pp = rs.getString("SITE_CODE");
+                p1.addItem(pp);
                 p.addItem(pp);
             }
         }
@@ -1029,9 +1069,6 @@ Connection con = null;
             JOptionPane.showMessageDialog(null, e);
         }
 
-        csmc_home.setVisible(false);
-        app_sua.setVisible(true);
-        cpr.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_appt_saActionPerformed
 
@@ -1040,9 +1077,10 @@ Connection con = null;
         cpr.setVisible(false);
         csmc_home.setVisible(false);
         app_flats.setVisible(false);
-      app_flats1.setVisible(false);
+        app_flats1.setVisible(false);
         app_flats.setVisible(true);
      
+        p2.removeAllItems();
         p3.removeAllItems();
         conn c = new conn();
         con=c.getconn();
@@ -1054,6 +1092,7 @@ Connection con = null;
             {
                 String pp = rs.getString("SITE_CODE");
                 p3.addItem(pp);
+                p2.addItem(pp);
             }
         }
         catch (Exception e)
@@ -1064,6 +1103,7 @@ Connection con = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_appt_flatsActionPerformed
 
+    
     private void submit5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit5ActionPerformed
         app_sua1.setVisible(false);
         cpr.setVisible(false);
@@ -1232,9 +1272,8 @@ Connection con = null;
     }//GEN-LAST:event_submit4ActionPerformed
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-
-         
-        DefaultTableModel model = (DefaultTableModel) sa.getModel();
+     
+        DefaultTableModel model = (DefaultTableModel) flat.getModel();
         model.setRowCount(0);
 
         conn c = new conn();
@@ -1257,8 +1296,6 @@ Connection con = null;
                 tts = rs.getString("VILLAGE");
                 flo = rs.getInt("Floor");
                 fla = rs.getInt("Flats");;
-            
-                flo=flo*4;
             }
             dt.setText(dts);
             vt.setText(vts);
@@ -1266,8 +1303,7 @@ Connection con = null;
             
             Object[] o =  { flo , fla};
             model.addRow(o);
-                    
-        
+                            
         }
         catch (Exception e)
         {
@@ -1276,7 +1312,7 @@ Connection con = null;
 
 
         p3.removeAllItems();
-        
+        p2.removeAllItems();
         String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
         try{
             st=con.createStatement();
@@ -1285,6 +1321,7 @@ Connection con = null;
             {
                 String pp = rs.getString("SITE_CODE");
                 p3.addItem(pp);
+                p2.addItem(pp);
             }
         }
         catch (Exception e)
@@ -1327,9 +1364,7 @@ Connection con = null;
                 vts = rs.getString("TALUKA");
                 tts = rs.getString("VILLAGE");
                 flo = rs.getInt("Floor");
-                fla = rs.getInt("Flats");;
-            
-                flo=flo*4;
+                fla = rs.getInt("Flats");
             }
             dt1.setText(dts);
             vt1.setText(vts);
@@ -1395,7 +1430,7 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         //Set Trigger query by ABHIK
-        String sql = "update PROJECT SET SURVEY_AGENT_CODE = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
+        String sql = "insert into CSMC_APPOINT_APPL ('"+dataCol1+"' VILLAGE = '"+p3.getSelectedItem().toString()+"')";
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1,dataCol1 );
@@ -1442,6 +1477,10 @@ Connection con = null;
    
         // TODO add your handling code here:
     }//GEN-LAST:event_submit7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1495,6 +1534,7 @@ Connection con = null;
     private javax.swing.JButton home;
     private javax.swing.JPanel info;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1511,6 +1551,7 @@ Connection con = null;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1534,6 +1575,7 @@ Connection con = null;
     private javax.swing.JComboBox<String> p1;
     private javax.swing.JComboBox<String> p2;
     private javax.swing.JComboBox<String> p3;
+    private javax.swing.JComboBox<String> p4;
     private javax.swing.JButton prj_rep;
     private javax.swing.JTable sa;
     private javax.swing.JTable sa1;
