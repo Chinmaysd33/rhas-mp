@@ -26,7 +26,7 @@ Connection con = null;
     public CSMC_main1() {
         initComponents();
        app_sua1.setVisible(false);
-        app_sua.setVisible(false);
+        sua.setVisible(false);
         cpr.setVisible(false);
       app_flats.setVisible(false);
       app_flats1.setVisible(false);
@@ -36,7 +36,7 @@ Connection con = null;
  public CSMC_main1(String aa) {
         initComponents();
        app_sua1.setVisible(false);
-        app_sua.setVisible(false);
+        sua.setVisible(false);
         cpr.setVisible(false);
       csmc_home.setVisible(true);
       csmc_no.setText(aa);
@@ -97,11 +97,7 @@ Connection con = null;
         jLabel20 = new javax.swing.JLabel();
         submit5 = new javax.swing.JButton();
         p1 = new javax.swing.JComboBox<>();
-        app_sua = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        submit2 = new javax.swing.JButton();
-        p = new javax.swing.JComboBox<>();
+        sua = new javax.swing.JPanel();
         dt = new javax.swing.JTextField();
         tt = new javax.swing.JTextField();
         vt = new javax.swing.JTextField();
@@ -114,10 +110,6 @@ Connection con = null;
         p2 = new javax.swing.JComboBox<>();
         jLabel22 = new javax.swing.JLabel();
         app_flats1 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        submit6 = new javax.swing.JButton();
-        p3 = new javax.swing.JComboBox<>();
-        jLabel24 = new javax.swing.JLabel();
         dt1 = new javax.swing.JTextField();
         tt1 = new javax.swing.JTextField();
         vt1 = new javax.swing.JTextField();
@@ -570,66 +562,7 @@ Connection con = null;
         p1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Project-" }));
         p1.setToolTipText("");
 
-        javax.swing.GroupLayout app_sua1Layout = new javax.swing.GroupLayout(app_sua1);
-        app_sua1.setLayout(app_sua1Layout);
-        app_sua1Layout.setHorizontalGroup(
-            app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_sua1Layout.createSequentialGroup()
-                .addGroup(app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(app_sua1Layout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel20)
-                        .addGap(18, 18, 18)
-                        .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(app_sua1Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel15))
-                    .addGroup(app_sua1Layout.createSequentialGroup()
-                        .addGap(359, 359, 359)
-                        .addComponent(submit5)))
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
-        app_sua1Layout.setVerticalGroup(
-            app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_sua1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addGap(34, 34, 34)
-                .addGroup(app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(submit5)
-                .addContainerGap(388, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(app_sua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
-
-        app_sua.setBackground(new java.awt.Color(0, 153, 153));
-        app_sua.setMaximumSize(new java.awt.Dimension(880, 780));
-        app_sua.setMinimumSize(new java.awt.Dimension(880, 580));
-        app_sua.setPreferredSize(new java.awt.Dimension(880, 580));
-
-        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel13.setText("Appoint Survey Agent");
-
-        jLabel19.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel19.setText("Project :");
-
-        submit2.setBackground(new java.awt.Color(0, 153, 153));
-        submit2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        submit2.setMnemonic('S');
-        submit2.setText("SUBMIT");
-        submit2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submit2ActionPerformed(evt);
-            }
-        });
-
-        p.setBackground(new java.awt.Color(0, 204, 204));
-        p.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        p.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Project-" }));
-        p.setToolTipText("");
+        sua.setBackground(new java.awt.Color(0, 153, 153));
 
         dt.setEditable(false);
         dt.setBackground(new java.awt.Color(0, 204, 204));
@@ -694,62 +627,82 @@ Connection con = null;
             }
         });
 
-        javax.swing.GroupLayout app_suaLayout = new javax.swing.GroupLayout(app_sua);
-        app_sua.setLayout(app_suaLayout);
-        app_suaLayout.setHorizontalGroup(
-            app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_suaLayout.createSequentialGroup()
-                .addGroup(app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(app_suaLayout.createSequentialGroup()
-                        .addGap(261, 261, 261)
-                        .addComponent(jLabel19)
-                        .addGap(18, 18, 18)
-                        .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(app_suaLayout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel13))
-                    .addGroup(app_suaLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(117, 117, 117)
-                        .addGroup(app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(app_suaLayout.createSequentialGroup()
-                                .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(97, 97, 97)
-                                .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(submit2)
-                            .addGroup(app_suaLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(submit4))))
-                    .addGroup(app_suaLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(spsa, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)))
-                .addGap(63, 63, 63))
-        );
-        app_suaLayout.setVerticalGroup(
-            app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_suaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addGap(34, 34, 34)
-                .addGroup(app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(submit2)
-                .addGap(25, 25, 25)
-                .addGroup(app_suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(spsa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+        javax.swing.GroupLayout suaLayout = new javax.swing.GroupLayout(sua);
+        sua.setLayout(suaLayout);
+        suaLayout.setHorizontalGroup(
+            suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(suaLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129)
+                .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(125, 125, 125))
+            .addGroup(suaLayout.createSequentialGroup()
+                .addGap(368, 368, 368)
                 .addComponent(submit4)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(suaLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(spsa, javax.swing.GroupLayout.DEFAULT_SIZE, 839, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        suaLayout.setVerticalGroup(
+            suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(suaLayout.createSequentialGroup()
+                .addGroup(suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(suaLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(suaLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(27, 27, 27)
+                .addComponent(spsa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(submit4)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        getContentPane().add(app_sua, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
+        javax.swing.GroupLayout app_sua1Layout = new javax.swing.GroupLayout(app_sua1);
+        app_sua1.setLayout(app_sua1Layout);
+        app_sua1Layout.setHorizontalGroup(
+            app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(app_sua1Layout.createSequentialGroup()
+                .addGroup(app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(app_sua1Layout.createSequentialGroup()
+                        .addGap(261, 261, 261)
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(app_sua1Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel15))
+                    .addGroup(app_sua1Layout.createSequentialGroup()
+                        .addGap(359, 359, 359)
+                        .addComponent(submit5)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(sua, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        app_sua1Layout.setVerticalGroup(
+            app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(app_sua1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(app_sua1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(submit5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(sua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(app_sua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         app_flats.setBackground(new java.awt.Color(0, 153, 153));
         app_flats.setMaximumSize(new java.awt.Dimension(880, 780));
@@ -777,67 +730,7 @@ Connection con = null;
         jLabel22.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel22.setText("Project :");
 
-        javax.swing.GroupLayout app_flatsLayout = new javax.swing.GroupLayout(app_flats);
-        app_flats.setLayout(app_flatsLayout);
-        app_flatsLayout.setHorizontalGroup(
-            app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flatsLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(168, 168, 168))
-            .addGroup(app_flatsLayout.createSequentialGroup()
-                .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(app_flatsLayout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel14)))
-                    .addGroup(app_flatsLayout.createSequentialGroup()
-                        .addGap(367, 367, 367)
-                        .addComponent(submit3)))
-                .addContainerGap(351, Short.MAX_VALUE))
-        );
-        app_flatsLayout.setVerticalGroup(
-            app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(app_flatsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel22))
-                .addGap(18, 18, 18)
-                .addComponent(submit3)
-                .addContainerGap(409, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(app_flats, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
-
         app_flats1.setBackground(new java.awt.Color(0, 153, 153));
-        app_flats1.setMaximumSize(new java.awt.Dimension(880, 780));
-        app_flats1.setMinimumSize(new java.awt.Dimension(880, 580));
-        app_flats1.setPreferredSize(new java.awt.Dimension(880, 580));
-
-        jLabel23.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel23.setText("Allocate Flats");
-
-        submit6.setBackground(new java.awt.Color(0, 153, 153));
-        submit6.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        submit6.setMnemonic('S');
-        submit6.setText("SUBMIT");
-        submit6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submit6ActionPerformed(evt);
-            }
-        });
-
-        p3.setBackground(new java.awt.Color(0, 204, 204));
-        p3.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        p3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select Project-" }));
-        p3.setToolTipText("");
-
-        jLabel24.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel24.setText("Project :");
 
         dt1.setEditable(false);
         dt1.setBackground(new java.awt.Color(0, 204, 204));
@@ -945,64 +838,80 @@ Connection con = null;
         app_flats1.setLayout(app_flats1Layout);
         app_flats1Layout.setHorizontalGroup(
             app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addComponent(dt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
+                .addComponent(tt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(vt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
+                .addComponent(spsa1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(app_flats1Layout.createSequentialGroup()
-                .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(app_flats1Layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel23)))
-                    .addGroup(app_flats1Layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(submit7))
-                    .addGroup(app_flats1Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(app_flats1Layout.createSequentialGroup()
-                                .addComponent(dt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(80, 80, 80)
-                                .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(app_flats1Layout.createSequentialGroup()
-                                        .addComponent(tt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(102, 102, 102)
-                                        .addComponent(vt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(submit6))))))
+                .addGap(367, 367, 367)
+                .addComponent(submit7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
-                        .addComponent(p3, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(168, 168, 168))
-                    .addComponent(spsa1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(153, 153, 153))
         );
         app_flats1Layout.setVerticalGroup(
             app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(app_flats1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel23)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(p3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24))
-                .addGap(18, 18, 18)
-                .addComponent(submit6)
-                .addGap(16, 16, 16)
-                .addGroup(app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                    .addComponent(tt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(spsa1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(23, 23, 23)
                 .addComponent(submit7)
-                .addGap(215, 215, 215))
+                .addContainerGap())
         );
 
-        getContentPane().add(app_flats1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
+        javax.swing.GroupLayout app_flatsLayout = new javax.swing.GroupLayout(app_flats);
+        app_flats.setLayout(app_flatsLayout);
+        app_flatsLayout.setHorizontalGroup(
+            app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flatsLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(168, 168, 168))
+            .addGroup(app_flatsLayout.createSequentialGroup()
+                .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(app_flatsLayout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel14)))
+                    .addGroup(app_flatsLayout.createSequentialGroup()
+                        .addGap(367, 367, 367)
+                        .addComponent(submit3)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(app_flats1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        app_flatsLayout.setVerticalGroup(
+            app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(app_flatsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(app_flatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(p2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addComponent(submit3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(app_flats1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        getContentPane().add(app_flats, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1016,8 +925,7 @@ Connection con = null;
     }//GEN-LAST:event_view_detActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        app_flats1.setVisible(false);
-        app_sua.setVisible(false);
+        sua.setVisible(false);
         cpr.setVisible(false);
         csmc_home.setVisible(true);
         app_flats.setVisible(false);
@@ -1032,23 +940,18 @@ Connection con = null;
     }//GEN-LAST:event_log_outActionPerformed
 
     private void prj_repActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prj_repActionPerformed
-        app_sua.setVisible(false);
+        sua.setVisible(false);
         cpr.setVisible(true);
         csmc_home.setVisible(false);
         app_flats.setVisible(false);
-         app_flats1.setVisible(false);
-     
-
         // TODO add your handling code here:
     }//GEN-LAST:event_prj_repActionPerformed
 
     private void appt_saActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appt_saActionPerformed
-        app_sua.setVisible(false);
+        sua.setVisible(false);
         cpr.setVisible(false);
         csmc_home.setVisible(false);
-        app_flats.setVisible(false);
         app_sua1.setVisible(true);
-        p.removeAllItems();
         p1.removeAllItems();
     
         conn c = new conn();
@@ -1061,7 +964,6 @@ Connection con = null;
             {
                 String pp = rs.getString("SITE_CODE");
                 p1.addItem(pp);
-                p.addItem(pp);
             }
         }
         catch (Exception e)
@@ -1073,15 +975,14 @@ Connection con = null;
     }//GEN-LAST:event_appt_saActionPerformed
 
     private void appt_flatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appt_flatsActionPerformed
-        app_sua.setVisible(false);
+        app_sua1.setVisible(false);
+       sua.setVisible(false);
         cpr.setVisible(false);
         csmc_home.setVisible(false);
-        app_flats.setVisible(false);
-        app_flats1.setVisible(false);
         app_flats.setVisible(true);
-     
+        app_flats1.setVisible(false);
+
         p2.removeAllItems();
-        p3.removeAllItems();
         conn c = new conn();
         con=c.getconn();
         String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
@@ -1091,7 +992,6 @@ Connection con = null;
             while(rs.next())
             {
                 String pp = rs.getString("SITE_CODE");
-                p3.addItem(pp);
                 p2.addItem(pp);
             }
         }
@@ -1099,7 +999,6 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-
         // TODO add your handling code here:
     }//GEN-LAST:event_appt_flatsActionPerformed
 
@@ -1109,7 +1008,7 @@ Connection con = null;
         cpr.setVisible(false);
         app_flats.setVisible(false);
         csmc_home.setVisible(false);
-        app_sua.setVisible(true);
+        sua.setVisible(true);
          app_flats1.setVisible(false);
      
         DefaultTableModel model = (DefaultTableModel) sa.getModel();
@@ -1118,7 +1017,7 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
 
-        String sql1="select DISTRICT,TALUKA,VILLAGE from PROJECT where SITE_CODE = '"+p.getSelectedItem().toString()+"'";
+        String sql1="select DISTRICT,TALUKA,VILLAGE from PROJECT where SITE_CODE = '"+p1.getSelectedItem().toString()+"'";
         try{
             String dts="District";
             String vts="Village";
@@ -1165,69 +1064,6 @@ Connection con = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_submit5ActionPerformed
 
-    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
-        app_sua1.setVisible(false);
-        cpr.setVisible(false);
-        app_flats.setVisible(false);
-         app_flats1.setVisible(false);
-     
-        csmc_home.setVisible(false);
-        app_sua.setVisible(true);
-      
-        DefaultTableModel model = (DefaultTableModel) sa.getModel();
-        model.setRowCount(0);
-
-        conn c = new conn();
-        con=c.getconn();
-
-        String sql1="select DISTRICT,TALUKA,VILLAGE from PROJECT where SITE_CODE = '"+p.getSelectedItem().toString()+"'";
-        try{
-            String dts="District";
-            String vts="Village";
-            String tts="Taluka";
-
-            st=con.createStatement();
-            rs = st.executeQuery(sql1);
-            while(rs.next())
-            {
-                dts = rs.getString("DISTRICT");
-                vts = rs.getString("TALUKA");
-                tts = rs.getString("VILLAGE");
-            }
-            dt.setText(dts);
-            vt.setText(vts);
-            tt.setText(tts);
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-
-        String sql = "SELECT Employee_ID,First_name,Middle_name,Last_name,Gender FROM SURVEY_AGENT WHERE Employee_ID NOT IN (SELECT Agent_ID FROM Applicants) ";
-        try{
-            st=con.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next())
-            {
-                String id1 = rs.getString("Employee_ID");
-                String sf_name = rs.getString("First_name");
-                String mf_name = rs.getString("Middle_name");
-                String lf_name = rs.getString("Last_name");
-                String g2 = rs.getString("Gender");
-
-                Object[] o =  { null , id1 , sf_name+mf_name+lf_name ,g2};
-                model.addRow(o);
-
-            }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_submit2ActionPerformed
-
     private void submit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit4ActionPerformed
         int rc = sa.getRowCount();
         int i=0;
@@ -1267,12 +1103,12 @@ Connection con = null;
         app_flats.setVisible(false);
         csmc_home.setVisible(false);
         app_flats1.setVisible(false);
-        app_sua.setVisible(true);
+        sua.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_submit4ActionPerformed
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-     
+     app_flats.setVisible(true);
         DefaultTableModel model = (DefaultTableModel) flat.getModel();
         model.setRowCount(0);
 
@@ -1280,7 +1116,7 @@ Connection con = null;
         con=c.getconn();
 
         
-        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p.getSelectedItem().toString()+"'";
+        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p1.getSelectedItem().toString()+"'";
         try{
             String dts="District";
             String vts="Village";
@@ -1309,9 +1145,7 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-
-
-        p3.removeAllItems();
+        
         p2.removeAllItems();
         String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
         try{
@@ -1320,7 +1154,6 @@ Connection con = null;
             while(rs.next())
             {
                 String pp = rs.getString("SITE_CODE");
-                p3.addItem(pp);
                 p2.addItem(pp);
             }
         }
@@ -1328,92 +1161,8 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-
-   
-      app_sua1.setVisible(false);
-        cpr.setVisible(false);
-        csmc_home.setVisible(false);
-        app_sua.setVisible(false);
-       app_flats1.setVisible(true);
-        app_flats.setVisible(false);
              // TODO add your handling code here:
     }//GEN-LAST:event_submit3ActionPerformed
-
-    private void submit6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit6ActionPerformed
-        
-        DefaultTableModel model = (DefaultTableModel) flat.getModel();
-        model.setRowCount(0);
-        DefaultTableModel model2 = (DefaultTableModel) sa1.getModel();
-        model2.setRowCount(0);
-        conn c = new conn();
-        con=c.getconn();
-
-        
-        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p3.getSelectedItem().toString()+"'";
-        try{
-            String dts="District";
-            String vts="Village";
-            String tts="Taluka";
-            int flo=0;
-            int fla=0;
-            st=con.createStatement();
-            rs = st.executeQuery(sql1);
-            while(rs.next())
-            {
-                dts = rs.getString("DISTRICT");
-                vts = rs.getString("TALUKA");
-                tts = rs.getString("VILLAGE");
-                flo = rs.getInt("Floor");
-                fla = rs.getInt("Flats");
-            }
-            dt1.setText(dts);
-            vt1.setText(vts);
-            tt1.setText(tts);
-            
-            Object[] o =  { flo , fla};
-            model.addRow(o);
-                    
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        String sql = "SELECT Applicant_no,First_name,Middle_name,Last_name,Income_annum,Gender,Marital_status FROM APPLICANTS WHERE PROJECT_ID ='"+p3.getSelectedItem().toString()+"'   ORDER BY Gender,Income,Marital_status DESC ";
-        try{
-            st=con.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next())
-            {
-                String pp1 = rs.getString("Applicant_no");
-                String pp2 = rs.getString("First_name");
-                String pp3 = rs.getString("Middle_name");
-                String pp4 = rs.getString("Last_name");
-                int pp5 = rs.getInt("Income_annum");
-                String pp6 = rs.getString("Gender");
-                String pp7 = rs.getString("Marital_status");
-            
-            
-                Object[] o =  { null , pp1,pp2+pp3+pp4,pp5,pp6,pp7};
-                model.addRow(o);
-       
-            }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-
-   
-      app_sua1.setVisible(false);
-        cpr.setVisible(false);
-        csmc_home.setVisible(false);
-        app_sua.setVisible(false);
-       app_flats1.setVisible(true);
-        app_flats.setVisible(false);
-    
-        
-// TODO add your handling code here:
-    }//GEN-LAST:event_submit6ActionPerformed
 
     private void submit7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit7ActionPerformed
      
@@ -1430,7 +1179,7 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         //Set Trigger query by ABHIK
-        String sql = "insert into CSMC_APPOINT_APPL ('"+dataCol1+"' VILLAGE = '"+p3.getSelectedItem().toString()+"')";
+        String sql = "insert into CSMC_APPOINT_APPL ('"+dataCol1+"' VILLAGE = '"+p2.getSelectedItem().toString()+"')";
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1,dataCol1 );
@@ -1450,8 +1199,7 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-
-        p3.removeAllItems();
+p2.removeAllItems();
         String sql2="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
         try{
             st=con.createStatement();
@@ -1459,7 +1207,7 @@ Connection con = null;
             while(rs.next())
             {
                 String pp = rs.getString("SITE_CODE");
-                p3.addItem(pp);
+                p2.addItem(pp);
             }
         }
         catch (Exception e)
@@ -1467,11 +1215,10 @@ Connection con = null;
             JOptionPane.showMessageDialog(null, e);
         }
         
-        app_sua.setVisible(true);
           app_sua1.setVisible(false);
         cpr.setVisible(false);
         csmc_home.setVisible(false);
-        app_sua.setVisible(false);
+        sua.setVisible(false);
        app_flats1.setVisible(false);
         app_flats.setVisible(true);
    
@@ -1521,7 +1268,6 @@ Connection con = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel app_flats;
     private javax.swing.JPanel app_flats1;
-    private javax.swing.JPanel app_sua;
     private javax.swing.JPanel app_sua1;
     private javax.swing.JButton appt_flats;
     private javax.swing.JButton appt_sa;
@@ -1539,18 +1285,14 @@ Connection con = null;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1571,21 +1313,18 @@ Connection con = null;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton log_out;
-    private javax.swing.JComboBox<String> p;
     private javax.swing.JComboBox<String> p1;
     private javax.swing.JComboBox<String> p2;
-    private javax.swing.JComboBox<String> p3;
     private javax.swing.JComboBox<String> p4;
     private javax.swing.JButton prj_rep;
     private javax.swing.JTable sa;
     private javax.swing.JTable sa1;
     private javax.swing.JScrollPane spsa;
     private javax.swing.JScrollPane spsa1;
-    private javax.swing.JButton submit2;
+    private javax.swing.JPanel sua;
     private javax.swing.JButton submit3;
     private javax.swing.JButton submit4;
     private javax.swing.JButton submit5;
-    private javax.swing.JButton submit6;
     private javax.swing.JButton submit7;
     private javax.swing.JTextField tt;
     private javax.swing.JTextField tt1;

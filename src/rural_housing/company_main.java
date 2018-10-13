@@ -98,7 +98,6 @@ Connection con = null;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 960));
         setMinimumSize(new java.awt.Dimension(1200, 760));
-        setPreferredSize(new java.awt.Dimension(1200, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
