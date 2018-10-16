@@ -7,21 +7,35 @@ package rural_housing;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.jdbc.JDBCPieDataset;
 
 /**
  *
  * @author chinmay
  */
 public class reports extends javax.swing.JFrame {
-
+Connection con = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    Statement st = null;
     /**
      * Creates new form reports
      */
@@ -40,6 +54,12 @@ public class reports extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -57,21 +77,86 @@ public class reports extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Click 2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Click 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Click 4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Click 5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Click 6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Click 7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jButton1)
-                .addContainerGap(992, Short.MAX_VALUE))
+                .addGap(156, 156, 156)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(149, 149, 149)
+                        .addComponent(jButton2)
+                        .addGap(107, 107, 107)
+                        .addComponent(jButton3)
+                        .addGap(93, 93, 93)
+                        .addComponent(jButton4)
+                        .addGap(92, 92, 92)
+                        .addComponent(jButton5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton6)
+                        .addGap(138, 138, 138)
+                        .addComponent(jButton7)))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jButton1)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5))
+                .addGap(75, 75, 75)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
+                    .addComponent(jButton6))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -91,10 +176,10 @@ public class reports extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        DefaultCategoryDataset bcd = new DefaultCategoryDataset();
-        bcd.addValue(2000, "NORMAL", "NORL");
+       /* DefaultCategoryDataset bcd = new DefaultCategoryDataset();
+        bcd.addValue(4000, "NORMAL", "NORL");
        bcd.addValue(8000, "NORMALZ", "NORZ");
-              bcd.addValue(600, "NORMALY", "NORLY");
+              bcd.addValue(6000, "NORMALY", "NORLY");
               JFreeChart bc = ChartFactory.createBarChart("tp", "A","AB", bcd, PlotOrientation.VERTICAL,true,true, false);
         BarRenderer ren=null;
 CategoryPlot cp=null;
@@ -103,9 +188,335 @@ ren=new BarRenderer();
 ChartFrame cpp1=new ChartFrame("tp",bc);
 cpp1.setVisible(true);
 cpp1.setSize(400,600);
+*/ conn c = new conn();
+        con=c.getconn();
 
+		int m=0,f=0;
+        try {
+            String query = "SELECT count(*) as male from APPLICANTS where Gender='MALE'";
+            String query2 = "SELECT count(*) as female from APPLICANTS where Gender='FEMALE'";
+//            String query = "SELECT * from APPLICANTS";
+       
 
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               m = rs.getInt("male");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query2);
+            while(rs.next())
+            {
+               f = rs.getInt("female");
+
+                
+            }
+             DefaultPieDataset result = new DefaultPieDataset();
+        result.setValue("male", m);
+        result.setValue("female",f);
+            JFreeChart chart = ChartFactory.createPieChart("Test", result, true,
+				true, false);
+		ChartPanel chartPanel = new ChartPanel(chart);
+                ChartFrame cpp3 = new ChartFrame("tp",chart);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   conn c = new conn();
+        con=c.getconn();
+
+		int m=0,f=0;
+        try {
+            String query = "SELECT count(*) as male from APPLICANTS where Gender='MALE' AND PROJECT_ID is not null ";
+            String query2 = "SELECT count(*) as female from APPLICANTS where Gender='FEMALE' AND PROJECT_ID is not null";
+//            String query = "SELECT * from APPLICANTS";
+       
+
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               m = rs.getInt("male");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query2);
+            while(rs.next())
+            {
+               f = rs.getInt("female");
+
+                
+            }
+            DefaultCategoryDataset rslt = new DefaultCategoryDataset();
+        rslt.addValue(m, "male", "");
+        rslt.addValue(f, "female", "");
+        
+         BarRenderer ren=null;
+CategoryPlot cp=null;
+ren=new BarRenderer();
+         JFreeChart result = ChartFactory.createBarChart("tp","Gender", "No of flats allocated", rslt, PlotOrientation.VERTICAL,true,true, false);
+         
+       result.getCategoryPlot().getRangeAxis().setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+         
+         ChartFrame cpp3 = new ChartFrame("tp",result);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+      
+           conn c = new conn();
+        con=c.getconn();
+
+		int m=0,f=0;
+        try {
+            String query = "SELECT count(*) as male from APPLICANTS where Income_annum<600000 ";
+            String query2 = "SELECT count(*) as female from APPLICANTS where Income_annum>=600000";
+//            String query = "SELECT * from APPLICANTS";
+       
+
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               m = rs.getInt("male");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query2);
+            while(rs.next())
+            {
+               f = rs.getInt("female");
+
+                
+            }
+            DefaultCategoryDataset rslt = new DefaultCategoryDataset();
+        rslt.addValue(m, "LIG", "");
+        rslt.addValue(f, "MIG", "");
+        
+         BarRenderer ren=null;
+CategoryPlot cp=null;
+ren=new BarRenderer();
+         JFreeChart result = ChartFactory.createBarChart("tp","Income group", "No of flats allocated", rslt, PlotOrientation.VERTICAL,true,true, false);
+         
+       result.getCategoryPlot().getRangeAxis().setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+         
+         ChartFrame cpp3 = new ChartFrame("tp",result);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+conn c = new conn();
+        con=c.getconn();
+
+		int s1=0,s2=0,s3=0,s4=0;
+        try {
+            String query = "SELECT count(*) as s11 from APPLICANTS where Marital_Status ='MARRIED'";
+            String query1 = "SELECT count(*) as s12 from APPLICANTS where Marital_Status ='UNMARRIED'";
+            String query2 = "SELECT count(*) as s13 from APPLICANTS where Marital_Status ='DIVORCED'";
+            String query3 = "SELECT count(*) as s14 from APPLICANTS where Marital_Status ='WIDOWED'";
+
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               s1 = rs.getInt("s11");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query1);
+            while(rs.next())
+            {
+               s2 = rs.getInt("s12");
+
+                
+            }
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query2);
+            while(rs.next())
+            {
+               s3 = rs.getInt("s13");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query3);
+            while(rs.next())
+            {
+               s3 = rs.getInt("s14");
+
+                
+            }
+             DefaultPieDataset result = new DefaultPieDataset();
+        result.setValue("Married", s1);
+        result.setValue("Un-Married", s2);
+                result.setValue("Divorced", s3);
+        result.setValue("Widowed", s4);
+            JFreeChart chart = ChartFactory.createPieChart("Test", result, true,
+				true, false);
+		ChartPanel chartPanel = new ChartPanel(chart);
+                ChartFrame cpp3 = new ChartFrame("tp",chart);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+           conn c = new conn();
+        con=c.getconn();
+
+		int m=0,f=0;
+        try {
+            String query = "SELECT sum(flats) as male from PROJECT";
+            String query2 = "SELECT sum(Floor) as female from PROJECT";
+//            String query = "SELECT * from APPLICANTS";
+       
+
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+               m = rs.getInt("male");
+            }
+
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query2);
+            while(rs.next())
+            {
+               f = rs.getInt("female");
+
+                
+            }
+            DefaultCategoryDataset rslt = new DefaultCategoryDataset();
+        rslt.addValue(m, "Total", "");
+        rslt.addValue(f, "Allocated", "");
+        
+         BarRenderer ren=null;
+CategoryPlot cp=null;
+ren=new BarRenderer();
+         JFreeChart result = ChartFactory.createBarChart("tp","", "No of Flats", rslt, PlotOrientation.HORIZONTAL,true,true, false);
+         
+       result.getCategoryPlot().getRangeAxis().setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+         
+         ChartFrame cpp3 = new ChartFrame("tp",result);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }// TODO add your handling code here:
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+ conn c = new conn();
+        con=c.getconn();
+
+		int m=0,f=0;
+             String s3 = " SELECT TIMESTAMPDIFF(YEAR,DOB,CURDATE())AS AGE FROM APPLICANTS ";
+        try
+        {
+            pst = con.prepareStatement(s3);
+            rs = pst.executeQuery();
+            while (rs.next()) 
+            {
+                int s2 = rs.getInt(1);
+                if(s2<45)
+                    m++;
+                else
+                    f++;
+            }
+    }catch(Exception e){e.printStackTrace();}   
+
+
+            
+        DefaultCategoryDataset rslt = new DefaultCategoryDataset();
+        rslt.addValue(m, "18-45", "");
+        rslt.addValue(f, ">45", "");
+        
+         BarRenderer ren=null;
+CategoryPlot cp=null;
+ren=new BarRenderer();
+         JFreeChart result = ChartFactory.createBarChart("tp","Age Group", "No of People", rslt, PlotOrientation.VERTICAL,true,true, false);
+         
+       result.getCategoryPlot().getRangeAxis().setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+         
+         ChartFrame cpp3 = new ChartFrame("tp",result);
+		cpp3.setVisible(true);
+cpp3.setSize(400,600);
+
+ 
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        conn c = new conn();
+        con=c.getconn();
+
+		int m=0,f=0,i=0;
+        try {
+            String query = "SELECT flats,Floor from PROJECT";
+//            String query = "SELECT * from APPLICANTS";
+       
+	    DefaultCategoryDataset rslt = new DefaultCategoryDataset();
+        
+
+	 st=con.createStatement();
+            rs = st.executeQuery(query);
+            while(rs.next())
+            {
+                String is = Integer.toString(i++);
+               m = rs.getInt("flats");
+               f=rs.getInt("Floor");
+            rslt.addValue(m, "Total Flats ", is);
+            rslt.addValue(f, "Allocated Flats", is);
+
+            }
+
+            
+         BarRenderer ren=null;
+CategoryPlot cp=null;
+ren=new BarRenderer();
+         JFreeChart result = ChartFactory.createBarChart("tp","Project", "No of Flats", rslt, PlotOrientation.VERTICAL,true,true, false);
+         
+       result.getCategoryPlot().getRangeAxis().setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+         
+         ChartFrame cpp3 = new ChartFrame("tp",result);
+		cpp3.setVisible(true);
+cpp3.setSize(1200,600);
+
+ } catch (SQLException ex) {
+            Logger.getLogger(reports.class.getName()).log(Level.SEVERE, null, ex);
+        }// TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +555,12 @@ cpp1.setSize(400,600);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

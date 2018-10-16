@@ -927,7 +927,7 @@ Connection con = null;
     conn c = new conn();
     con=c.getconn();
    
-   String mc_pass,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass;
+   String mc_pass="NOT APPLICABLE",rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass="NOT APPLICABLE";
         String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
         try
         {
@@ -992,6 +992,8 @@ Connection con = null;
                     {
                         mcn2.setEnabled(false);
                         mcy2.setEnabled(false); 
+                        mcn2.setSelected(false);
+                        mcy2.setSelected(false);
                     }
                     if(dc_pass.equalsIgnoreCase("YES"))
                     {
@@ -1005,6 +1007,9 @@ Connection con = null;
                     {
                         dcn2.setEnabled(false);
                         dcy2.setEnabled(false);   
+                    dcn2.setSelected(false);
+                        dcy2.setSelected(false);
+                    
                     }
                 }
         }
@@ -1052,7 +1057,7 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,Aadhar_no,Contact FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,Aadhar_no,Contact,DOB FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
         while(rs.next())
         {   
@@ -1066,6 +1071,8 @@ Connection con = null;
         d2.setText(rs.getString("District"));  
         s2.setText(rs.getString("State"));
         inc1.setText(rs.getString("Income_annum"));
+        dob1.setText(rs.getDate("DOB").toString());
+        
         int inco = Integer.parseInt(inc1.getText());
         if(inco<300000)
         {
@@ -1100,7 +1107,6 @@ Connection con = null;
             rs = pst.executeQuery();
             while (rs.next()) 
             {
-
                 int s2 = rs.getInt(1);
                 age1.setText(Integer.toString(s2));
             }
@@ -1177,92 +1183,6 @@ Connection con = null;
         String valid="true";
         String mc_pass=null,rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass=null,user_no = app_no.getText();
        
-        String q1 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
-        try
-        {
-                st = con.createStatement();
-                rs = st.executeQuery(q1);
-              
-                while(rs.next()) 
-                { 
-                    ac_pass = (rs.getString("aadhar_copy"));
-                    bc_pass = (rs.getString("birth_cert_copy"));
-                    ic_pass = (rs.getString("income_cert_copy")); 
-                    rc_pass = (rs.getString("ration_copy"));
-                    mc_pass = (rs.getString("marriage_copy"));
-                    dc_pass = (rs.getString("death_copy"));  
-                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
-    
-                    if(ac_pass.equalsIgnoreCase("YES"))
-                    {
-                       acy2.setSelected(true);
-                       System.out.print("acy2");
-                    }
-                    else
-                    {
-                       acn2.setSelected(true);
-                       System.out.print("acn2");
-                    }
-                    if(bc_pass.equalsIgnoreCase("YES"))
-                    {
-                        bcy2.setSelected(true);
-                                   System.out.print("bcy2");
-                    }
-                    else
-                    {
-                       bcn2.setSelected(true);
-                                  System.out.print("bcn2");
-                    }
-                    if(ic_pass.equalsIgnoreCase("YES"))
-                    {
-                        icy2.setSelected(true);
-                    }
-                    else
-                    {
-                       icn2.setSelected(true);
-                    }
-                    if(rc_pass.equalsIgnoreCase("YES"))
-                    {
-                        rcy2.setSelected(true);
-                    }
-                    else
-                    {
-                       rcn2.setSelected(true);
-                    }
-                    if(mc_pass .equalsIgnoreCase("YES"))
-                    {
-                        mcn2.setSelected(true);
-                    }
-                    else if(mc_pass.equalsIgnoreCase("NO"))
-                    {
-                       mcn2.setSelected(true);
-                    }
-                    else
-                    {
-                        mcn2.setEnabled(false);
-                        mcy2.setEnabled(false); 
-                    }
-                    if(dc_pass.equalsIgnoreCase("YES"))
-                    {
-                        dcy2.setSelected(true);
-                    }
-                    else if(dc_pass.equalsIgnoreCase("NO"))
-                    {
-                       dcn2.setSelected(true);
-                    }
-                    else
-                    {
-                        dcn2.setEnabled(false);
-                        dcy2.setEnabled(false);   
-                    }
-                }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-        
         
         mc_pass="NOT APPLICABLE";
         dc_pass="NOT APPLICABLE";
@@ -1271,7 +1191,7 @@ Connection con = null;
             {
                 mc_pass = "YES";
             }
-            else
+            else if(mcn2.isSelected())
             {
                 mc_pass = "NO";
             }
@@ -1320,7 +1240,7 @@ Connection con = null;
             rc_pass = "NO";
         }
         
-        String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
+        String q2 = "update APPL_DOCS_SUBMIT set aadhar_copy=?,birth_cert_copy=?,income_cert_copy=?,ration_copy=?,marriage_copy=?,death_copy=? WHERE appl_num=?  ";
         try
         {
             pst = con.prepareStatement(q2);
@@ -1339,7 +1259,10 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e); 
         }
-       
+        doc1.setVisible(false);
+    view.setVisible(false);
+    app_home.setVisible(true);
+  
 
     }//GEN-LAST:event_submit2ActionPerformed
     
