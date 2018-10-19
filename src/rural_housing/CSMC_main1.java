@@ -85,7 +85,6 @@ Connection con = null;
         jLabel25 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        view_det = new javax.swing.JButton();
         home = new javax.swing.JButton();
         log_out = new javax.swing.JButton();
         prj_rep = new javax.swing.JButton();
@@ -428,16 +427,6 @@ Connection con = null;
         jPanel1.setMinimumSize(new java.awt.Dimension(330, 550));
         jPanel1.setPreferredSize(new java.awt.Dimension(330, 550));
 
-        view_det.setBackground(new java.awt.Color(0, 204, 204));
-        view_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        view_det.setMnemonic('V');
-        view_det.setText("View Agent Details");
-        view_det.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                view_detActionPerformed(evt);
-            }
-        });
-
         home.setBackground(new java.awt.Color(0, 204, 204));
         home.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         home.setMnemonic('H');
@@ -498,7 +487,6 @@ Connection con = null;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(view_det, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -519,9 +507,7 @@ Connection con = null;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(view_det)
-                .addGap(23, 23, 23)
+                .addGap(102, 102, 102)
                 .addComponent(prj_rep)
                 .addGap(21, 21, 21)
                 .addComponent(appt_sa)
@@ -531,7 +517,7 @@ Connection con = null;
                 .addComponent(home)
                 .addGap(29, 29, 29)
                 .addComponent(log_out)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 320, 580));
@@ -919,10 +905,6 @@ Connection con = null;
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
 
     }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void view_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_detActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_view_detActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         sua.setVisible(false);
@@ -1328,7 +1310,6 @@ p2.removeAllItems();
     private javax.swing.JButton submit7;
     private javax.swing.JTextField tt;
     private javax.swing.JTextField tt1;
-    private javax.swing.JButton view_det;
     private javax.swing.JTextField vt;
     private javax.swing.JTextField vt1;
     // End of variables declaration//GEN-END:variables

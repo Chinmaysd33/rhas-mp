@@ -32,7 +32,7 @@ public class MoH_main extends javax.swing.JFrame {
         click1.setVisible(false);
         jScrollPane2.setVisible(false);
       moh_home.setVisible(true);
-      appoint.setVisible(false);
+//      appoint.setVisible(false);
         
     }
     /**
@@ -83,7 +83,6 @@ public class MoH_main extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         submit3 = new javax.swing.JButton();
         state3 = new javax.swing.JComboBox<>();
-        appoint = new javax.swing.JPanel();
         sp = new javax.swing.JScrollPane();
         view_ag = new javax.swing.JTable();
         submit4 = new javax.swing.JButton();
@@ -533,8 +532,6 @@ public class MoH_main extends javax.swing.JFrame {
             }
         });
 
-        appoint.setBackground(new java.awt.Color(0, 153, 153));
-
         sp.setBackground(new java.awt.Color(0, 153, 153));
 
         view_ag.setModel(new javax.swing.table.DefaultTableModel(
@@ -580,32 +577,12 @@ public class MoH_main extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout appointLayout = new javax.swing.GroupLayout(appoint);
-        appoint.setLayout(appointLayout);
-        appointLayout.setHorizontalGroup(
-            appointLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 766, Short.MAX_VALUE)
-            .addGroup(appointLayout.createSequentialGroup()
-                .addGap(296, 296, 296)
-                .addComponent(submit4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        appointLayout.setVerticalGroup(
-            appointLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(appointLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(submit4)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout app_csmcLayout = new javax.swing.GroupLayout(app_csmc);
         app_csmc.setLayout(app_csmcLayout);
         app_csmcLayout.setHorizontalGroup(
             app_csmcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_csmcLayout.createSequentialGroup()
-                .addContainerGap(154, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel21)
                 .addGap(232, 232, 232))
             .addGroup(app_csmcLayout.createSequentialGroup()
@@ -614,13 +591,19 @@ public class MoH_main extends javax.swing.JFrame {
                         .addGap(184, 184, 184)
                         .addComponent(jLabel22)
                         .addGap(75, 75, 75)
-                        .addComponent(state3, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(state3, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(app_csmcLayout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(submit3))
-                    .addGroup(app_csmcLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(appoint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(sp, javax.swing.GroupLayout.DEFAULT_SIZE, 796, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(app_csmcLayout.createSequentialGroup()
+                .addGap(327, 327, 327)
+                .addComponent(submit4)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(app_csmcLayout.createSequentialGroup()
+                .addGap(315, 315, 315)
+                .addComponent(submit3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         app_csmcLayout.setVerticalGroup(
@@ -632,11 +615,13 @@ public class MoH_main extends javax.swing.JFrame {
                 .addGroup(app_csmcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(state3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(submit3)
-                .addGap(23, 23, 23)
-                .addComponent(appoint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(submit4)
+                .addGap(308, 308, 308))
         );
 
         getContentPane().add(app_csmc, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, -1, -1));
@@ -839,11 +824,12 @@ public class MoH_main extends javax.swing.JFrame {
     }//GEN-LAST:event_log_outActionPerformed
 
     private void app_csmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_app_csmActionPerformed
-                v_detail.setVisible(false);
+       v_detail.setVisible(false);
       app_company.setVisible(false);
       app_csmc.setVisible(false);
       moh_home.setVisible(false);
-       app_csmc.setVisible(true);
+//      appoint.setVisible(false);
+      app_csmc.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_app_csmActionPerformed
 
@@ -1279,15 +1265,23 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
     }//GEN-LAST:event_villageMouseClicked
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-    v_detail.setVisible(false);
+    /*v_detail.setVisible(false);
       app_company.setVisible(false);
-      app_csmc.setVisible(true);
        view_ten.setVisible(false);
         click1.setVisible(false);
         jScrollPane2.setVisible(false);
       moh_home.setVisible(false);        
-      appoint.setVisible(true);
-        conn c = new conn();
+     // appoint.setVisible(true);
+      //view_ag.setVisible(true);
+      //submit4.setVisible(true);
+*/      
+        DefaultTableModel model = (DefaultTableModel) view_ag.getModel();
+        //for(int i=model.getRowCount();i>=0;i--)
+        //{
+          //  model.removeRow(i);
+        //}
+        model.setRowCount(0);
+      conn c = new conn();
         con=c.getconn();
         String query = "select Officer_ID,f_name,m_name,l_name from CSMC where state = '"+state3.getSelectedItem().toString().toUpperCase()+"' ";
         try
@@ -1305,8 +1299,7 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
                 //String sf_name = "f_name";
                 //String sm_name = "m_name";
                 //String sl_name = "l_name";
-                Object[] o =  {code, sf_name, sm_name,sl_name};
-                DefaultTableModel model = (DefaultTableModel) view_ag.getModel();
+                Object[] o =  {null,code, sf_name, sm_name,sl_name};
                 model.addRow(o);
 
             }
@@ -1321,6 +1314,31 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
     }//GEN-LAST:event_submit3ActionPerformed
 
     private void submit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit4ActionPerformed
+     
+        int rc = view_ag.getRowCount();
+        int i=0;
+        for( i=0;i<=rc;i++)
+        {
+            Boolean chked = Boolean.valueOf(view_ag.getValueAt(i, 0).toString());
+            if(chked==true)
+            break;
+        }
+        String dataCol1 = view_ag.getValueAt(i, 1).toString();
+
+        conn c = new conn();
+        con=c.getconn();
+        //Set Trigger query by ABHIK
+        String sql = "UPDATE PROJEC SET CSMC_CODE=('"+dataCol1+"') WHERE  STATE = '"+state3.getSelectedItem().toString().toUpperCase()+"'";
+        try{
+            pst = con.prepareStatement(sql);
+            pst.setString(1,dataCol1 );
+            pst.executeUpdate();
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+     
         // TODO add your handling code here:
     }//GEN-LAST:event_submit4ActionPerformed
 
@@ -1364,7 +1382,6 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
     private javax.swing.JPanel app_company;
     private javax.swing.JButton app_csm;
     private javax.swing.JPanel app_csmc;
-    private javax.swing.JPanel appoint;
     private javax.swing.JButton click;
     private javax.swing.JButton click1;
     private javax.swing.JComboBox<String> district;

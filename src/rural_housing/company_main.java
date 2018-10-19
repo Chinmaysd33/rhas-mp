@@ -5,6 +5,11 @@
  */
 package rural_housing;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -19,7 +24,7 @@ Connection con = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
      PreparedStatement pst1 = null;
-    Statement stmt;
+    Statement st=null;
     /**
      * Creates new form company_main
      */
@@ -32,6 +37,8 @@ Connection con = null;
          submit2.setVisible(false);
         viewproj.setVisible(false);
 
+        jLabel9.setVisible(false);
+        gst_no.setVisible(false);
     }
     
     public company_main(String abc) {
@@ -43,6 +50,8 @@ Connection con = null;
          submit2.setVisible(false);
         viewproj.setVisible(false);
         com_no.setText(abc);
+        jLabel9.setVisible(false);
+        gst_no.setVisible(false);
 
     }
 
@@ -72,14 +81,14 @@ Connection con = null;
         jLabel9 = new javax.swing.JLabel();
         gst_no = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        st = new javax.swing.JRadioButton();
-        na = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         comp_name = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         cn2 = new javax.swing.JTextField();
         submit1 = new javax.swing.JButton();
         cn1 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        comp_name1 = new javax.swing.JTextField();
         sub_tender = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -267,6 +276,7 @@ Connection con = null;
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel9.setText("Company GST Number:");
 
+        gst_no.setEditable(false);
         gst_no.setBackground(new java.awt.Color(0, 204, 204));
         gst_no.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         gst_no.setText("Enter the company's 15 digit GST number");
@@ -279,27 +289,10 @@ Connection con = null;
         jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel10.setText("Company Name:");
 
-        st.setBackground(new java.awt.Color(0, 153, 153));
-        st.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        st.setText("State");
-        st.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stActionPerformed(evt);
-            }
-        });
-
-        na.setBackground(new java.awt.Color(0, 153, 153));
-        na.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        na.setText("National");
-        na.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                naActionPerformed(evt);
-            }
-        });
-
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel11.setText("Company Status:");
 
+        comp_name.setEditable(false);
         comp_name.setBackground(new java.awt.Color(0, 204, 204));
         comp_name.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         comp_name.setText("Enter the company name");
@@ -312,6 +305,7 @@ Connection con = null;
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel12.setText("Contact Number:");
 
+        cn2.setEditable(false);
         cn2.setBackground(new java.awt.Color(0, 204, 204));
         cn2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         cn2.setText("10 Digit Contact Number (optional)");
@@ -323,14 +317,15 @@ Connection con = null;
 
         submit1.setBackground(new java.awt.Color(0, 153, 153));
         submit1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        submit1.setMnemonic('S');
-        submit1.setText("SUBMIT");
+        submit1.setMnemonic('b');
+        submit1.setText("Back");
         submit1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submit1ActionPerformed(evt);
             }
         });
 
+        cn1.setEditable(false);
         cn1.setBackground(new java.awt.Color(0, 204, 204));
         cn1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         cn1.setText("10 Digit Contact Number");
@@ -340,28 +335,44 @@ Connection con = null;
             }
         });
 
+        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        jLabel13.setText("Experience");
+
+        comp_name1.setEditable(false);
+        comp_name1.setBackground(new java.awt.Color(0, 204, 204));
+        comp_name1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        comp_name1.setText("Enter the company name");
+        comp_name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comp_name1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout v_detailLayout = new javax.swing.GroupLayout(v_detail);
         v_detail.setLayout(v_detailLayout);
         v_detailLayout.setHorizontalGroup(
             v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(v_detailLayout.createSequentialGroup()
-                .addGap(121, 121, 121)
-                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addGap(26, 26, 26)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(v_detailLayout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(26, 26, 26))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)))
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
-                        .addGroup(v_detailLayout.createSequentialGroup()
-                            .addComponent(na)
-                            .addGap(26, 26, 26)
-                            .addComponent(st))
                         .addComponent(comp_name)
-                        .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comp_name1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -382,13 +393,11 @@ Connection con = null;
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(comp_name, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(na)
-                        .addComponent(st))
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(comp_name1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
@@ -397,10 +406,12 @@ Connection con = null;
                     .addComponent(jLabel12)
                     .addComponent(cn1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addGap(31, 31, 31)
                 .addComponent(submit1)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
         getContentPane().add(v_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
@@ -606,6 +617,24 @@ Connection con = null;
         sub_tender.setVisible(false);
         com_main.setVisible(false);
         v_detail.setVisible(true);
+        try {
+        conn c = new conn();
+        con=c.getconn();
+        st = con.createStatement();
+        String sql = "SELECT  Status,Name,Contact_no,Experience FROM COMPANY WHERE Company_ID = '"+com_no.getText()+"'";
+        rs = st.executeQuery(sql);
+    while(rs.next())
+    {     
+        comp_name1.setText(rs.getString("Status"));
+        comp_name.setText(rs.getString("Name"));
+        cn1.setText(rs.getString("Contact_no"));
+        cn2.setText(rs.getString("Experience"));
+    }
+    } catch (SQLException e ) {
+    JOptionPane.showMessageDialog(null, e); 
+
+    }    
+
         // TODO add your handling code here:
     }//GEN-LAST:event_view_detActionPerformed
 
@@ -644,8 +673,8 @@ Connection con = null;
         String vill = v.getSelectedItem().toString();
         String sql = "SELECT SITE_CODE , REGION_GDP from PROJECT WHERE VILLAGE = '"+vill+"';";
         try{
-                stmt=con.createStatement();
-                rs = stmt.executeQuery(sql);
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
                 if (rs.next())
                 {
                     String code = rs.getString("SITE_CODE");
@@ -702,14 +731,6 @@ Connection con = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_gst_noActionPerformed
 
-    private void stActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stActionPerformed
-
-    private void naActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_naActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_naActionPerformed
-
     private void comp_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comp_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comp_nameActionPerformed
@@ -719,6 +740,10 @@ Connection con = null;
     }//GEN-LAST:event_cn2ActionPerformed
 
     private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
+        v_detail.setVisible(false);
+        sub_tender.setVisible(false);
+        com_main.setVisible(false);
+        com_main.setVisible(true);
 
     }//GEN-LAST:event_submit1ActionPerformed
 
@@ -1162,6 +1187,10 @@ Connection con = null;
         } // TODO add your handling code here:
     }//GEN-LAST:event_vMouseClicked
 
+    private void comp_name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comp_name1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comp_name1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1203,6 +1232,7 @@ Connection con = null;
     private javax.swing.JPanel com_main;
     private javax.swing.JLabel com_no;
     private javax.swing.JTextField comp_name;
+    private javax.swing.JTextField comp_name1;
     private javax.swing.JComboBox<String> d;
     private javax.swing.JTextField gst_no;
     private javax.swing.JButton home;
@@ -1210,6 +1240,7 @@ Connection con = null;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
@@ -1223,9 +1254,7 @@ Connection con = null;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton log_out;
-    private javax.swing.JRadioButton na;
     private javax.swing.JComboBox<String> s;
-    private javax.swing.JRadioButton st;
     private javax.swing.JButton sub_ten;
     private javax.swing.JPanel sub_tender;
     private javax.swing.JButton submit;
