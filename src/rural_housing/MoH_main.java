@@ -410,10 +410,12 @@ public class MoH_main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        view_ten.setColumnSelectionAllowed(true);
         view_ten.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         view_ten.getTableHeader().setResizingAllowed(false);
         view_ten.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(view_ten);
+        view_ten.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         if (view_ten.getColumnModel().getColumnCount() > 0) {
             view_ten.getColumnModel().getColumn(0).setResizable(false);
             view_ten.getColumnModel().getColumn(0).setPreferredWidth(10);
@@ -619,7 +621,7 @@ public class MoH_main extends javax.swing.JFrame {
                 .addComponent(submit3)
                 .addGap(32, 32, 32)
                 .addComponent(sp, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(submit4)
                 .addGap(308, 308, 308))
         );
