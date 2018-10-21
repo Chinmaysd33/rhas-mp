@@ -360,8 +360,8 @@ public class login extends javax.swing.JFrame {
                 }              
                 else
                 {
-                    user.setText("");
-                    pass.setText("");
+                    user.setText("Enter Username");
+                    pass.setText("Enter password");
                     JOptionPane.showMessageDialog(null ,"Invalid username or password" );
                 }
             }
