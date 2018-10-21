@@ -418,7 +418,6 @@ conn c = new conn();
         try {
             String query = "SELECT count(*) as s11 from APPLICANTS where Marital_Status ='MARRIED'";
             String query1 = "SELECT count(*) as s12 from APPLICANTS where Marital_Status ='UNMARRIED'";
-            String query2 = "SELECT count(*) as s13 from APPLICANTS where Marital_Status ='DIVORCED'";
             String query3 = "SELECT count(*) as s14 from APPLICANTS where Marital_Status ='WIDOWED'";
 
 	 st=con.createStatement();
@@ -438,14 +437,7 @@ conn c = new conn();
                 
             }
             
-	 st=con.createStatement();
-            rs = st.executeQuery(query2);
-            while(rs.next())
-            {
-               s3 = rs.getInt("s13");
-            }
-
-            
+	    
 	 st=con.createStatement();
             rs = st.executeQuery(query3);
             while(rs.next())
@@ -457,8 +449,7 @@ conn c = new conn();
              DefaultPieDataset result = new DefaultPieDataset();
         result.setValue("Married", s1);
         result.setValue("Un-Married", s2);
-                result.setValue("Divorced", s3);
-        result.setValue("Widowed", s4);
+        result.setValue("Widowed", s3);
             JFreeChart chart = ChartFactory.createPieChart("Applicants based on Marital Status", result, true,
 				true, false);
 		ChartPanel chartPanel = new ChartPanel(chart);
@@ -711,7 +702,6 @@ conn c = new conn();
         try {
             String query = "SELECT count(*) as s11 from APPLICANTS where Marital_Status ='MARRIED' and PROJECT_ID is not null";
             String query1 = "SELECT count(*) as s12 from APPLICANTS where Marital_Status ='UNMARRIED' and PROJECT_ID is not null";
-            String query2 = "SELECT count(*) as s13 from APPLICANTS where Marital_Status ='DIVORCED' and PROJECT_ID is not null";
             String query3 = "SELECT count(*) as s14 from APPLICANTS where Marital_Status ='WIDOWED' and PROJECT_ID is not null";
 
 	 st=con.createStatement();
@@ -732,14 +722,6 @@ conn c = new conn();
             }
             
 	 st=con.createStatement();
-            rs = st.executeQuery(query2);
-            while(rs.next())
-            {
-               s3 = rs.getInt("s13");
-            }
-
-            
-	 st=con.createStatement();
             rs = st.executeQuery(query3);
             while(rs.next())
             {
@@ -750,8 +732,7 @@ conn c = new conn();
              DefaultPieDataset result = new DefaultPieDataset();
         result.setValue("Married", s1);
         result.setValue("Un-Married", s2);
-                result.setValue("Divorced", s3);
-        result.setValue("Widowed", s4);
+        result.setValue("Widowed", s3);
             JFreeChart chart = ChartFactory.createPieChart("Allocation based on Marital Status", result, true,
 				true, false);
 		ChartPanel chartPanel = new ChartPanel(chart);

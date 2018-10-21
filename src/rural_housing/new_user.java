@@ -50,7 +50,7 @@ public class new_user extends javax.swing.JFrame {
         rct.add(type1);
         rct.add(type2);
         rct.add(type3);
-        g_wrong.setVisible(false);
+        g_wrong.setText("");
             dcn.setEnabled(false);
             dcy.setEnabled(false);
             mcn.setEnabled(false);
@@ -1016,7 +1016,7 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_l_nameMouseClicked
 
     private void mMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mMouseClicked
-        g_wrong.setVisible(false);
+        g_wrong.setText("");
         if(!(f_name.getText().matches("[A-Z][a-z]*" )) || (f_name.getText().matches("")))
         {
             m_name.setBackground(Color.RED);
@@ -1042,7 +1042,7 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_mMouseClicked
 
     private void fMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fMouseClicked
-        g_wrong.setVisible(false);
+        g_wrong.setText("");
         if(!(f_name.getText().matches("[A-Z][a-z]*" )) || (f_name.getText().matches("")))
         {
             m_name.setBackground(Color.RED);
@@ -1081,30 +1081,30 @@ public class new_user extends javax.swing.JFrame {
             m_name.setBackground(Color.RED);
             f_name.setBackground(Color.red);
             l_name.setBackground(Color.red);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else if(!(m_name.getText().matches("[A-Z][a-z]*" )) || (m_name.getText().matches("")))
         {
             m_name.setBackground(Color.RED);
             l_name.setBackground(Color.red);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else if(!(l_name.getText().matches("[A-Z][a-z]*" )) || (l_name.getText().matches("")))
         {
             l_name.setBackground(Color.red);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else if(!(g.isSelected(m.getModel())||g.isSelected(f.getModel())))
         {
             l_name.setBackground(Color.green);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else
         {
             m_name.setBackground(Color.GREEN);
             f_name.setBackground(Color.green);
             l_name.setBackground(Color.GREEN);
-            g_wrong.setVisible(false);
+            g_wrong.setText("");
         }
     }//GEN-LAST:event_a_noMouseClicked
 
@@ -1351,7 +1351,7 @@ public class new_user extends javax.swing.JFrame {
         else if(!(g.isSelected(m.getModel())||g.isSelected(f.getModel())))
         {
             a_no.setBackground(Color.red);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else if(!(a_no.getText().matches("[0-9]{12}")))
         {
@@ -1362,7 +1362,7 @@ public class new_user extends javax.swing.JFrame {
             m_name.setBackground(Color.GREEN);
             f_name.setBackground(Color.green);
             l_name.setBackground(Color.GREEN);
-            g_wrong.setVisible(false);
+            g_wrong.setText("");
             a_no.setBackground(Color.green);
         } // TODO add your handling code here:
     }//GEN-LAST:event_c_no1MouseClicked
@@ -1462,7 +1462,7 @@ public class new_user extends javax.swing.JFrame {
         {
             a_no.setBackground(Color.red);
             c_no1.setBackground(Color.red);
-            g_wrong.setVisible(true);
+            g_wrong.setText("Select GENDER");
         }
         else if(!(a_no.getText().matches("[0-9]{12}")))
         {
@@ -1479,7 +1479,7 @@ public class new_user extends javax.swing.JFrame {
             f_name.setBackground(Color.green);
             l_name.setBackground(Color.GREEN);
             c_no1.setBackground(Color.GREEN);
-            g_wrong.setVisible(false);
+            g_wrong.setText("");
             a_no.setBackground(Color.green);
         }
         // TODO add your handling code here:

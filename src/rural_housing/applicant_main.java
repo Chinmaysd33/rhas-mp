@@ -109,7 +109,6 @@ Connection con = null;
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        add_det = new javax.swing.JButton();
         view_det = new javax.swing.JButton();
         home = new javax.swing.JButton();
         log_out = new javax.swing.JButton();
@@ -216,16 +215,6 @@ Connection con = null;
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(320, 580));
 
-        add_det.setBackground(new java.awt.Color(0, 204, 204));
-        add_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        add_det.setMnemonic('U');
-        add_det.setText("Update Details");
-        add_det.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_detActionPerformed(evt);
-            }
-        });
-
         view_det.setBackground(new java.awt.Color(0, 204, 204));
         view_det.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         view_det.setMnemonic('V');
@@ -271,9 +260,7 @@ Connection con = null;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(view_det, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(add_det, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(view_det, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,9 +273,7 @@ Connection con = null;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(add_det)
-                .addGap(51, 51, 51)
+                .addGap(110, 110, 110)
                 .addComponent(view_det)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
                 .addComponent(home)
@@ -918,109 +903,6 @@ Connection con = null;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void add_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_detActionPerformed
- view1.setVisible(false);
-    app_home.setVisible(false);     // TODO add your handling code here:
-    view.setVisible(false);
-   doc1.setVisible(true);
-   
-    conn c = new conn();
-    con=c.getconn();
-   
-   String mc_pass="NOT APPLICABLE",rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass="NOT APPLICABLE";
-        String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
-        try
-        {
-                st = con.createStatement();
-                rs = st.executeQuery(q2);
-              
-                while(rs.next()) 
-                { 
-                    ac_pass = (rs.getString("aadhar_copy"));
-                    bc_pass = (rs.getString("birth_cert_copy"));
-                    ic_pass = (rs.getString("income_cert_copy")); 
-                    rc_pass = (rs.getString("ration_copy"));
-                    mc_pass = (rs.getString("marriage_copy"));
-                    dc_pass = (rs.getString("death_copy"));  
-                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
-    
-                    if(ac_pass.equalsIgnoreCase("YES"))
-                    {
-                       acy2.setSelected(true);
-                       System.out.print("acy2");
-                    }
-                    else
-                    {
-                       acn2.setSelected(true);
-                       System.out.print("acn2");
-                    }
-                    if(bc_pass.equalsIgnoreCase("YES"))
-                    {
-                        bcy2.setSelected(true);
-                                   System.out.print("bcy2");
-                    }
-                    else
-                    {
-                       bcn2.setSelected(true);
-                                  System.out.print("bcn2");
-                    }
-                    if(ic_pass.equalsIgnoreCase("YES"))
-                    {
-                        icy2.setSelected(true);
-                    }
-                    else
-                    {
-                       icn2.setSelected(true);
-                    }
-                    if(rc_pass.equalsIgnoreCase("YES"))
-                    {
-                        rcy2.setSelected(true);
-                    }
-                    else
-                    {
-                       rcn2.setSelected(true);
-                    }
-                    if(mc_pass .equalsIgnoreCase("YES"))
-                    {
-                        mcn2.setSelected(true);
-                    }
-                    else if(mc_pass.equalsIgnoreCase("NO"))
-                    {
-                       mcn2.setSelected(true);
-                    }
-                    else
-                    {
-                        mcn2.setEnabled(false);
-                        mcy2.setEnabled(false); 
-                        mcn2.setSelected(false);
-                        mcy2.setSelected(false);
-                    }
-                    if(dc_pass.equalsIgnoreCase("YES"))
-                    {
-                        dcy2.setSelected(true);
-                    }
-                    else if(dc_pass.equalsIgnoreCase("NO"))
-                    {
-                       dcn2.setSelected(true);
-                    }
-                    else
-                    {
-                        dcn2.setEnabled(false);
-                        dcy2.setEnabled(false);   
-                    dcn2.setSelected(false);
-                        dcy2.setSelected(false);
-                    
-                    }
-                }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-        
-    
-    }//GEN-LAST:event_add_detActionPerformed
-
     private void view_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_detActionPerformed
    doc1.setVisible(false);
     app_home.setVisible(false);
@@ -1306,7 +1188,6 @@ Connection con = null;
     private javax.swing.ButtonGroup ac;
     private javax.swing.JRadioButton acn2;
     private javax.swing.JRadioButton acy2;
-    private javax.swing.JButton add_det;
     private javax.swing.JTextField age1;
     private javax.swing.JPanel app_home;
     private javax.swing.JLabel app_no;

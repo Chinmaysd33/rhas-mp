@@ -726,6 +726,11 @@ Connection con = null;
         dt1.setMinimumSize(new java.awt.Dimension(127, 32));
         dt1.setName(""); // NOI18N
         dt1.setPreferredSize(new java.awt.Dimension(127, 32));
+        dt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dt1ActionPerformed(evt);
+            }
+        });
 
         tt1.setEditable(false);
         tt1.setBackground(new java.awt.Color(0, 204, 204));
@@ -825,7 +830,7 @@ Connection con = null;
         app_flats1Layout.setHorizontalGroup(
             app_flats1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(132, 132, 132)
                 .addComponent(dt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131)
                 .addComponent(tt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -926,7 +931,28 @@ Connection con = null;
         cpr.setVisible(true);
         csmc_home.setVisible(false);
         app_flats.setVisible(false);
-        // TODO add your handling code here:
+    p4.removeAllItems();
+     conn c = new conn();
+        con=c.getconn();
+           System.out.println(csmc_no.getText().toString());
+        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText().toString()+"'";
+        try{
+            st=con.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next())
+            {
+                String pp = rs.getString("SITE_CODE");
+                System.out.println(pp);
+                p4.addItem(pp);
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+
+// TODO add your handling code here:
     }//GEN-LAST:event_prj_repActionPerformed
 
     private void appt_saActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appt_saActionPerformed
@@ -1090,46 +1116,55 @@ Connection con = null;
     }//GEN-LAST:event_submit4ActionPerformed
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-     app_flats.setVisible(true);
-        DefaultTableModel model = (DefaultTableModel) flat.getModel();
-        model.setRowCount(0);
-
+System.out.print("IN Submit");
+        app_flats1.setVisible(true);        
+     DefaultTableModel model2 = (DefaultTableModel) flat.getModel();
+        model2.setRowCount(0);
+        String vs=p2.getSelectedItem().toString();
         conn c = new conn();
+        System.out.print(vs);
         con=c.getconn();
 
-        
-        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE = '"+p1.getSelectedItem().toString()+"'";
-        try{
-            String dts="District";
-            String vts="Village";
-            String tts="Taluka";
+            String dt11="District";
+            String vt11="Village";
+            String tt11="Taluka";
             int flo=0;
             int fla=0;
-            st=con.createStatement();
-            rs = st.executeQuery(sql1);
+        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE=? ";
+        try{
+            System.out.print("IN Submit2");
+            pst = con.prepareStatement(sql1);
+            pst.setString(1, vs);
+            rs=pst.executeQuery();
             while(rs.next())
             {
-                dts = rs.getString("DISTRICT");
-                vts = rs.getString("TALUKA");
-                tts = rs.getString("VILLAGE");
+                System.out.print("IN Submit3");
+                dt11 = rs.getString("DISTRICT");
+                tt11 = rs.getString("TALUKA");
+                vt11 = rs.getString("VILLAGE");
                 flo = rs.getInt("Floor");
-                fla = rs.getInt("Flats");;
-            }
-            dt.setText(dts);
-            vt.setText(vts);
-            tt.setText(tts);
+                fla = rs.getInt("Flats");
+                System.out.print(dt11);
+                System.out.print(vt11);
+                System.out.print(tt11);
+                System.out.print(flo);
+                System.out.print(fla);
             
-            Object[] o =  { flo , fla};
-            model.addRow(o);
-                            
+            }
+           dt1.setText(dt11);
+            vt1.setText(vt11);
+            tt1.setText(tt11);
+            
+            Object[] o =  { fla , flo};
+            model2.addRow(o);             
         }
         catch (Exception e)
-        {
+        {System.out.print("IN Submit4");
             JOptionPane.showMessageDialog(null, e);
         }
-        
-        p2.removeAllItems();
-        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
+        System.out.print("out Submit");
+     /*   p2.removeAllItems();
+        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql);
@@ -1143,7 +1178,7 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-             // TODO add your handling code here:
+             // TODO add your handling code here:*/
     }//GEN-LAST:event_submit3ActionPerformed
 
     private void submit7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit7ActionPerformed
@@ -1210,6 +1245,10 @@ p2.removeAllItems();
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void dt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dt1ActionPerformed
 
     /**
      * @param args the command line arguments

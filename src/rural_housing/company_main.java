@@ -22,14 +22,17 @@ import javax.swing.table.DefaultTableModel;
 public class company_main extends javax.swing.JFrame {
 Connection con = null;
     ResultSet rs = null;
+     ResultSet rs1 = null;
     PreparedStatement pst = null;
      PreparedStatement pst1 = null;
     Statement st=null;
+    Statement st1=null;
     /**
      * Creates new form company_main
      */
     public company_main() {
         initComponents();
+         view_ten.setVisible(false);
         v_detail.setVisible(false);
         sub_tender.setVisible(false);
         com_main.setVisible(false);
@@ -43,6 +46,7 @@ Connection con = null;
     
     public company_main(String abc) {
         initComponents();
+         view_ten.setVisible(false);
         v_detail.setVisible(false);
         sub_tender.setVisible(false);
         com_main.setVisible(false);
@@ -72,6 +76,7 @@ Connection con = null;
         log_out = new javax.swing.JButton();
         sub_ten = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
+        view_det1 = new javax.swing.JButton();
         com_main = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -103,6 +108,11 @@ Connection con = null;
         viewproj = new javax.swing.JScrollPane();
         view_proj = new javax.swing.JTable();
         submit2 = new javax.swing.JButton();
+        view_ten = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        submit4 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        see_tender = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 960));
@@ -178,10 +188,24 @@ Connection con = null;
         jLabel17.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel17.setText("Company Login");
 
+        view_det1.setBackground(new java.awt.Color(0, 204, 204));
+        view_det1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        view_det1.setMnemonic('A');
+        view_det1.setText("View Available Tenders");
+        view_det1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                view_det1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jLabel17)
+                .addContainerGap(46, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,21 +218,20 @@ Connection con = null;
                         .addGap(82, 82, 82))
                     .addComponent(sub_ten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel17)
-                .addContainerGap(46, Short.MAX_VALUE))
+            .addComponent(view_det1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88)
+                .addGap(38, 38, 38)
                 .addComponent(view_det)
-                .addGap(51, 51, 51)
+                .addGap(39, 39, 39)
+                .addComponent(view_det1)
+                .addGap(38, 38, 38)
                 .addComponent(sub_ten)
-                .addGap(108, 108, 108)
+                .addGap(104, 104, 104)
                 .addComponent(home)
                 .addGap(50, 50, 50)
                 .addComponent(log_out)
@@ -609,11 +632,99 @@ Connection con = null;
 
         getContentPane().add(sub_tender, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 860, -1));
 
+        view_ten.setBackground(new java.awt.Color(0, 153, 153));
+        view_ten.setMaximumSize(new java.awt.Dimension(870, 780));
+        view_ten.setMinimumSize(new java.awt.Dimension(870, 580));
+
+        jLabel20.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        jLabel20.setText("View Available Tender");
+
+        submit4.setBackground(new java.awt.Color(0, 153, 153));
+        submit4.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        submit4.setMnemonic('S');
+        submit4.setText("SUBMIT");
+        submit4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit4ActionPerformed(evt);
+            }
+        });
+
+        see_tender.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Project id", "State", "District", "Taluka", "Village", "Min Budget", "Start date", "End Date"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(see_tender);
+        if (see_tender.getColumnModel().getColumnCount() > 0) {
+            see_tender.getColumnModel().getColumn(0).setResizable(false);
+            see_tender.getColumnModel().getColumn(1).setResizable(false);
+            see_tender.getColumnModel().getColumn(2).setResizable(false);
+            see_tender.getColumnModel().getColumn(3).setResizable(false);
+            see_tender.getColumnModel().getColumn(4).setResizable(false);
+            see_tender.getColumnModel().getColumn(5).setResizable(false);
+            see_tender.getColumnModel().getColumn(6).setResizable(false);
+            see_tender.getColumnModel().getColumn(7).setResizable(false);
+        }
+
+        javax.swing.GroupLayout view_tenLayout = new javax.swing.GroupLayout(view_ten);
+        view_ten.setLayout(view_tenLayout);
+        view_tenLayout.setHorizontalGroup(
+            view_tenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view_tenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(218, 218, 218))
+            .addGroup(view_tenLayout.createSequentialGroup()
+                .addGroup(view_tenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(view_tenLayout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(submit4))
+                    .addGroup(view_tenLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        view_tenLayout.setVerticalGroup(
+            view_tenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(view_tenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(210, 210, 210)
+                .addComponent(submit4)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(view_ten, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 860, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_detActionPerformed
         v_detail.setVisible(false);
+         view_ten.setVisible(false);
         sub_tender.setVisible(false);
         com_main.setVisible(false);
         v_detail.setVisible(true);
@@ -640,6 +751,7 @@ Connection con = null;
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         v_detail.setVisible(false);
+         view_ten.setVisible(false);
         sub_tender.setVisible(false);
         com_main.setVisible(false);
         com_main.setVisible(true);
@@ -656,6 +768,7 @@ Connection con = null;
     private void sub_tenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sub_tenActionPerformed
         v_detail.setVisible(false);
         sub_tender.setVisible(false);
+         view_ten.setVisible(false);
         com_main.setVisible(false);  
         sub_tender.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_sub_tenActionPerformed
@@ -743,6 +856,7 @@ Connection con = null;
         v_detail.setVisible(false);
         sub_tender.setVisible(false);
         com_main.setVisible(false);
+         view_ten.setVisible(false);
         com_main.setVisible(true);
 
     }//GEN-LAST:event_submit1ActionPerformed
@@ -921,15 +1035,57 @@ Connection con = null;
     }//GEN-LAST:event_tItemStateChanged
 
     private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
+        conn c = new conn();
+        con=c.getconn();
+        int status=0,work=0;
+        String arrange=null;
+        String ne = "Select count(*) as no from PROJECT where COMPANY_CODE='"+com_no.getText().toString()+"'";
+        try
+        {
+            pst1 = con.prepareStatement(ne);
+            rs = pst1.executeQuery();
+            while(rs.next())
+            {
+                work=rs.getInt("no");
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        String stat = "Select status from COMPANY where Company_ID='"+com_no.getText().toString()+"'";
+        try
+        {
+            pst1 = con.prepareStatement(stat);
+            rs = pst1.executeQuery();
+            while(rs.next())
+            {
+                arrange=rs.getString("status");
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+                    
+        if(arrange.equalsIgnoreCase("national"))
+        {
+            status=5;
+        }
+        else if(arrange.equalsIgnoreCase("state"))
+        {
+            status=3;
+        }
+        
         Boolean chked = Boolean.valueOf(view_proj.getValueAt(0, 0).toString());
         String dataCol1 = view_proj.getValueAt(0, 1).toString();
         
         if (chked)
         {
-        try
+            if(work<status)
+            {
+                try
         {
-            conn c = new conn();
-            con=c.getconn();
             String a  = com_no.getText();
             String chk = "SELECT * FROM TENDER WHERE com = '"+a+"' AND project = '"+dataCol1+"'";
             pst1 = con.prepareStatement(chk);
@@ -985,6 +1141,18 @@ Connection con = null;
             {
                 Logger.getLogger(company_main.class.getName()).log(Level.SEVERE,null, ex);
             } 
+        }
+           else
+            {
+                    JOptionPane.showMessageDialog(null, "Maximum no of tender submitted or project alloted as per status"); 
+                    v_detail.setVisible(false);
+                    sub_tender.setVisible(false);
+                    com_main.setVisible(false);
+                    submit2.setVisible(false);
+                    viewproj.setVisible(false);
+                    com_main.setVisible(true);          
+                
+            }
         }
     }//GEN-LAST:event_submit2ActionPerformed
 
@@ -1191,6 +1359,64 @@ Connection con = null;
         // TODO add your handling code here:
     }//GEN-LAST:event_comp_name1ActionPerformed
 
+    private void view_det1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_det1ActionPerformed
+  v_detail.setVisible(false);
+        sub_tender.setVisible(false);
+        com_main.setVisible(false);
+         submit2.setVisible(false);
+        viewproj.setVisible(false);
+             
+        view_ten.setVisible(true);
+        DefaultTableModel model1 = (DefaultTableModel) see_tender.getModel();
+        model1.setRowCount(0);
+        conn c = new conn();
+        con=c.getconn();
+        String sql = "SELECT SITE_CODE,Start_Date,End_date,quot from Tender_by_moh ";
+        
+        try{
+            String t1=null,t2=null,t3=null,t4=null,t5=null,t6=null,t7=null,t8=null;
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("SITE_CODE");
+                     t2 = rs.getString("Start_Date");
+                     t3 = rs.getString("End_Date");
+                     t4 = rs.getString("quot");
+                          String sql1 = "SELECT STATE,DISTRICT,TALUKA,VILLAGE from PROJECT where SITE_CODE = '"+t1+"'";
+                    try{
+                        st1=con.createStatement();
+                        rs1 = st1.executeQuery(sql1);
+                        if(rs1.next())
+                        {
+                         t5 = rs1.getString("STATE");
+                         t6 = rs1.getString("DISTRICT");   
+                         t7 = rs1.getString("TALUKA");
+                         t8 = rs1.getString("VILLAGE");
+
+                        }
+                    }
+                  catch (Exception e)
+                    {
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                    Object[] o =  { t1,t5,t6,t7,t8,t4,t2,t3};     
+                    model1.addRow(o);                 
+                }
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_view_det1ActionPerformed
+
+    private void submit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submit4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1244,6 +1470,7 @@ Connection con = null;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1253,18 +1480,23 @@ Connection con = null;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton log_out;
     private javax.swing.JComboBox<String> s;
+    private javax.swing.JTable see_tender;
     private javax.swing.JButton sub_ten;
     private javax.swing.JPanel sub_tender;
     private javax.swing.JButton submit;
     private javax.swing.JButton submit1;
     private javax.swing.JButton submit2;
+    private javax.swing.JButton submit4;
     private javax.swing.JComboBox<String> t;
     private javax.swing.JComboBox<String> v;
     private javax.swing.JPanel v_detail;
     private javax.swing.JButton view_det;
+    private javax.swing.JButton view_det1;
     private javax.swing.JTable view_proj;
+    private javax.swing.JPanel view_ten;
     private javax.swing.JScrollPane viewproj;
     // End of variables declaration//GEN-END:variables
 }

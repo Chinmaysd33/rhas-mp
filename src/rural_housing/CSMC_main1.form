@@ -1151,7 +1151,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="dt1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                       <Component id="tt1" min="-2" max="-2" attributes="0"/>
@@ -1217,6 +1217,9 @@
                   <Dimension value="[127, 32]"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dt1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="tt1">
               <Properties>
