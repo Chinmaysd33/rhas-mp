@@ -34,26 +34,9 @@ Connection con = null;
         con=c.getconn();
     
         initComponents();
-   doc1.setVisible(false);
+ 
     view.setVisible(false);
     app_home.setVisible(true);
-        ac.add(acy2);
-        ac.add(acn2);
-        bc.add(bcy2);
-        bc.add(bcn2);
-        ic.add(icy2);
-        ic.add(icn2);
-        rc.add(rcy2);
-        rc.add(rcy2);
-        mc.add(dcy2);
-        mc.add(mcn2);
-        dc.add(dcy2);
-        dc.add(dcn2);
-        
-            dcn2.setEnabled(false);
-            dcy2.setEnabled(false);
-            mcn2.setEnabled(false);
-            mcy2.setEnabled(false);
     view1.setVisible(false);
     }
 
@@ -64,30 +47,24 @@ Connection con = null;
     app_no.setText(abc);
     app_no1.setText(abc);
     app_no2.setText(abc);
-     app_no3.setText(abc);
-   doc1.setVisible(false);
     view.setVisible(false);
     view1.setVisible(false);
     app_home.setVisible(true);
     
-    ac.add(acy2);
-        ac.add(acn2);
-        bc.add(bcy2);
-        bc.add(bcn2);
-        ic.add(icy2);
-        ic.add(icn2);
-        rc.add(rcy2);
-        rc.add(rcn2);
-        mc.add(mcy2);
-        mc.add(mcn2);
-        dc.add(dcy2);
-        dc.add(dcn2);
-        
-            dcn2.setEnabled(true);
-            dcy2.setEnabled(true);
-            mcn2.setEnabled(true);
-            mcy2.setEnabled(true);
-         
+        String s3 = " SELECT PROJECT_ID FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        try
+        {
+            pst = con.prepareStatement(s3);
+            rs = pst.executeQuery();
+            while (rs.next()) 
+            {
+                String s2 = rs.getString(1);
+               if(!(s2.equalsIgnoreCase("NULL")))
+               {
+                   JOptionPane.showMessageDialog(this,"You have been alloted flat","Congratulations!!!", JOptionPane.INFORMATION_MESSAGE);
+               }    
+            }
+    }catch(Exception e){e.printStackTrace();}     
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -149,39 +126,6 @@ Connection con = null;
         age1 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         inc2 = new javax.swing.JTextField();
-        doc1 = new javax.swing.JPanel();
-        jLabel66 = new javax.swing.JLabel();
-        jLabel67 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
-        acy2 = new javax.swing.JRadioButton();
-        acn2 = new javax.swing.JRadioButton();
-        jLabel70 = new javax.swing.JLabel();
-        dcy2 = new javax.swing.JRadioButton();
-        mcn2 = new javax.swing.JRadioButton();
-        jLabel71 = new javax.swing.JLabel();
-        bcy2 = new javax.swing.JRadioButton();
-        bcn2 = new javax.swing.JRadioButton();
-        jLabel72 = new javax.swing.JLabel();
-        icy2 = new javax.swing.JRadioButton();
-        icn2 = new javax.swing.JRadioButton();
-        jLabel73 = new javax.swing.JLabel();
-        submit2 = new javax.swing.JButton();
-        jLabel74 = new javax.swing.JLabel();
-        rcy2 = new javax.swing.JRadioButton();
-        rcn2 = new javax.swing.JRadioButton();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        mcy2 = new javax.swing.JRadioButton();
-        dcn2 = new javax.swing.JRadioButton();
-        app_no3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 760));
@@ -644,267 +588,10 @@ Connection con = null;
 
         getContentPane().add(view1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
 
-        doc1.setBackground(new java.awt.Color(0, 153, 153));
-        doc1.setMaximumSize(new java.awt.Dimension(880, 780));
-        doc1.setMinimumSize(new java.awt.Dimension(880, 780));
-        doc1.setPreferredSize(new java.awt.Dimension(880, 780));
-        doc1.setRequestFocusEnabled(false);
-
-        jLabel66.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel66.setText("Applicant Document List");
-
-        jLabel67.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel67.setText("Aadhar Card");
-
-        jLabel68.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
-        jLabel68.setText("Status");
-
-        jLabel69.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
-        jLabel69.setText("Document Name");
-
-        acy2.setBackground(new java.awt.Color(0, 153, 153));
-        acy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        acy2.setText("Submitted");
-
-        acn2.setBackground(new java.awt.Color(0, 153, 153));
-        acn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        acn2.setText("Not Submitted");
-
-        jLabel70.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel70.setText("Marriage Certificate");
-
-        dcy2.setBackground(new java.awt.Color(0, 153, 153));
-        dcy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        dcy2.setText("Submitted");
-
-        mcn2.setBackground(new java.awt.Color(0, 153, 153));
-        mcn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        mcn2.setText("Not Submitted");
-
-        jLabel71.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel71.setText("Birth Certificate");
-
-        bcy2.setBackground(new java.awt.Color(0, 153, 153));
-        bcy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        bcy2.setText("Submitted");
-
-        bcn2.setBackground(new java.awt.Color(0, 153, 153));
-        bcn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        bcn2.setText("Not Submitted");
-
-        jLabel72.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel72.setText("Income Certificate");
-
-        icy2.setBackground(new java.awt.Color(0, 153, 153));
-        icy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        icy2.setText("Submitted");
-
-        icn2.setBackground(new java.awt.Color(0, 153, 153));
-        icn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        icn2.setText("Not Submitted");
-
-        jLabel73.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel73.setText("(if applicable)");
-
-        submit2.setBackground(new java.awt.Color(0, 153, 153));
-        submit2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        submit2.setMnemonic('S');
-        submit2.setText("SUBMIT");
-        submit2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submit2ActionPerformed(evt);
-            }
-        });
-
-        jLabel74.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel74.setText("Ration Card ");
-
-        rcy2.setBackground(new java.awt.Color(0, 153, 153));
-        rcy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        rcy2.setText("Submitted");
-
-        rcn2.setBackground(new java.awt.Color(0, 153, 153));
-        rcn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        rcn2.setText("Not Submitted");
-
-        jLabel75.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel75.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel75.setText("*");
-
-        jLabel76.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel76.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel76.setText("*");
-
-        jLabel77.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel77.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel77.setText("*");
-
-        jLabel78.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel78.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel78.setText("*");
-
-        jLabel79.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel79.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel79.setText("*");
-
-        jLabel80.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel80.setText(" are Compulsory.");
-
-        jLabel81.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel81.setText("Note - Documents marked with ");
-
-        jLabel82.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel82.setText("Death Certificate");
-
-        jLabel83.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel83.setText("(for widowed applicant only)");
-
-        mcy2.setBackground(new java.awt.Color(0, 153, 153));
-        mcy2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        mcy2.setText("Submitted");
-
-        dcn2.setBackground(new java.awt.Color(0, 153, 153));
-        dcn2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        dcn2.setText("Not Submitted");
-
-        app_no3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        app_no3.setText("Label");
-
-        javax.swing.GroupLayout doc1Layout = new javax.swing.GroupLayout(doc1);
-        doc1.setLayout(doc1Layout);
-        doc1Layout.setHorizontalGroup(
-            doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(doc1Layout.createSequentialGroup()
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(doc1Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel82)
-                            .addComponent(jLabel70)
-                            .addGroup(doc1Layout.createSequentialGroup()
-                                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel74)
-                                    .addComponent(jLabel73)
-                                    .addComponent(jLabel67)
-                                    .addComponent(jLabel71)
-                                    .addComponent(jLabel72))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel75)
-                                    .addComponent(jLabel78)
-                                    .addComponent(jLabel77)
-                                    .addComponent(jLabel76)))
-                            .addComponent(jLabel83)
-                            .addComponent(jLabel69))
-                        .addGap(60, 60, 60)
-                        .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel68)
-                            .addGroup(doc1Layout.createSequentialGroup()
-                                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(acy2)
-                                    .addComponent(dcy2)
-                                    .addComponent(bcy2)
-                                    .addComponent(icy2)
-                                    .addComponent(rcy2)
-                                    .addComponent(mcy2))
-                                .addGap(46, 46, 46)
-                                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rcn2)
-                                    .addComponent(icn2)
-                                    .addComponent(mcn2)
-                                    .addComponent(acn2)
-                                    .addComponent(bcn2)
-                                    .addComponent(dcn2)))))
-                    .addGroup(doc1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(app_no3)
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel66))
-                    .addGroup(doc1Layout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(jLabel81)
-                        .addGap(0, 0, 0)
-                        .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submit2)
-                            .addGroup(doc1Layout.createSequentialGroup()
-                                .addComponent(jLabel79)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel80)))))
-                .addContainerGap(41, Short.MAX_VALUE))
-        );
-        doc1Layout.setVerticalGroup(
-            doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(doc1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(app_no3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel66, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel69)
-                    .addComponent(jLabel68))
-                .addGap(7, 7, 7)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(acn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(acy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel75))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(bcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bcn2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, doc1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel76, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(icy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(icn2)
-                    .addComponent(jLabel77))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rcn2))
-                    .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel74)
-                        .addComponent(jLabel78)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(mcn2)
-                        .addComponent(mcy2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel73)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcy2)
-                    .addComponent(dcn2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel83)
-                .addGap(71, 71, 71)
-                .addComponent(submit2)
-                .addGap(39, 39, 39)
-                .addGroup(doc1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel79)
-                    .addComponent(jLabel80)
-                    .addComponent(jLabel81))
-                .addGap(170, 170, 170))
-        );
-
-        getContentPane().add(doc1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void view_detActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_detActionPerformed
-   doc1.setVisible(false);
     app_home.setVisible(false);
     view1.setVisible(false);
     view.setVisible(false);
@@ -914,7 +601,6 @@ Connection con = null;
     }//GEN-LAST:event_view_detActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-   doc1.setVisible(false);
     app_home.setVisible(true);
     view1.setVisible(false);
     view.setVisible(false);
@@ -931,7 +617,6 @@ Connection con = null;
     }//GEN-LAST:event_log_outActionPerformed
 
     private void view_mainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_mainActionPerformed
-        doc1.setVisible(false);
         app_home.setVisible(false);
         view.setVisible(false);
          view1.setVisible(true);
@@ -998,7 +683,6 @@ Connection con = null;
     
     
     private void view_subActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_view_subActionPerformed
-         doc1.setVisible(false);
     app_home.setVisible(false);
         view.setVisible(false);
         view1.setVisible(true);   
@@ -1057,96 +741,6 @@ Connection con = null;
          
         // TODO add your handling code here:
     }//GEN-LAST:event_view_subActionPerformed
-
-    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
-          conn c = new conn();
-        con=c.getconn();
-
-        String valid="true";
-        String mc_pass=null,rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass=null,user_no = app_no.getText();
-       
-        
-        mc_pass="NOT APPLICABLE";
-        dc_pass="NOT APPLICABLE";
-        
-            if(mcy2.isSelected())
-            {
-                mc_pass = "YES";
-            }
-            else if(mcn2.isSelected())
-            {
-                mc_pass = "NO";
-            }
-        
-            if(dcy2.isSelected())
-            {
-                dc_pass = "YES";
-            }
-            else if(dcn2.isSelected())
-            {
-                dc_pass = "NO";
-            }
-        
-        if(acy2.isSelected())
-        {
-            ac_pass = "YES";
-        }
-        else
-        {
-            ac_pass = "NO";
-        }
-
-        if(bcy2.isSelected())
-        {
-            bc_pass = "YES";
-        }
-        else
-        {
-            bc_pass = "NO";
-        }
-        if(icy2.isSelected())
-        {
-            ic_pass = "YES";
-        }
-        else
-        {
-            ic_pass = "NO";
-        }
-
-        if(rcy2.isSelected())
-        {
-            rc_pass = "YES";
-        }
-        else
-        {
-            rc_pass = "NO";
-        }
-        
-        String q2 = "update APPL_DOCS_SUBMIT set aadhar_copy=?,birth_cert_copy=?,income_cert_copy=?,ration_copy=?,marriage_copy=?,death_copy=? WHERE appl_num=?  ";
-        try
-        {
-            pst = con.prepareStatement(q2);
-
-            pst.setObject(1,ac_pass);
-            pst.setString(2,bc_pass);
-            pst.setString(3,ic_pass);
-            pst.setString(4,rc_pass);
-            pst.setString(5, mc_pass);
-            pst.setString(6, dc_pass);
-            pst.setString(7,user_no);
-
-            pst.execute();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e); 
-        }
-        doc1.setVisible(false);
-    view.setVisible(false);
-    app_home.setVisible(true);
-  
-
-    }//GEN-LAST:event_submit2ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1186,31 +780,21 @@ Connection con = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField a_no1;
     private javax.swing.ButtonGroup ac;
-    private javax.swing.JRadioButton acn2;
-    private javax.swing.JRadioButton acy2;
     private javax.swing.JTextField age1;
     private javax.swing.JPanel app_home;
     private javax.swing.JLabel app_no;
     private javax.swing.JLabel app_no1;
     private javax.swing.JLabel app_no2;
-    private javax.swing.JLabel app_no3;
     private javax.swing.ButtonGroup bc;
-    private javax.swing.JRadioButton bcn2;
-    private javax.swing.JRadioButton bcy2;
     private javax.swing.JTextField c_no;
     private javax.swing.JTextField d2;
     private javax.swing.ButtonGroup dc;
-    private javax.swing.JRadioButton dcn2;
-    private javax.swing.JRadioButton dcy2;
     private javax.swing.JTextField dob1;
-    private javax.swing.JPanel doc1;
     private javax.swing.JTextField f_name2;
     private javax.swing.ButtonGroup g;
     private javax.swing.JTextField gen1;
     private javax.swing.JButton home;
     private javax.swing.ButtonGroup ic;
-    private javax.swing.JRadioButton icn2;
-    private javax.swing.JRadioButton icy2;
     private javax.swing.JTextField inc1;
     private javax.swing.JTextField inc2;
     private javax.swing.JLabel jLabel1;
@@ -1228,39 +812,16 @@ Connection con = null;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField l_name2;
     private javax.swing.JButton log_out;
     private javax.swing.JTextField m_name2;
     private javax.swing.ButtonGroup mc;
-    private javax.swing.JRadioButton mcn2;
-    private javax.swing.JRadioButton mcy2;
     private javax.swing.ButtonGroup ms;
     private javax.swing.JTextField ms2;
     private javax.swing.ButtonGroup rc;
-    private javax.swing.JRadioButton rcn2;
-    private javax.swing.JRadioButton rcy2;
     private javax.swing.JTextField s2;
-    private javax.swing.JButton submit2;
     private javax.swing.JTextField t2;
     private javax.swing.JTextField v2;
     private javax.swing.JPanel view;

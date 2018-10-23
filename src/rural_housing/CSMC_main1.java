@@ -618,9 +618,9 @@ Connection con = null;
         suaLayout.setHorizontalGroup(
             suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(suaLayout.createSequentialGroup()
-                .addGap(112, 112, 112)
+                .addGap(114, 114, 114)
                 .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129)
+                .addGap(127, 127, 127)
                 .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -637,20 +637,16 @@ Connection con = null;
         suaLayout.setVerticalGroup(
             suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(suaLayout.createSequentialGroup()
-                .addGroup(suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(suaLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(suaLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(46, 46, 46)
+                .addGroup(suaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(spsa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(submit4)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout app_sua1Layout = new javax.swing.GroupLayout(app_sua1);
@@ -684,8 +680,9 @@ Connection con = null;
                     .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submit5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(sua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(sua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         getContentPane().add(app_sua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
@@ -755,14 +752,14 @@ Connection con = null;
 
             },
             new String [] {
-                "Appoint", "Applicant_ID", "Name", "Gender", "Marital Status", "Income", "Income Group"
+                "Appoint", "Applicant_ID", "Name", "Gender", "Marital Status", "Income", "Income Group", "Age"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -783,6 +780,7 @@ Connection con = null;
             sa1.getColumnModel().getColumn(4).setResizable(false);
             sa1.getColumnModel().getColumn(5).setResizable(false);
             sa1.getColumnModel().getColumn(6).setResizable(false);
+            sa1.getColumnModel().getColumn(7).setResizable(false);
         }
 
         submit7.setBackground(new java.awt.Color(0, 153, 153));
@@ -837,9 +835,7 @@ Connection con = null;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(vt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, app_flats1Layout.createSequentialGroup()
-                .addComponent(spsa1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(spsa1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
             .addGroup(app_flats1Layout.createSequentialGroup()
                 .addGap(367, 367, 367)
                 .addComponent(submit7)
@@ -1012,7 +1008,7 @@ Connection con = null;
 
     
     private void submit5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit5ActionPerformed
-        app_sua1.setVisible(false);
+        app_sua1.setVisible(true);
         cpr.setVisible(false);
         app_flats.setVisible(false);
         csmc_home.setVisible(false);
@@ -1048,7 +1044,8 @@ Connection con = null;
             JOptionPane.showMessageDialog(null, e);
         }
 
-        String sql = "SELECT Employee_ID,First_name,Middle_name,Last_name,Gender FROM SURVEY_AGENT WHERE Employee_ID NOT IN (SELECT Agent_ID FROM Applicants) ";
+        String sql = "select s.Employee_ID , s.First_name,s.Middle_name,s.Last_name,s.Gender from SURVEY_AGENT s LEFT JOIN PROJECT p ON s.Employee_ID=p.SURVEY_AGENT_CODE where p.SURVEY_AGENT_CODE is null and CSMC_ID='"+csmc_no.getText()+"' ";
+          
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql);
@@ -1060,7 +1057,7 @@ Connection con = null;
                 String lf_name = rs.getString("Last_name");
                 String g2 = rs.getString("Gender");
 
-                Object[] o =  { null , id1 , sf_name+mf_name+lf_name ,g2};
+                Object[] o =  { null , id1 , sf_name+" "+mf_name+" "+lf_name ,g2};
                 model.addRow(o);
 
             }
@@ -1085,7 +1082,7 @@ Connection con = null;
 
         conn c = new conn();
         con=c.getconn();
-        String sql = "update PROJECT SET SURVEY_AGENT_CODE = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
+        String sql = "update PROJECT SET SURVEY_AGENT_CODE = ? WHERE  SITE_CODE = '"+ p1.getSelectedItem().toString()+"'";
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1,dataCol1 );
@@ -1095,7 +1092,7 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-        String sql1 = "update APPLICANTS SET Agent_ID = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
+        String sql1 = "update APPLICANTS SET Agent_ID = ? WHERE  VILLAGE = (select VILLAGE FROM PROJECT WHERE  SITE_CODE = '"+ p1.getSelectedItem().toString()+"' )";
         try{
             pst = con.prepareStatement(sql1);
             pst.setString(1,dataCol1 );
@@ -1105,21 +1102,42 @@ Connection con = null;
         {
             JOptionPane.showMessageDialog(null, e);
         }
-
-        app_sua1.setVisible(false);
+ p1.removeAllItems();
+                String sql2="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
+        try{
+            st=con.createStatement();
+            rs = st.executeQuery(sql2);
+            while(rs.next())
+            {
+                String pp = rs.getString("SITE_CODE");
+                p1.addItem(pp);
+            }
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+         DefaultTableModel model = (DefaultTableModel) sa.getModel();
+        model.setRowCount(0);
+        dt.setText("");
+        vt.setText("");
+        tt.setText("");
+        
+        app_sua1.setVisible(true);
         cpr.setVisible(false);
         app_flats.setVisible(false);
         csmc_home.setVisible(false);
         app_flats1.setVisible(false);
-        sua.setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_submit4ActionPerformed
 
     private void submit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit3ActionPerformed
-System.out.print("IN Submit");
+
         app_flats1.setVisible(true);        
      DefaultTableModel model2 = (DefaultTableModel) flat.getModel();
         model2.setRowCount(0);
+     
         String vs=p2.getSelectedItem().toString();
         conn c = new conn();
         System.out.print(vs);
@@ -1132,13 +1150,11 @@ System.out.print("IN Submit");
             int fla=0;
         String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE=? ";
         try{
-            System.out.print("IN Submit2");
             pst = con.prepareStatement(sql1);
             pst.setString(1, vs);
             rs=pst.executeQuery();
             while(rs.next())
             {
-                System.out.print("IN Submit3");
                 dt11 = rs.getString("DISTRICT");
                 tt11 = rs.getString("TALUKA");
                 vt11 = rs.getString("VILLAGE");
@@ -1159,26 +1175,54 @@ System.out.print("IN Submit");
             model2.addRow(o);             
         }
         catch (Exception e)
-        {System.out.print("IN Submit4");
-            JOptionPane.showMessageDialog(null, e);
-        }
-        System.out.print("out Submit");
-     /*   p2.removeAllItems();
-        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
-        try{
-            st=con.createStatement();
-            rs = st.executeQuery(sql);
-            while(rs.next())
-            {
-                String pp = rs.getString("SITE_CODE");
-                p2.addItem(pp);
-            }
-        }
-        catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, e);
         }
-             // TODO add your handling code here:*/
+     DefaultTableModel model3 = (DefaultTableModel) sa1.getModel();
+        model3.setRowCount(0);
+                try {
+                    
+      con=c.getconn();
+        st = con.createStatement();
+        
+   
+        String sql="SELECT  concat(First_name,' ',Middle_name,' ',Last_name) as name ,Income_annum,Gender,Marital_status,TIMESTAMPDIFF(YEAR,DOB,CURDATE())AS AGE,Applicant_no FROM APPLICANTS WHERE VILLAGE = '"+vt1.getText()+"' order by Gender DESC,Income_annum ASC,Marital_status DESC,AGE DESC";
+        rs = st.executeQuery(sql);
+    while(rs.next())
+    {     String inc2=null,a1=null,a2=null,a3=null,a4=null,a5=null,a6=null,a7=null,a8=null,a9=null;
+         a1=(rs.getString("Applicant_no"));
+        a2=(rs.getString("name"));
+        a3=(rs.getString("Income_annum"));
+        a4=(rs.getString("Gender"));        
+        a5=(rs.getString("Marital_status"));
+        a6=(rs.getString("AGE"));  
+       
+    int inco = Integer.parseInt(a3);
+        if(inco<300000)
+        {
+            inc2=("Below Poverty Line");
+        }
+        else if(inco>=300000 && inco<600000)
+        {
+            inc2=("Low Income Group");
+        }
+        else if(inco>=600000 && inco<1200000)
+        {
+            inc2=("Medium Income Group");
+        }
+        else
+        {
+            inc2=("High Income Group");
+        }
+        Object[] o={null,a1,a2,a4,a5,a3,inc2,a6};
+        model3.addRow(o);
+    }   
+    } catch (SQLException e ) {
+    JOptionPane.showMessageDialog(null, e); 
+
+    }    
+
+             // TODO add your handling code here:
     }//GEN-LAST:event_submit3ActionPerformed
 
     private void submit7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit7ActionPerformed
@@ -1206,17 +1250,7 @@ System.out.print("IN Submit");
         {
             JOptionPane.showMessageDialog(null, e);
         }
-        String sql1 = "update APPLICANTS SET Agent_ID = ? WHERE  VILLAGE = '"+vt.getText()+"'    ";
-        try{
-            pst = con.prepareStatement(sql1);
-            pst.setString(1,dataCol1 );
-            pst.executeUpdate();
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-p2.removeAllItems();
+    p2.removeAllItems();
         String sql2="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
         try{
             st=con.createStatement();

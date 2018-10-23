@@ -1070,7 +1070,7 @@ Connection con = null;
                     
         if(arrange.equalsIgnoreCase("national"))
         {
-            status=5;
+            status=1;
         }
         else if(arrange.equalsIgnoreCase("state"))
         {

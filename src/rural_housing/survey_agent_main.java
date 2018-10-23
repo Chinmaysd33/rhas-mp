@@ -39,6 +39,10 @@ Connection con = null;
         mc.add(mcn);
         dc.add(dcy);
         dc.add(dcn);
+          dcn.setEnabled(false);
+            dcy.setEnabled(false);
+            mcn.setEnabled(false);
+            mcy.setEnabled(false);
     }
 public survey_agent_main(String aa) {
         initComponents();
@@ -58,7 +62,12 @@ public survey_agent_main(String aa) {
         mc.add(mcn);
         dc.add(dcy);
         dc.add(dcn);
-     sag_no.setText(aa);
+          dcn.setEnabled(false);
+            dcy.setEnabled(false);
+            mcn.setEnabled(false);
+            mcy.setEnabled(false);
+    
+        sag_no.setText(aa);
     }
 
     /**
@@ -130,9 +139,6 @@ public survey_agent_main(String aa) {
         nof = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         landtype = new javax.swing.JComboBox<>();
-        jLabel24 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        remark = new javax.swing.JTextArea();
         app_no1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -460,7 +466,7 @@ public survey_agent_main(String aa) {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(submit2))
+                            .addComponent(submit))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, s_rep_appLayout.createSequentialGroup()
                             .addGap(100, 100, 100)
                             .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -474,7 +480,6 @@ public survey_agent_main(String aa) {
                                 .addComponent(jLabel74))
                             .addGap(53, 53, 53)
                             .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(submit)
                                 .addGroup(s_rep_appLayout.createSequentialGroup()
                                     .addGap(101, 101, 101)
                                     .addComponent(jLabel11))
@@ -501,7 +506,8 @@ public survey_agent_main(String aa) {
                                 .addGroup(s_rep_appLayout.createSequentialGroup()
                                     .addComponent(dcy)
                                     .addGap(18, 18, 18)
-                                    .addComponent(dcn))))))
+                                    .addComponent(dcn))
+                                .addComponent(submit2)))))
                 .addContainerGap(97, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, s_rep_appLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -519,7 +525,7 @@ public survey_agent_main(String aa) {
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submit2))
+                    .addComponent(submit))
                 .addGap(18, 18, 18)
                 .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -556,19 +562,15 @@ public survey_agent_main(String aa) {
                         .addComponent(mcy)
                         .addComponent(mcn)))
                 .addGap(0, 0, 0)
-                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(s_rep_appLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(submit))
-                    .addGroup(s_rep_appLayout.createSequentialGroup()
-                        .addComponent(jLabel73)
-                        .addGap(18, 18, 18)
-                        .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dcy)
-                            .addComponent(dcn))
-                        .addComponent(jLabel83)
-                        .addContainerGap(55, Short.MAX_VALUE))))
+                .addComponent(jLabel73)
+                .addGap(18, 18, 18)
+                .addGroup(s_rep_appLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcy)
+                    .addComponent(dcn))
+                .addComponent(jLabel83)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(submit2))
         );
 
         app_sp.setViewportView(s_rep_app);
@@ -630,16 +632,6 @@ public survey_agent_main(String aa) {
         landtype.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         landtype.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Agricultural", "Barren", "Industrial", "Residential", "Other" }));
 
-        jLabel24.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel24.setText("Remarks (if any):");
-
-        remark.setBackground(new java.awt.Color(0, 204, 204));
-        remark.setColumns(20);
-        remark.setFont(new java.awt.Font("Comic Sans MS", 0, 16)); // NOI18N
-        remark.setRows(5);
-        remark.setText("\n");
-        jScrollPane2.setViewportView(remark);
-
         app_no1.setBackground(new java.awt.Color(0, 204, 204));
         app_no1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         app_no1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -660,28 +652,25 @@ public survey_agent_main(String aa) {
                         .addGap(93, 93, 93)
                         .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(s_rep_regLayout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addComponent(jLabel24)
-                                .addGap(127, 127, 127)
+                                .addGap(374, 374, 374)
                                 .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(gdp)
-                                    .addComponent(nof)
-                                    .addComponent(landtype, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2)))
+                                    .addComponent(nof, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                                    .addComponent(landtype, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel20)
                                 .addComponent(jLabel21)
                                 .addComponent(jLabel22)
                                 .addComponent(jLabel23))
                             .addGroup(s_rep_regLayout.createSequentialGroup()
-                                .addGap(257, 257, 257)
+                                .addGap(227, 227, 227)
                                 .addComponent(app_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(s_rep_regLayout.createSequentialGroup()
-                        .addGap(324, 324, 324)
-                        .addComponent(submit1))
-                    .addGroup(s_rep_regLayout.createSequentialGroup()
                         .addGap(204, 204, 204)
-                        .addComponent(jLabel14)))
+                        .addComponent(jLabel14))
+                    .addGroup(s_rep_regLayout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(submit1)))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
         s_rep_regLayout.setVerticalGroup(
@@ -689,11 +678,11 @@ public survey_agent_main(String aa) {
             .addGroup(s_rep_regLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(app_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel20)
-                .addGap(54, 54, 54)
+                .addGap(36, 36, 36)
                 .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(gdp, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -705,13 +694,9 @@ public survey_agent_main(String aa) {
                 .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
                     .addComponent(landtype, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(s_rep_regLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
+                .addGap(110, 110, 110)
                 .addComponent(submit1)
-                .addGap(146, 146, 146))
+                .addGap(108, 108, 108))
         );
 
         reg_sp.setViewportView(s_rep_reg);
@@ -744,6 +729,26 @@ public survey_agent_main(String aa) {
       reg_sp.setVisible(false);
         app_sp.setVisible(false);
       reg_sp.setVisible(true);
+       conn c = new conn();
+        con=c.getconn();
+        String sql = "SELECT SITE_CODE from PROJECT where sag_code = '"+sag_no.getText()+"'";
+        
+        try{
+            String t1=null;
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("SITE_CODE");
+                }
+                app_no1.setText(t1);
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
     }//GEN-LAST:event_sur_regActionPerformed
 
     private void sur_appActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sur_appActionPerformed
@@ -751,19 +756,206 @@ public survey_agent_main(String aa) {
         s_agent_home.setVisible(false); 
         app_sp.setVisible(false);
       app_sp.setVisible(true);
+  String sql = "SELECT SITE_CODE from PROJECT where sag_code = '"+sag_no.getText()+"'";
+        
+        try{
+            String t1=null;
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("SITE_CODE");
+                }
+                app_no.setText(t1);
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+      
+  String sql1 = "SELECT Applicant_no from APPLICANTS where Agent_ID = '"+sag_no.getText()+"'";
+        
+        try{
+            String t1=null;
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("Applicant_no");
+                     v.addItem(t1);
+                }
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+
     }//GEN-LAST:event_sur_appActionPerformed
 
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         conn c = new conn();
         con=c.getconn();
        
-        String gender,ms_pass,mc_pass="NOT APPLICABLE",rc_pass,ac_pass,bc_pass,ic_pass,dc_pass="NOT APPLICABLE";
         
+        String t1=null;
+        String sql= "select Marital_status from APPLICANT where Applicant_ID='"+v.getSelectedItem().toString().toUpperCase()+"'";
+        
+        try{
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("Marital_status");
+                }
+                
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+           if(t1.equalsIgnoreCase("UNMARRIED")) 
+           {
+            dcn.setEnabled(false);
+            dcy.setEnabled(false);
+            mcn.setEnabled(false);
+            mcy.setEnabled(false);
+           }
+           else if(t1.equalsIgnoreCase("MARRIED")) 
+           {
+            dcn.setEnabled(false);
+            dcy.setEnabled(false);
+            mcn.setEnabled(true);
+            mcy.setEnabled(true);
+            }
+           else if(t1.equalsIgnoreCase("WIDOWED")) 
+           {
+            dcn.setEnabled(true);
+            dcy.setEnabled(true);
+            mcn.setEnabled(true);
+            mcy.setEnabled(true);
+            }
+         
+          
+    }//GEN-LAST:event_submitActionPerformed
+
+    private void app_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_app_noActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_app_noActionPerformed
+
+    private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
+        String valid="true";
+        if(!(ac.isSelected(acy.getModel())||ac.isSelected(acn.getModel())))
+       {
+           valid="false";
+           JOptionPane.showMessageDialog(null, "Select Aadhar Card submitted or not");
+       }
+       if(!(bc.isSelected(bcy.getModel())||bc.isSelected(bcn.getModel())))
+       {
+           valid="false";
+           JOptionPane.showMessageDialog(null, "Select Birth Certificate submitted or not");
+       }
+       if(!(rc.isSelected(rcy.getModel())||rc.isSelected(rcn.getModel())))
+       {
+           valid="false";
+           JOptionPane.showMessageDialog(null, "Select Ration Card submitted or not");
+       }
+       if(!(ic.isSelected(icy.getModel())||ic.isSelected(icn.getModel())))
+       {
+           valid="false";
+           JOptionPane.showMessageDialog(null, "Select Income Certificate submitted or not");
+       }
+       if(!(mcy.isEnabled()))
+       {
+            if(!(mc.isSelected(mcy.getModel())||mc.isSelected(mcn.getModel())))
+            {
+                valid="false";
+                JOptionPane.showMessageDialog(null, "Select Marriage Certificate submitted or not");
+            }
+       }
+       if(!(dcy.isEnabled()))
+       {
+            if(!(dc.isSelected(dcy.getModel())||dc.isSelected(dcn.getModel())))
+            {
+                valid="false";
+                JOptionPane.showMessageDialog(null, "Select Death Certificate submitted or not");
+            }
+       }
+       
+        if(valid=="true") 
+        {
+            conn c = new conn();
+            con=c.getconn();
+            String q2 = "insert into AGENT_REPORT_REGION(REGION_CODE,GDP_REGION,NO_FAMILIES,LAND_TYPE)  values(?,?,?,?)";
+            try
+            {
+                pst = con.prepareStatement(q2);
+
+                pst.setObject(1,app_no1.getText());
+                pst.setString(2,gdp.getText());
+                pst.setString(3,nof.getText());
+                pst.setString(4,landtype.getSelectedItem().toString().toUpperCase());
+
+                pst.execute();
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_submit1ActionPerformed
+
+    private void gdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gdpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gdpActionPerformed
+
+    private void nofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nofActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nofActionPerformed
+
+    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
+    conn c = new conn();
+    con=c.getconn();
+   String t1=null;
+   String mc_pass="NOT APPLICABLE",rc_pass=null,ac_pass=null,bc_pass=null,ic_pass=null,dc_pass="NOT APPLICABLE";
+   
+   String sql= "select Marital_status from APPLICANT where Applicant_ID='"+v.getSelectedItem().toString().toUpperCase()+"'";
+        
+        try{
+        
+                st=con.createStatement();
+                rs = st.executeQuery(sql);
+                while(rs.next())
+                {
+                     t1 = rs.getString("Marital_status");
+                }
+                
+            }
+            catch (Exception e)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+           if(t1.equalsIgnoreCase("UNMARRIED")) 
+           {
+               mc_pass="NOT APPLICABLE";
+               dc_pass="NOT APPLICABLE";
+           }
+           else if(t1.equalsIgnoreCase("MARRIED")) 
+           {
+               dc_pass="NOT APPLICABLE";   
+           }
+           else if(t1.equalsIgnoreCase("WIDOWED")) 
+           {
+               
+           }
+           
             if(mcy.isSelected())
             {
                 mc_pass = "YES";
             }
-            else
+            else if(mcn.isSelected())
             {
                 mc_pass = "NO";
             }
@@ -790,7 +982,7 @@ public survey_agent_main(String aa) {
         {
             bc_pass = "YES";
         }
-        else
+        else if(bcn.isSelected())
         {
             bc_pass = "NO";
         }
@@ -798,7 +990,7 @@ public survey_agent_main(String aa) {
         {
             ic_pass = "YES";
         }
-        else
+        else if(icn.isSelected())
         {
             ic_pass = "NO";
         }
@@ -807,11 +999,12 @@ public survey_agent_main(String aa) {
         {
             rc_pass = "YES";
         }
-        else
+        else if(rcn.isSelected())
         {
             rc_pass = "NO";
         }
-          String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
+       
+     String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
         try
         {
             pst = con.prepareStatement(q2);
@@ -831,111 +1024,7 @@ public survey_agent_main(String aa) {
             JOptionPane.showMessageDialog(null, e);
         }   
             
-          
-    }//GEN-LAST:event_submitActionPerformed
-
-    private void app_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_app_noActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_app_noActionPerformed
-
-    private void submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit1ActionPerformed
-
-    }//GEN-LAST:event_submit1ActionPerformed
-
-    private void gdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gdpActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_gdpActionPerformed
-
-    private void nofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nofActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nofActionPerformed
-
-    private void submit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit2ActionPerformed
-    conn c = new conn();
-    con=c.getconn();
-   
-   String mc_pass,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass;
-        String q2 = "select aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy from APPL_DOCS_SUBMIT where appl_num='"+app_no.getText()+"'";
-        try
-        {
-                st = con.createStatement();
-                rs = st.executeQuery(q2);
-              
-                while(rs.next()) 
-                { 
-                    ac_pass = (rs.getString("aadhar_copy"));
-                    bc_pass = (rs.getString("birth_cert_copy"));
-                    ic_pass = (rs.getString("income_cert_copy")); 
-                    rc_pass = (rs.getString("ration_copy"));
-                    mc_pass = (rs.getString("marriage_copy"));
-                    dc_pass = (rs.getString("death_copy"));  
-                    System.out.println(ac_pass+"\n"+bc_pass+"\n"+ic_pass+"\n"+rc_pass+"\n"+mc_pass+"\n"+dc_pass+"\n");
-    
-                    if(ac_pass.equalsIgnoreCase("YES"))
-                    {
-                       acy.setSelected(true);
-                    }
-                    else
-                    {
-                       acn.setSelected(true);
-                    }
-                    if(bc_pass.equalsIgnoreCase("YES"))
-                    {
-                        bcy.setSelected(true);
-                    }
-                    else
-                    {
-                       bcn.setSelected(true);
-                    }
-                    if(ic_pass.equalsIgnoreCase("YES"))
-                    {
-                        icy.setSelected(true);
-                    }
-                    else
-                    {
-                       icn.setSelected(true);
-                    }
-                    if(rc_pass.equalsIgnoreCase("YES"))
-                    {
-                        rcy.setSelected(true);
-                    }
-                    else
-                    {
-                       rcn.setSelected(true);
-                    }
-                    if(mc_pass .equalsIgnoreCase("YES"))
-                    {
-                        mcn.setSelected(true);
-                    }
-                    else if(mc_pass.equalsIgnoreCase("NO"))
-                    {
-                       mcn.setSelected(true);
-                    }
-                    else
-                    {
-                        mcn.setEnabled(false);
-                        mcy.setEnabled(false); 
-                    }
-                    if(dc_pass.equalsIgnoreCase("YES"))
-                    {
-                        dcy.setSelected(true);
-                    }
-                    else if(dc_pass.equalsIgnoreCase("NO"))
-                    {
-                       dcn.setSelected(true);
-                    }
-                    else
-                    {
-                        dcn.setEnabled(false);
-                        dcy.setEnabled(false);   
-                    }
-                }
-        }
-        catch (Exception e)
-        {
-            JOptionPane.showMessageDialog(null, e);
-        }
-
+      
         // TODO add your handling code here:
     }//GEN-LAST:event_submit2ActionPerformed
 
@@ -1009,7 +1098,6 @@ public survey_agent_main(String aa) {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel73;
@@ -1020,7 +1108,6 @@ public survey_agent_main(String aa) {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JComboBox<String> landtype;
     private javax.swing.JButton log_out1;
     private javax.swing.ButtonGroup mc;
@@ -1031,7 +1118,6 @@ public survey_agent_main(String aa) {
     private javax.swing.JRadioButton rcn;
     private javax.swing.JRadioButton rcy;
     private javax.swing.JScrollPane reg_sp;
-    private javax.swing.JTextArea remark;
     private javax.swing.JPanel s_agent_home;
     private javax.swing.JPanel s_rep_app;
     private javax.swing.JPanel s_rep_reg;

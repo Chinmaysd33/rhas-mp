@@ -32,29 +32,14 @@ public class new_user extends javax.swing.JFrame {
         initComponents();
         g.add(f);
         g.add(m);
+        g.add(f1);
         ms.add(ma);
         ms.add(unma);
         ms.add(wi);
-        ac.add(acy);
-        ac.add(acn);
-        bc.add(bcy);
-        bc.add(bcn);
-        ic.add(icy);
-        ic.add(icn);
-        rc.add(rcy);
-        rc.add(rcn);
-        mc.add(mcy);
-        mc.add(mcn);
-        dc.add(dcy);
-        dc.add(dcn);
         rct.add(type1);
         rct.add(type2);
         rct.add(type3);
         g_wrong.setText("");
-            dcn.setEnabled(false);
-            dcy.setEnabled(false);
-            mcn.setEnabled(false);
-            mcy.setEnabled(false);
             exit.setVisible(false);
     }
 
@@ -110,6 +95,7 @@ public class new_user extends javax.swing.JFrame {
         d = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         dob = new org.jdesktop.swingx.JXDatePicker();
+        f1 = new javax.swing.JRadioButton();
         income = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         inc = new javax.swing.JTextField();
@@ -125,40 +111,6 @@ public class new_user extends javax.swing.JFrame {
         nexti = new javax.swing.JButton();
         exit_lbl = new javax.swing.JLabel();
         exit = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        doc = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        acy = new javax.swing.JRadioButton();
-        acn = new javax.swing.JRadioButton();
-        jLabel23 = new javax.swing.JLabel();
-        dcy = new javax.swing.JRadioButton();
-        mcn = new javax.swing.JRadioButton();
-        jLabel24 = new javax.swing.JLabel();
-        bcy = new javax.swing.JRadioButton();
-        bcn = new javax.swing.JRadioButton();
-        jLabel25 = new javax.swing.JLabel();
-        icy = new javax.swing.JRadioButton();
-        icn = new javax.swing.JRadioButton();
-        jLabel26 = new javax.swing.JLabel();
-        submit = new javax.swing.JButton();
-        jLabel27 = new javax.swing.JLabel();
-        rcy = new javax.swing.JRadioButton();
-        rcn = new javax.swing.JRadioButton();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        mcy = new javax.swing.JRadioButton();
-        dcn = new javax.swing.JRadioButton();
-        nexti1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1200, 760));
@@ -397,8 +349,6 @@ public class new_user extends javax.swing.JFrame {
             }
         });
 
-        g_wrong.setText("Select GENDER");
-
         d.setBackground(new java.awt.Color(0, 204, 204));
         d.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         d.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Select District-" }));
@@ -415,6 +365,21 @@ public class new_user extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         jLabel2.setText("New User Registration");
+
+        f1.setBackground(new java.awt.Color(0, 153, 153));
+        f1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        f1.setText("Other");
+        f1.setToolTipText("");
+        f1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                f1MouseClicked(evt);
+            }
+        });
+        f1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout personalLayout = new javax.swing.GroupLayout(personal);
         personal.setLayout(personalLayout);
@@ -442,16 +407,23 @@ public class new_user extends javax.swing.JFrame {
                             .addComponent(v, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(personalLayout.createSequentialGroup()
                                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(m))
-                                .addGap(18, 18, 18)
+                                    .addGroup(personalLayout.createSequentialGroup()
+                                        .addComponent(f_name, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(m_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(personalLayout.createSequentialGroup()
+                                        .addComponent(m)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(f)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(f1)))
                                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(m_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(f))
-                                .addGap(18, 18, 18)
-                                .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(g_wrong)
-                                    .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(personalLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(personalLayout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addComponent(g_wrong))))
                             .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(personalLayout.createSequentialGroup()
                                 .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,7 +442,7 @@ public class new_user extends javax.swing.JFrame {
                     .addGroup(personalLayout.createSequentialGroup()
                         .addGap(323, 323, 323)
                         .addComponent(jLabel2)))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
         personalLayout.setVerticalGroup(
             personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,7 +463,8 @@ public class new_user extends javax.swing.JFrame {
                             .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(m)
                                 .addComponent(g_wrong, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(f))
+                                .addComponent(f)
+                                .addComponent(f1))
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(personalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -604,7 +577,7 @@ public class new_user extends javax.swing.JFrame {
 
         nexti.setBackground(new java.awt.Color(0, 153, 153));
         nexti.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        nexti.setText("Next");
+        nexti.setText("Submit");
         nexti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextiActionPerformed(evt);
@@ -692,267 +665,6 @@ public class new_user extends javax.swing.JFrame {
         );
 
         add_detail.addTab("Income Details", income);
-
-        doc.setBackground(new java.awt.Color(0, 153, 153));
-
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        jLabel10.setText("Applicant Document List");
-
-        jLabel20.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel20.setText("Aadhar Card");
-
-        jLabel21.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
-        jLabel21.setText("Status");
-
-        jLabel22.setFont(new java.awt.Font("Comic Sans MS", 1, 28)); // NOI18N
-        jLabel22.setText("Document Name");
-
-        acy.setBackground(new java.awt.Color(0, 153, 153));
-        acy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        acy.setText("Submitted");
-
-        acn.setBackground(new java.awt.Color(0, 153, 153));
-        acn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        acn.setText("Not Submitted");
-
-        jLabel23.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel23.setText("Marriage Certificate");
-
-        dcy.setBackground(new java.awt.Color(0, 153, 153));
-        dcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        dcy.setText("Submitted");
-
-        mcn.setBackground(new java.awt.Color(0, 153, 153));
-        mcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        mcn.setText("Not Submitted");
-
-        jLabel24.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel24.setText("Birth Certificate");
-
-        bcy.setBackground(new java.awt.Color(0, 153, 153));
-        bcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        bcy.setText("Submitted");
-
-        bcn.setBackground(new java.awt.Color(0, 153, 153));
-        bcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        bcn.setText("Not Submitted");
-
-        jLabel25.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel25.setText("Income Certificate");
-
-        icy.setBackground(new java.awt.Color(0, 153, 153));
-        icy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        icy.setText("Submitted");
-
-        icn.setBackground(new java.awt.Color(0, 153, 153));
-        icn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        icn.setText("Not Submitted");
-
-        jLabel26.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel26.setText("(if applicable)");
-
-        submit.setBackground(new java.awt.Color(0, 153, 153));
-        submit.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        submit.setMnemonic('S');
-        submit.setText("SUBMIT");
-        submit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitActionPerformed(evt);
-            }
-        });
-
-        jLabel27.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel27.setText("Ration Card ");
-
-        rcy.setBackground(new java.awt.Color(0, 153, 153));
-        rcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        rcy.setText("Submitted");
-
-        rcn.setBackground(new java.awt.Color(0, 153, 153));
-        rcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        rcn.setText("Not Submitted");
-
-        jLabel28.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel28.setText("*");
-
-        jLabel29.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel29.setText("*");
-
-        jLabel30.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel30.setText("*");
-
-        jLabel31.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel31.setText("*");
-
-        jLabel32.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(189, 32, 49));
-        jLabel32.setText("*");
-
-        jLabel33.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel33.setText(" are Compulsory.");
-
-        jLabel34.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel34.setText("Note - Documents marked with ");
-
-        jLabel35.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel35.setText("Death Certificate");
-
-        jLabel36.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        jLabel36.setText("(for widowed applicant only)");
-
-        mcy.setBackground(new java.awt.Color(0, 153, 153));
-        mcy.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        mcy.setText("Submitted");
-
-        dcn.setBackground(new java.awt.Color(0, 153, 153));
-        dcn.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        dcn.setText("Not Submitted");
-
-        nexti1.setBackground(new java.awt.Color(0, 153, 153));
-        nexti1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        nexti1.setText("Next");
-        nexti1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nexti1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout docLayout = new javax.swing.GroupLayout(doc);
-        doc.setLayout(docLayout);
-        docLayout.setHorizontalGroup(
-            docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(docLayout.createSequentialGroup()
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(docLayout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel23)
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel27)
-                                    .addComponent(jLabel26)
-                                    .addComponent(jLabel20)
-                                    .addComponent(jLabel24)
-                                    .addComponent(jLabel25))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel28)
-                                    .addComponent(jLabel31)
-                                    .addComponent(jLabel30)
-                                    .addComponent(jLabel29)))
-                            .addComponent(jLabel36)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel35))
-                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(acy)
-                                    .addComponent(dcy)
-                                    .addComponent(bcy)
-                                    .addComponent(icy)
-                                    .addComponent(rcy)
-                                    .addComponent(mcy))
-                                .addGap(46, 46, 46)
-                                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rcn)
-                                    .addComponent(icn)
-                                    .addComponent(mcn)
-                                    .addComponent(acn)
-                                    .addComponent(bcn)
-                                    .addComponent(dcn)))
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addGap(168, 168, 168)
-                                .addComponent(jLabel21))))
-                    .addGroup(docLayout.createSequentialGroup()
-                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addGap(149, 149, 149)
-                                .addComponent(jLabel34))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, docLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(nexti1)
-                                .addGap(61, 61, 61)))
-                        .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(submit)
-                            .addGroup(docLayout.createSequentialGroup()
-                                .addComponent(jLabel32)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel33))))
-                    .addGroup(docLayout.createSequentialGroup()
-                        .addGap(292, 292, 292)
-                        .addComponent(jLabel10)))
-                .addContainerGap(302, Short.MAX_VALUE))
-        );
-        docLayout.setVerticalGroup(
-            docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(docLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel10)
-                .addGap(26, 26, 26)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel21))
-                .addGap(18, 18, 18)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel28)
-                    .addComponent(acy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(acn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel29)
-                    .addComponent(bcy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bcn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(icy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(icn)
-                    .addComponent(jLabel30))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(rcy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(rcn))
-                    .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel31)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(mcn)
-                        .addComponent(mcy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dcy)
-                    .addComponent(dcn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel36)
-                .addGap(32, 32, 32)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(submit)
-                    .addComponent(nexti1))
-                .addGap(91, 91, 91)
-                .addGroup(docLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel33)
-                    .addComponent(jLabel34))
-                .addGap(137, 137, 137))
-        );
-
-        jScrollPane2.setViewportView(doc);
-
-        add_detail.addTab("Documents", jScrollPane2);
 
         getContentPane().add(add_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, 530));
 
@@ -1122,24 +834,14 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_ageMouseClicked
 
     private void maMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maMouseClicked
-        mcn.setEnabled(true);
-        mcy.setEnabled(true);    // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_maMouseClicked
 
     private void unmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_unmaMouseClicked
-        dcn.setEnabled(false);
-        dcy.setEnabled(false);
-        mcn.setEnabled(false);
-        mcy.setEnabled(false);   // TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_unmaMouseClicked
 
     private void wiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wiMouseClicked
-        dcn.setEnabled(true);
-        dcy.setEnabled(true);
-        mcn.setEnabled(true);
-        mcy.setEnabled(true);        // TODO add your handling code here:       // TODO add your handling code here:
     }//GEN-LAST:event_wiMouseClicked
 
     private void nextpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextpActionPerformed
@@ -1496,7 +1198,6 @@ public class new_user extends javax.swing.JFrame {
         if(inco<300000)
         {
             inc_grp.setText("Below Poverty Line");
-            submit.setEnabled(false);
             nexti.setEnabled(false);
             exit.setVisible(true);
             exit_lbl.setText("You are NOT Eligible. Please EXIT");
@@ -1504,7 +1205,6 @@ public class new_user extends javax.swing.JFrame {
         else if(inco>=300000 && inco<600000)
         {
             inc_grp.setText("Low Income Group");
-            submit.setEnabled(true);
             nexti.setEnabled(true);
             exit_lbl.setText("");
             exit.setVisible(false);
@@ -1512,7 +1212,6 @@ public class new_user extends javax.swing.JFrame {
         else if(inco>=600000 && inco<1200000)
         {
             inc_grp.setText("Medium Income Group");
-            submit.setEnabled(true);
             nexti.setEnabled(true);
             exit_lbl.setText("");
             exit.setVisible(false);
@@ -1520,7 +1219,6 @@ public class new_user extends javax.swing.JFrame {
         else
         {
             inc_grp.setText("High Income Group");
-            submit.setEnabled(false);
             nexti.setEnabled(false);
             exit.setVisible(true);
             exit_lbl.setText("You are NOT Eligible. Please EXIT");
@@ -1552,148 +1250,7 @@ public class new_user extends javax.swing.JFrame {
         
         if(valid=="true")
         {
-                add_detail.setSelectedIndex(2);
-        }
-// TODO add your handling code here:
-    }//GEN-LAST:event_nextiActionPerformed
-
-    private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
-       String valid="true";
-       if(!(ac.isSelected(acy.getModel())||ac.isSelected(acn.getModel())))
-       {
-           valid="false";
-           JOptionPane.showMessageDialog(null, "Select Aadhar Card submitted or not");
-       }
-       if(!(bc.isSelected(bcy.getModel())||bc.isSelected(bcn.getModel())))
-       {
-           valid="false";
-           JOptionPane.showMessageDialog(null, "Select Birth Certificate submitted or not");
-       }
-       if(!(rc.isSelected(rcy.getModel())||rc.isSelected(rcn.getModel())))
-       {
-           valid="false";
-           JOptionPane.showMessageDialog(null, "Select Ration Card submitted or not");
-       }
-       if(!(ic.isSelected(icy.getModel())||ic.isSelected(icn.getModel())))
-       {
-           valid="false";
-           JOptionPane.showMessageDialog(null, "Select Income Certificate submitted or not");
-       }
-           if(ma.isSelected())
-           {
-            if(!(mc.isSelected(mcy.getModel())||mc.isSelected(mcn.getModel())))
-            {
-                valid="false";
-                JOptionPane.showMessageDialog(null, "Select Marriage Certificate submitted or not");
-            }
-           }
-           if(wi.isSelected())
-           {
-            if(!(mc.isSelected(mcy.getModel())||mc.isSelected(mcn.getModel())))
-            {
-                valid="false";
-                JOptionPane.showMessageDialog(null, "Select Marriage Certificate submitted or not");
-            }
-            if(!(dc.isSelected(dcy.getModel())||dc.isSelected(dcn.getModel())))
-            {
-                valid="false";
-                JOptionPane.showMessageDialog(null, "Select Death Certificate submitted or not");
-            }
-
-           }
-              
-              
-       if(valid=="true")
-       {
-        java.util.Date date = dob.getDate();
-        java.sql.Date sqldate = new java.sql.Date(date.getTime());
-        String gender="OTHER",ms_pass,mc_pass=null,rc_pass,ac_pass,bc_pass,ic_pass,dc_pass=null;
-        conn c = new conn();
-        con=c.getconn();
-        if(m.isSelected())
-        {
-            gender = "MALE";
-        }
-        else if(f.isSelected())
-        {
-            gender = "FEMALE";
-        }
-
-        if(ma.isSelected())
-        {
-            ms_pass = "MARRIED";
-            dc_pass = "NOT APPLICABLE";
-            if(mcy.isSelected())
-            {
-                mc_pass = "YES";
-            }
-            else
-            {
-                mc_pass = "NO";
-            }
-        }
-        else if(unma.isSelected())
-        {
-            ms_pass = "UNMARRIED";
-            dc_pass = "NOT APPLICABLE";
-            mc_pass = "NOT APPLICABLE";
-
-        }
-        else
-        {
-            ms_pass = "WIDOWED";
-            if(mcy.isSelected())
-            {
-                mc_pass = "YES";
-            }
-            else if(mcn.isSelected())
-            {
-                mc_pass = "NO";
-            }
-            if(dcy.isSelected())
-            {
-                dc_pass = "YES";
-            }
-            else if(dcn.isSelected())
-            {
-                dc_pass = "NO";
-            }
-        }
-        if(acy.isSelected())
-        {
-            ac_pass = "YES";
-        }
-        else
-        {
-            ac_pass = "NO";
-        }
-
-        if(bcy.isSelected())
-        {
-            bc_pass = "YES";
-        }
-        else
-        {
-            bc_pass = "NO";
-        }
-        if(icy.isSelected())
-        {
-            ic_pass = "YES";
-        }
-        else
-        {
-            ic_pass = "NO";
-        }
-
-        if(rcy.isSelected())
-        {
-            rc_pass = "YES";
-        }
-        else
-        {
-            rc_pass = "NO";
-        }
-        String proj_code=null;
+          String proj_code=null;
         try
         {
             String q1="select SITE_CODE from PROJECT where VILLAGE='"+v.getSelectedItem().toString()+"'";
@@ -1708,11 +1265,49 @@ public class new_user extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-        
+        java.sql.Date date = new java.sql.Date(dob.getDate().getTime());
         BigInteger bi = new BigInteger(a_no.getText());
         BigInteger bi2 = new BigInteger(c_no1.getText());
         String query = "Insert into APPLICANTS(Aadhar_no,First_name,Middle_name,Last_name,Income_annum,DOB,Gender,Marital_status,STATE,DISTRICT,TALUKA,VILLAGE,Contact) values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
-
+        String gender=null,ms_pass=null,rc_pass=null;
+        if(m.isSelected())
+        {
+            gender="MALE";
+        }
+        else  if(f.isSelected())
+        {
+            gender="FEMALE";
+        }
+        else  if(f1.isSelected())
+        {
+            gender="OTHER";
+        }
+        
+        if(ma.isSelected())
+        {
+            gender="MARRIED";
+        }
+        else  if(unma.isSelected())
+        {
+            gender="UNMARRIED";
+        }
+        else  if(wi.isSelected())
+        {
+            gender="WIDOWED";
+        }
+        
+         if(type1.isSelected())
+        {
+            rc_pass="WHITE";
+        }
+        else  if(type2.isSelected())
+        {
+            rc_pass="ORANGE";
+        }
+        else  if(type3.isSelected())
+        {
+            rc_pass="YELLOW";
+        }
         try
         {
             pst = con.prepareStatement(query);
@@ -1722,7 +1317,7 @@ public class new_user extends javax.swing.JFrame {
             pst.setString(3, m_name.getText());
             pst.setString(4,l_name.getText());
             pst.setString(5, inc.getText());
-            pst.setDate(6, sqldate);
+            pst.setDate(6, date);
             pst.setString(7, gender);
             pst.setString(8, ms_pass);
 
@@ -1741,18 +1336,14 @@ public class new_user extends javax.swing.JFrame {
                 user_no = rs.getString("Applicant_no");                
             }
             
-            String q2 = "insert into APPL_DOCS_SUBMIT(aadhar_copy,birth_cert_copy,income_cert_copy,ration_copy,marriage_copy,death_copy,appl_num)  values(?,?,?,?,?,?,?)";
+            String q2 = "insert into INCOME_DETAILS(PROOF_INC,RATION_TYPE,APP_NUMBER)  values(?,?,?)";
         try
         {
             pst = con.prepareStatement(q2);
 
-            pst.setObject(1,ac_pass);
-            pst.setString(2,bc_pass);
-            pst.setString(3,ic_pass);
-            pst.setString(4,rc_pass);
-            pst.setString(5, mc_pass);
-            pst.setString(6, dc_pass);
-            pst.setString(7,user_no);
+            pst.setObject(1,poc.getSelectedItem().toString().toUpperCase());
+            pst.setString(2,rc_pass);
+            pst.setString(3,user_no);
            
             pst.execute();
         }
@@ -1770,8 +1361,9 @@ public class new_user extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, e);
         }
-       }
-    }//GEN-LAST:event_submitActionPerformed
+        }
+// TODO add your handling code here:
+    }//GEN-LAST:event_nextiActionPerformed
 
     private void incMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_incMouseClicked
        
@@ -2018,16 +1610,20 @@ public class new_user extends javax.swing.JFrame {
         }    // TODO add your handling code here:
     }//GEN-LAST:event_vMouseClicked
 
-    private void nexti1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nexti1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nexti1ActionPerformed
-
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         this.setVisible(false);
         login re = new login();
         re.setVisible(true);                
         // TODO add your handling code here:
     }//GEN-LAST:event_exitActionPerformed
+
+    private void f1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_f1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f1MouseClicked
+
+    private void f1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2067,36 +1663,27 @@ public class new_user extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField a_no;
     private javax.swing.ButtonGroup ac;
-    private javax.swing.JRadioButton acn;
-    private javax.swing.JRadioButton acy;
     private javax.swing.JTabbedPane add_detail;
     private javax.swing.JTextField age;
     private javax.swing.ButtonGroup bc;
-    private javax.swing.JRadioButton bcn;
-    private javax.swing.JRadioButton bcy;
     private javax.swing.JTextField c_no1;
     private javax.swing.JComboBox<String> d;
     private datechooser.beans.DateChooserDialog dateChooserDialog1;
     private datechooser.beans.DateChooserDialog dateChooserDialog2;
     private javax.swing.ButtonGroup dc;
-    private javax.swing.JRadioButton dcn;
-    private javax.swing.JRadioButton dcy;
     private org.jdesktop.swingx.JXDatePicker dob;
-    private javax.swing.JPanel doc;
     private javax.swing.JButton exit;
     private javax.swing.JLabel exit_lbl;
     private javax.swing.JRadioButton f;
+    private javax.swing.JRadioButton f1;
     private javax.swing.JTextField f_name;
     private javax.swing.ButtonGroup g;
     private javax.swing.JLabel g_wrong;
     private javax.swing.ButtonGroup ic;
-    private javax.swing.JRadioButton icn;
-    private javax.swing.JRadioButton icy;
     private javax.swing.JTextField inc;
     private javax.swing.JTextField inc_grp;
     private javax.swing.JPanel income;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2105,23 +1692,6 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2130,26 +1700,19 @@ public class new_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField l_name;
     private javax.swing.JRadioButton m;
     private javax.swing.JTextField m_name;
     private javax.swing.JRadioButton ma;
     private javax.swing.ButtonGroup mc;
-    private javax.swing.JRadioButton mcn;
-    private javax.swing.JRadioButton mcy;
     private javax.swing.ButtonGroup ms;
     private javax.swing.JButton nexti;
-    private javax.swing.JButton nexti1;
     private javax.swing.JButton nextp;
     private javax.swing.JPanel personal;
     private javax.swing.JComboBox<String> poc;
     private javax.swing.ButtonGroup rc;
-    private javax.swing.JRadioButton rcn;
     private javax.swing.ButtonGroup rct;
-    private javax.swing.JRadioButton rcy;
     private javax.swing.JComboBox<String> s;
-    private javax.swing.JButton submit;
     private javax.swing.JComboBox<String> t;
     private javax.swing.JRadioButton type1;
     private javax.swing.JRadioButton type2;
