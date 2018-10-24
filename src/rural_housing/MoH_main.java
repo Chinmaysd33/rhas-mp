@@ -829,12 +829,32 @@ public class MoH_main extends javax.swing.JFrame {
     }//GEN-LAST:event_state3ItemStateChanged
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
-        v_detail.setVisible(false);
-        
+        v_detail.setVisible(false);        
       moh_home.setVisible(false);
       app_company.setVisible(false);
       app_csmc.setVisible(false);
         v_detail.setVisible(true);
+      conn c = new conn();
+        con=c.getconn();
+        p1.removeAllItems();
+        String query = "select SITE_CODE from PROJECT ";
+        try
+        {
+            pst = con.prepareStatement(query);
+
+            rs = pst.executeQuery(query);
+
+            while (rs.next()) {
+                String code = rs.getString("SITE_CODE");
+                p1.addItem(code);
+            }
+
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
+   
         // TODO add your handling code here:
     }//GEN-LAST:event_viewActionPerformed
 
@@ -1190,12 +1210,14 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
         conn c = new conn();
         con=c.getconn();
 
-        String sql1="select STATE,DISTRICT,TALUKA,VILLAGE from PROJECT where SITE_CODE = '"+p1.getSelectedItem().toString()+"'";
+        String sql1="select STATE,DISTRICT,TALUKA,VILLAGE,REGION_GDP,FLATS from PROJECT where SITE_CODE = '"+p1.getSelectedItem().toString()+"'";
         try{
             String sts="State";
             String dts="District";
             String vts="Village";
             String tts="Taluka";
+            String gts="REGION_GDP";
+            String fts="FLATS";
 
             st=con.createStatement();
             rs = st.executeQuery(sql1);
@@ -1205,11 +1227,16 @@ if(district2.getSelectedItem().toString().equalsIgnoreCase("Buldhana"))
                 dts = rs.getString("DISTRICT");
                 vts = rs.getString("TALUKA");
                 tts = rs.getString("VILLAGE");
+                gts = rs.getString("REGION_GDP");
+                fts = rs.getString("FLATS");
+
             }
             st1.setText(sts);
             dt.setText(dts);
             vt.setText(vts);
-            tt.setText(tts);
+            tt.setText(tts);;
+            dt1.setText(gts);
+            tt1.setText(fts);
         }
         catch (Exception e)
         {

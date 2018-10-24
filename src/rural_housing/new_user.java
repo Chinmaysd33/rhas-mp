@@ -1618,7 +1618,29 @@ public class new_user extends javax.swing.JFrame {
     }//GEN-LAST:event_exitActionPerformed
 
     private void f1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_f1MouseClicked
-        // TODO add your handling code here:
+g_wrong.setText("");
+        if(!(f_name.getText().matches("[A-Z][a-z]*" )) || (f_name.getText().matches("")))
+        {
+            m_name.setBackground(Color.RED);
+            f_name.setBackground(Color.red);
+            l_name.setBackground(Color.red);
+        }
+        else if(!(m_name.getText().matches("[A-Z][a-z]*" )) || (m_name.getText().matches("")))
+        {
+            m_name.setBackground(Color.RED);
+            l_name.setBackground(Color.red);
+        }
+        else if(!(l_name.getText().matches("[A-Z][a-z]*" )) || (l_name.getText().matches("")))
+        {
+            l_name.setBackground(Color.red);
+        }
+        else
+        {
+            m_name.setBackground(Color.GREEN);
+            f_name.setBackground(Color.green);
+            l_name.setBackground(Color.GREEN);
+
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_f1MouseClicked
 
     private void f1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f1ActionPerformed

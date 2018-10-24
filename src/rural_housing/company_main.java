@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -297,12 +298,12 @@ Connection con = null;
         jLabel8.setText("Development Company Details");
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel9.setText("Company GST Number:");
+        jLabel9.setText("Company Number:");
 
         gst_no.setEditable(false);
         gst_no.setBackground(new java.awt.Color(0, 204, 204));
         gst_no.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        gst_no.setText("Enter the company's 15 digit GST number");
+        gst_no.setText("Company no");
         gst_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gst_noActionPerformed(evt);
@@ -318,7 +319,7 @@ Connection con = null;
         comp_name.setEditable(false);
         comp_name.setBackground(new java.awt.Color(0, 204, 204));
         comp_name.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        comp_name.setText("Enter the company name");
+        comp_name.setText("company name");
         comp_name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comp_nameActionPerformed(evt);
@@ -331,7 +332,7 @@ Connection con = null;
         cn2.setEditable(false);
         cn2.setBackground(new java.awt.Color(0, 204, 204));
         cn2.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        cn2.setText("10 Digit Contact Number (optional)");
+        cn2.setText("Experience");
         cn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cn2ActionPerformed(evt);
@@ -364,7 +365,7 @@ Connection con = null;
         comp_name1.setEditable(false);
         comp_name1.setBackground(new java.awt.Color(0, 204, 204));
         comp_name1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        comp_name1.setText("Enter the company name");
+        comp_name1.setText("Company Status");
         comp_name1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comp_name1ActionPerformed(evt);
@@ -378,53 +379,60 @@ Connection con = null;
             .addGroup(v_detailLayout.createSequentialGroup()
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(v_detailLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                        .addGap(204, 204, 204)
                         .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel9)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(26, 26, 26))
+                            .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel12)))
+                        .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel13)
+                        .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)))
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
-                        .addComponent(comp_name)
-                        .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comp_name1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addGroup(v_detailLayout.createSequentialGroup()
+                        .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                                .addComponent(cn1, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(cn2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comp_name1, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 2, Short.MAX_VALUE)
+                        .addComponent(comp_name, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(175, 175, 175))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
                         .addComponent(submit1)
-                        .addGap(362, 362, 362))))
+                        .addGap(362, 362, 362))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, v_detailLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(102, 102, 102))))
         );
         v_detailLayout.setVerticalGroup(
             v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(v_detailLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addGap(36, 36, 36)
-                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(comp_name, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(gst_no, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(comp_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(comp_name1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(gst_no, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(v_detailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(cn1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -434,7 +442,7 @@ Connection con = null;
                     .addComponent(jLabel13))
                 .addGap(31, 31, 31)
                 .addComponent(submit1)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         getContentPane().add(v_detail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 880, -1));
@@ -525,17 +533,17 @@ Connection con = null;
         view_proj.setFont(new java.awt.Font("Courier 10 Pitch", 1, 18)); // NOI18N
         view_proj.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+                {null, null, null, null}
             },
             new String [] {
-                "Click", "Site Code", "GDP"
+                "Click", "Site Code", "GDP", "Quotation"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Boolean.class, java.lang.String.class, java.lang.Float.class
+                java.lang.Boolean.class, java.lang.String.class, java.lang.Float.class, java.lang.Long.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false, false
+                true, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -552,6 +560,7 @@ Connection con = null;
             view_proj.getColumnModel().getColumn(0).setResizable(false);
             view_proj.getColumnModel().getColumn(1).setResizable(false);
             view_proj.getColumnModel().getColumn(2).setResizable(false);
+            view_proj.getColumnModel().getColumn(3).setResizable(false);
         }
 
         submit2.setBackground(new java.awt.Color(0, 153, 153));
@@ -728,6 +737,7 @@ Connection con = null;
         sub_tender.setVisible(false);
         com_main.setVisible(false);
         v_detail.setVisible(true);
+        gst_no.setText(com_no.getText());
         try {
         conn c = new conn();
         con=c.getconn();
@@ -792,7 +802,7 @@ Connection con = null;
                 {
                     String code = rs.getString("SITE_CODE");
                     Float sf_name = rs.getFloat("REGION_GDP");
-                    Object[] o =  { null , code, sf_name };
+                    Object[] o =  { null , code, sf_name ,"Enter Quotation"};
                   
                     model.addRow(o);
                     
@@ -1079,7 +1089,11 @@ Connection con = null;
         
         Boolean chked = Boolean.valueOf(view_proj.getValueAt(0, 0).toString());
         String dataCol1 = view_proj.getValueAt(0, 1).toString();
-        
+        String dataCol2 = view_proj.getValueAt(0, 2).toString();
+        Calendar calendar = Calendar.getInstance();
+
+        java.util.Date now = calendar.getTime();
+       
         if (chked)
         {
             if(work<status)
@@ -1087,7 +1101,7 @@ Connection con = null;
                 try
         {
             String a  = com_no.getText();
-            String chk = "SELECT * FROM TENDER WHERE com = '"+a+"' AND project = '"+dataCol1+"'";
+            String chk = "SELECT * FROM TENDER WHERE com = '"+a+"' AND project = '"+dataCol1+"','"+now+"'";
             pst1 = con.prepareStatement(chk);
             ResultSet ab = pst1.executeQuery();
             int count = 0;
@@ -1097,7 +1111,7 @@ Connection con = null;
             }
             if(count == 0)
             {
-              String sql = "INSERT INTO TENDER VALUES ('MOH001','"+a+"','"+dataCol1+"')";
+              String sql = "INSERT INTO TENDER(moh_id,company_id,project_id,Quotation,Tender_SUBMIT_date) VALUES ('MOH001','"+a+"','"+dataCol1+"',"+dataCol2+",)";
                 try{
                         pst=con.prepareStatement(sql);
                         Boolean b = pst.execute();
@@ -1371,7 +1385,7 @@ Connection con = null;
         model1.setRowCount(0);
         conn c = new conn();
         con=c.getconn();
-        String sql = "SELECT SITE_CODE,Start_Date,End_date,quot from Tender_by_moh ";
+        String sql = "SELECT PROJECT_NUMBER,Start_Date,End_date,quot from MOH_OPENS_TENDER ";
         
         try{
             String t1=null,t2=null,t3=null,t4=null,t5=null,t6=null,t7=null,t8=null;

@@ -276,10 +276,12 @@ cpp1.setSize(400,600);
 */ conn c = new conn();
         con=c.getconn();
 
-		int m=0,f=0;
+		int m=0,f=0,o=0;
         try {
             String query = "SELECT count(*) as male from APPLICANTS where Gender='MALE'";
             String query2 = "SELECT count(*) as female from APPLICANTS where Gender='FEMALE'";
+            String query3 = "SELECT count(*) as other from APPLICANTS where Gender='OTHER'";
+
 //            String query = "SELECT * from APPLICANTS";
        
 
@@ -295,14 +297,21 @@ cpp1.setSize(400,600);
             rs = st.executeQuery(query2);
             while(rs.next())
             {
-               f = rs.getInt("female");
-
-                
+               f = rs.getInt("female");        
             }
+             st=con.createStatement();
+            rs = st.executeQuery(query3);
+            while(rs.next())
+            {
+               o = rs.getInt("other");        
+            }
+        
              DefaultPieDataset result = new DefaultPieDataset();
         result.setValue("male", m);
         result.setValue("female",f);
-            JFreeChart chart = ChartFactory.createPieChart("Gender Wise Applicants", result, true,
+        result.setValue("other",o);
+       
+        JFreeChart chart = ChartFactory.createPieChart("Gender Wise Applicants", result, true,
 				true, false);
 		ChartPanel chartPanel = new ChartPanel(chart);
                 ChartFrame cpp3 = new ChartFrame("Gender Wise Applicants",chart);
@@ -318,11 +327,12 @@ cpp3.setSize(400,600);
    conn c = new conn();
         con=c.getconn();
 
-		int m=0,f=0;
+		int m=0,f=0,o=0;
         try {
             String query = "SELECT count(*) as male from APPLICANTS where Gender='MALE' AND PROJECT_ID is not null ";
             String query2 = "SELECT count(*) as female from APPLICANTS where Gender='FEMALE' AND PROJECT_ID is not null";
-//            String query = "SELECT * from APPLICANTS";
+            String query3 = "SELECT count(*) as other from APPLICANTS where Gender='OTHER' AND PROJECT_ID is not null";
+//          //            String query = "SELECT * from APPLICANTS";
        
 
 	 st=con.createStatement();
@@ -338,12 +348,20 @@ cpp3.setSize(400,600);
             while(rs.next())
             {
                f = rs.getInt("female");
-
-                
             }
+            
+	 st=con.createStatement();
+            rs = st.executeQuery(query3);
+            while(rs.next())
+            {
+               o = rs.getInt("other");
+            }
+
+            
             DefaultCategoryDataset rslt = new DefaultCategoryDataset();
         rslt.addValue(m, "male", "");
         rslt.addValue(f, "female", "");
+        rslt.addValue(o, "other", "");
         
          BarRenderer ren=null;
 CategoryPlot cp=null;
@@ -371,7 +389,7 @@ cpp3.setSize(400,600);
         try {
             String query = "SELECT count(*) as male from APPLICANTS where Income_annum<600000 AND PROJECT_ID is not null";
             String query2 = "SELECT count(*) as female from APPLICANTS where Income_annum>=600000 AND PROJECT_ID is not null";
-//            String query = "SELECT * from APPLICANTS";
+            //            String query = "SELECT * from APPLICANTS";
        
 
 	 st=con.createStatement();
@@ -470,8 +488,8 @@ cpp3.setSize(400,600);
 
 		int m=0,f=0;
         try {
-            String query = "SELECT sum(flats) as male from PROJECT";
-            String query2 = "SELECT sum(Floor) as female from PROJECT";
+            String query = "SELECT sum(T_FLATS) as t from PROJECT";
+            String query2 = "SELECT sum(FLATS) as f from PROJECT";
 //            String query = "SELECT * from APPLICANTS";
        
 
@@ -479,7 +497,7 @@ cpp3.setSize(400,600);
             rs = st.executeQuery(query);
             while(rs.next())
             {
-               m = rs.getInt("male");
+               m = rs.getInt("t");
             }
 
             
@@ -487,7 +505,7 @@ cpp3.setSize(400,600);
             rs = st.executeQuery(query2);
             while(rs.next())
             {
-               f = rs.getInt("female");
+               f = rs.getInt("f");
 
                 
             }
@@ -564,8 +582,9 @@ cpp3.setSize(400,600);
         con=c.getconn();
 
 		int m=0,f=0,i=1;
+                String village="Village";
         try {
-            String query = "SELECT flats,Floor from PROJECT";
+            String query = "SELECT T_FLATS,FLATS,VILLAGE from PROJECT";
 //            String query = "SELECT * from APPLICANTS";
        
 	    DefaultCategoryDataset rslt = new DefaultCategoryDataset();
@@ -576,10 +595,12 @@ cpp3.setSize(400,600);
             while(rs.next())
             {
                 String is = Integer.toString(i++);
-               m = rs.getInt("flats");
-               f=rs.getInt("Floor");
-            rslt.addValue(m, "Total Flats ", is);
-            rslt.addValue(f, "Allocated Flats", is);
+               m = rs.getInt("T_FLATS");
+               f=rs.getInt("FLATS");
+               village=rs.getString("VILLAGE");
+        village=village.substring(0,3);
+               rslt.addValue(m, "Total Flats ", village);
+            rslt.addValue(f, "Allocated Flats", village);
 
             }
 

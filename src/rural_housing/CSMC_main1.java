@@ -31,6 +31,15 @@ Connection con = null;
       app_flats.setVisible(false);
       app_flats1.setVisible(false);
       csmc_home.setVisible(true);
+      ph1.add(p1y);
+      ph1.add(p1n);
+      ph2.add(p2y);
+      ph2.add(p2n);
+      ph3.add(p3y);
+      ph3.add(p3n);
+      ph4.add(p4y);
+      ph4.add(p4n);
+      
       
     }
  public CSMC_main1(String aa) {
@@ -42,7 +51,17 @@ Connection con = null;
       csmc_no.setText(aa);
       app_flats1.setVisible(false);
       app_flats.setVisible(false);
-    }
+   ph1.add(p1y);
+      ph1.add(p1n);
+      ph2.add(p2y);
+      ph2.add(p2n);
+      ph3.add(p3y);
+      ph3.add(p3n);
+      ph4.add(p4y);
+      ph4.add(p4n);
+      
+         
+ }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +72,10 @@ Connection con = null;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ph1 = new javax.swing.ButtonGroup();
+        ph2 = new javax.swing.ButtonGroup();
+        ph3 = new javax.swing.ButtonGroup();
+        ph4 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         csmc_home = new javax.swing.JPanel();
@@ -67,14 +90,14 @@ Connection con = null;
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
+        p1y = new javax.swing.JRadioButton();
+        p1n = new javax.swing.JRadioButton();
+        p3n = new javax.swing.JRadioButton();
+        p2n = new javax.swing.JRadioButton();
+        p4n = new javax.swing.JRadioButton();
+        p3y = new javax.swing.JRadioButton();
+        p4y = new javax.swing.JRadioButton();
+        p2y = new javax.swing.JRadioButton();
         jButton7 = new javax.swing.JButton();
         info = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -214,37 +237,67 @@ Connection con = null;
         jLabel18.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
         jLabel18.setText("Phase 2 Completed:");
 
-        jRadioButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton1.setText("Yes");
+        p1y.setBackground(new java.awt.Color(0, 153, 153));
+        p1y.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p1y.setText("Yes");
+        p1y.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p1yMouseClicked(evt);
+            }
+        });
 
-        jRadioButton2.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton2.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton2.setText("No");
+        p1n.setBackground(new java.awt.Color(0, 153, 153));
+        p1n.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p1n.setText("No");
+        p1n.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p1nMouseClicked(evt);
+            }
+        });
 
-        jRadioButton3.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton3.setText("No");
+        p3n.setBackground(new java.awt.Color(0, 153, 153));
+        p3n.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p3n.setText("No");
+        p3n.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p3nMouseClicked(evt);
+            }
+        });
 
-        jRadioButton4.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton4.setText("No");
+        p2n.setBackground(new java.awt.Color(0, 153, 153));
+        p2n.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p2n.setText("No");
+        p2n.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p2nMouseClicked(evt);
+            }
+        });
 
-        jRadioButton5.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton5.setText("No");
+        p4n.setBackground(new java.awt.Color(0, 153, 153));
+        p4n.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p4n.setText("No");
 
-        jRadioButton6.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton6.setText("Yes");
+        p3y.setBackground(new java.awt.Color(0, 153, 153));
+        p3y.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p3y.setText("Yes");
 
-        jRadioButton7.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton7.setText("Yes");
+        p4y.setBackground(new java.awt.Color(0, 153, 153));
+        p4y.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p4y.setText("Yes");
+        p4y.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p4yMouseClicked(evt);
+            }
+        });
 
-        jRadioButton8.setBackground(new java.awt.Color(0, 153, 153));
-        jRadioButton8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jRadioButton8.setText("Yes");
+        p2y.setBackground(new java.awt.Color(0, 153, 153));
+        p2y.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        p2y.setText("Yes");
+        p2y.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                p2yMouseClicked(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(0, 153, 153));
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
@@ -350,16 +403,16 @@ Connection con = null;
                                     .addComponent(jLabel8)
                                     .addGroup(cprLayout.createSequentialGroup()
                                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton1)
-                                            .addComponent(jRadioButton6)
-                                            .addComponent(jRadioButton8)
-                                            .addComponent(jRadioButton7))
+                                            .addComponent(p1y)
+                                            .addComponent(p3y)
+                                            .addComponent(p2y)
+                                            .addComponent(p4y))
                                         .addGap(25, 25, 25)
                                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jRadioButton2)
-                                            .addComponent(jRadioButton4)
-                                            .addComponent(jRadioButton3)
-                                            .addComponent(jRadioButton5)))))
+                                            .addComponent(p1n)
+                                            .addComponent(p2n)
+                                            .addComponent(p3n)
+                                            .addComponent(p4n)))))
                             .addComponent(jLabel12))
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createSequentialGroup()
@@ -390,15 +443,15 @@ Connection con = null;
                             .addComponent(jLabel9)
                             .addComponent(p4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jRadioButton1)
-                        .addComponent(jRadioButton2)))
+                        .addComponent(p1y)
+                        .addComponent(p1n)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cprLayout.createSequentialGroup()
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jRadioButton4)
-                                .addComponent(jRadioButton8))
+                                .addComponent(p2n)
+                                .addComponent(p2y))
                             .addComponent(jLabel18))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,12 +461,12 @@ Connection con = null;
                                 .addComponent(jLabel12))
                             .addGroup(cprLayout.createSequentialGroup()
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton3)
-                                    .addComponent(jRadioButton6))
+                                    .addComponent(p3n)
+                                    .addComponent(p3y))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(cprLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton5)
-                                    .addComponent(jRadioButton7)))))
+                                    .addComponent(p4n)
+                                    .addComponent(p4y)))))
                     .addComponent(jButton8))
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
@@ -646,7 +699,7 @@ Connection con = null;
                 .addComponent(spsa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(submit4)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout app_sua1Layout = new javax.swing.GroupLayout(app_sua1);
@@ -680,7 +733,7 @@ Connection con = null;
                     .addComponent(p1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(submit5)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addComponent(sua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -798,7 +851,7 @@ Connection con = null;
 
             },
             new String [] {
-                "Total Flats ", "Remaining"
+                "Total Flats ", "Remaining Flats"
             }
         ) {
             Class[] types = new Class [] {
@@ -904,6 +957,57 @@ Connection con = null;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+     conn c = new conn();
+        con=c.getconn();
+        String pha1="NO",pha2="NO",pha3="NO",pha4="NO";
+        if(p1y.isSelected())
+        {
+            pha1="YES";
+        }
+        else
+        {
+            pha1="NO";
+        }
+        if(p2y.isSelected())
+        {
+            pha2="YES";
+        }
+        else
+        {
+            pha2="NO";
+        }
+        if(p3y.isSelected())
+        {
+            pha3="YES";
+        }
+        else
+        {
+            pha3="NO";
+        }
+        if(p4y.isSelected())
+        {
+            pha4="YES";
+        }
+        else
+        {
+            pha4="NO";
+        }
+        
+           System.out.println(csmc_no.getText().toString());
+        String sql="replace into CPR(P_ID,p1,p2,p3,p4) values(?,?,?,?,?)";
+        try{
+            pst=con.prepareStatement(sql);
+            pst.setString(1, p4.getSelectedItem().toString().toUpperCase());
+            pst.setString(2,pha1);
+            pst.setString(2,pha2);
+            pst.setString(2,pha3);
+            pst.setString(2,pha4);
+            rs = st.executeQuery(sql);
+        }
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, e);
+        }
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -931,7 +1035,7 @@ Connection con = null;
      conn c = new conn();
         con=c.getconn();
            System.out.println(csmc_no.getText().toString());
-        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText().toString()+"'";
+        String sql="select SITE_CODE from PROJECT where csmc_officer_code = '"+csmc_no.getText().toString()+"'";
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql);
@@ -960,7 +1064,7 @@ Connection con = null;
     
         conn c = new conn();
         con=c.getconn();
-        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
+        String sql="select SITE_CODE from PROJECT where csmc_officer_code = '"+csmc_no.getText()+"' and sag_code is NULL";
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql);
@@ -989,7 +1093,8 @@ Connection con = null;
         p2.removeAllItems();
         conn c = new conn();
         con=c.getconn();
-        String sql="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"'";
+        
+        String sql="select P.SITE_CODE,C.p3 from PROJECT P INNER JOIN CPR C on P.SITE_CODE=C.P_ID where P.csmc_officer_code = '"+csmc_no.getText()+"' AND C.p3 = 'YES'";
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql);
@@ -1044,7 +1149,7 @@ Connection con = null;
             JOptionPane.showMessageDialog(null, e);
         }
 
-        String sql = "select s.Employee_ID , s.First_name,s.Middle_name,s.Last_name,s.Gender from SURVEY_AGENT s LEFT JOIN PROJECT p ON s.Employee_ID=p.SURVEY_AGENT_CODE where p.SURVEY_AGENT_CODE is null and CSMC_ID='"+csmc_no.getText()+"' ";
+        String sql = "select s.Employee_ID , s.First_name,s.Middle_name,s.Last_name,s.Gender from SURVEY_AGENT s LEFT JOIN PROJECT p ON s.Employee_ID=p.sag_code where p.sag_code is null and CSMC_ID='"+csmc_no.getText()+"' ";
           
         try{
             st=con.createStatement();
@@ -1082,7 +1187,7 @@ Connection con = null;
 
         conn c = new conn();
         con=c.getconn();
-        String sql = "update PROJECT SET SURVEY_AGENT_CODE = ? WHERE  SITE_CODE = '"+ p1.getSelectedItem().toString()+"'";
+        String sql = "update PROJECT SET sag_code = ? WHERE  SITE_CODE = '"+ p1.getSelectedItem().toString()+"'";
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1,dataCol1 );
@@ -1103,7 +1208,7 @@ Connection con = null;
             JOptionPane.showMessageDialog(null, e);
         }
  p1.removeAllItems();
-                String sql2="select SITE_CODE from PROJECT where CSMC_CODE = '"+csmc_no.getText()+"' and SURVEY_AGENT_CODE is NULL";
+                String sql2="select SITE_CODE from PROJECT where csmc_officer_code = '"+csmc_no.getText()+"' and sag_code is NULL";
         try{
             st=con.createStatement();
             rs = st.executeQuery(sql2);
@@ -1148,7 +1253,7 @@ Connection con = null;
             String tt11="Taluka";
             int flo=0;
             int fla=0;
-        String sql1="select DISTRICT,TALUKA,VILLAGE,Floor,Flats from PROJECT where SITE_CODE=? ";
+        String sql1="select DISTRICT,TALUKA,VILLAGE,T_FLATS,FLATS from PROJECT where SITE_CODE=? ";
         try{
             pst = con.prepareStatement(sql1);
             pst.setString(1, vs);
@@ -1158,8 +1263,8 @@ Connection con = null;
                 dt11 = rs.getString("DISTRICT");
                 tt11 = rs.getString("TALUKA");
                 vt11 = rs.getString("VILLAGE");
-                flo = rs.getInt("Floor");
-                fla = rs.getInt("Flats");
+                flo = rs.getInt("T_FLATS");
+                fla = rs.getInt("FLATS");
                 System.out.print(dt11);
                 System.out.print(vt11);
                 System.out.print(tt11);
@@ -1171,7 +1276,7 @@ Connection con = null;
             vt1.setText(vt11);
             tt1.setText(tt11);
             
-            Object[] o =  { fla , flo};
+            Object[] o =  { flo , fla};
             model2.addRow(o);             
         }
         catch (Exception e)
@@ -1186,7 +1291,7 @@ Connection con = null;
         st = con.createStatement();
         
    
-        String sql="SELECT  concat(First_name,' ',Middle_name,' ',Last_name) as name ,Income_annum,Gender,Marital_status,TIMESTAMPDIFF(YEAR,DOB,CURDATE())AS AGE,Applicant_no FROM APPLICANTS WHERE VILLAGE = '"+vt1.getText()+"' order by Gender DESC,Income_annum ASC,Marital_status DESC,AGE DESC";
+        String sql="SELECT  concat(First_name,' ',Middle_name,' ',Last_name) as name ,Income_annum,Gender,Marital_status,TIMESTAMPDIFF(YEAR,DOB,CURDATE())AS AGE,Applicant_no FROM APPLICANTS WHERE VILLAGE = '"+vt1.getText()+"' order by Gender ,Income_annum ASC,Marital_status DESC,AGE DESC";
         rs = st.executeQuery(sql);
     while(rs.next())
     {     String inc2=null,a1=null,a2=null,a3=null,a4=null,a5=null,a6=null,a7=null,a8=null,a9=null;
@@ -1240,7 +1345,7 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         //Set Trigger query by ABHIK
-        String sql = "insert into CSMC_APPOINT_APPL ('"+dataCol1+"' VILLAGE = '"+p2.getSelectedItem().toString()+"')";
+        String sql = "insert into CSMC_APPOINT_APPL VALUES('"+p2.getSelectedItem().toString()+"','"+dataCol1+"' )";
         try{
             pst = con.prepareStatement(sql);
             pst.setString(1,dataCol1 );
@@ -1277,12 +1382,136 @@ Connection con = null;
     }//GEN-LAST:event_submit7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        conn c=new conn();
+        con=c.getconn();
+        String p11=null,p21=null,p31=null,p41=null;
+        String sql="Select p1,p2,p3,p4 from CPR where P_ID='"+p4.getSelectedItem().toString().toUpperCase()+"'";
+        try
+        {
+            pst=con.prepareStatement(sql);
+            rs=pst.executeQuery();
+            while(rs.next())
+            {
+                p11=rs.getString("p1");
+                    p21=rs.getString("p2");    
+                    p31=rs.getString("p3");  
+                    p41=rs.getString("p4");
+                    
+                    
+            }
+        }
+        catch(Exception e)
+        {
+           JOptionPane.showMessageDialog(null, e);
+        }
+        
+        if(p11.equalsIgnoreCase("YES"))
+        {
+            p1y.setSelected(true);
+        }
+        else
+        {
+            p1n.setSelected(true);
+              p2y.setEnabled(false);
+        p2n.setEnabled(false);
+        p3y.setEnabled(false);
+        p3n.setEnabled(false);
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        }
+        
+        if(p21.equalsIgnoreCase("YES"))
+        {
+            p2y.setSelected(true);
+        }
+        else
+        {
+            p2n.setSelected(true);
+        p3y.setEnabled(false);
+        p3n.setEnabled(false);
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        }
+        
+        if(p31.equalsIgnoreCase("YES"))
+        {
+            p3y.setSelected(true);
+        }
+        else
+        {
+            p3n.setSelected(true);
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        }
+        
+        if(p41.equalsIgnoreCase("YES"))
+        {
+            p4y.setSelected(true);
+        }
+        else
+        {
+            p4n.setSelected(true);
+        }
+// TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void dt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dt1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dt1ActionPerformed
+
+    private void p1yMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1yMouseClicked
+        p2y.setEnabled(true);
+        p2n.setEnabled(true);
+        p3y.setEnabled(true);
+        p3n.setEnabled(true);
+        p4y.setEnabled(true);
+        p4n.setEnabled(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p1yMouseClicked
+
+    private void p1nMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p1nMouseClicked
+        p2y.setEnabled(false);
+        p2n.setEnabled(false);
+        p3y.setEnabled(false);
+        p3n.setEnabled(false);
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        p2n.setSelected(true);
+        p3n.setSelected(true);
+        p4n.setSelected(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p1nMouseClicked
+
+    private void p2yMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2yMouseClicked
+        p3y.setEnabled(true);
+        p3n.setEnabled(true);
+        p4y.setEnabled(true);
+        p4n.setEnabled(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p2yMouseClicked
+
+    private void p2nMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p2nMouseClicked
+        p3y.setEnabled(false);
+        p3n.setEnabled(false);
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        p3n.setSelected(true);
+        p4n.setSelected(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p2nMouseClicked
+
+    private void p3nMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3nMouseClicked
+        p4y.setEnabled(false);
+        p4n.setEnabled(false);
+        p4n.setSelected(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p3nMouseClicked
+
+    private void p4yMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4yMouseClicked
+        p4y.setEnabled(true);
+        p4n.setEnabled(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_p4yMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1358,19 +1587,23 @@ Connection con = null;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton log_out;
     private javax.swing.JComboBox<String> p1;
+    private javax.swing.JRadioButton p1n;
+    private javax.swing.JRadioButton p1y;
     private javax.swing.JComboBox<String> p2;
+    private javax.swing.JRadioButton p2n;
+    private javax.swing.JRadioButton p2y;
+    private javax.swing.JRadioButton p3n;
+    private javax.swing.JRadioButton p3y;
     private javax.swing.JComboBox<String> p4;
+    private javax.swing.JRadioButton p4n;
+    private javax.swing.JRadioButton p4y;
+    private javax.swing.ButtonGroup ph1;
+    private javax.swing.ButtonGroup ph2;
+    private javax.swing.ButtonGroup ph3;
+    private javax.swing.ButtonGroup ph4;
     private javax.swing.JButton prj_rep;
     private javax.swing.JTable sa;
     private javax.swing.JTable sa1;

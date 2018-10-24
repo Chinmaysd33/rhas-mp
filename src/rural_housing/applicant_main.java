@@ -118,8 +118,6 @@ Connection con = null;
         app_no2 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         gen1 = new javax.swing.JTextField();
-        jLabel38 = new javax.swing.JLabel();
-        c_no = new javax.swing.JTextField();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
         dob1 = new javax.swing.JTextField();
@@ -416,15 +414,6 @@ Connection con = null;
         gen1.setMinimumSize(new java.awt.Dimension(99, 32));
         gen1.setName(""); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        jLabel38.setText("Contact Number:");
-
-        c_no.setEditable(false);
-        c_no.setBackground(new java.awt.Color(0, 204, 204));
-        c_no.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
-        c_no.setMinimumSize(new java.awt.Dimension(99, 32));
-        c_no.setName(""); // NOI18N
-
         jLabel42.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel42.setText("DOB:");
 
@@ -460,11 +449,11 @@ Connection con = null;
                     .addGroup(view1Layout.createSequentialGroup()
                         .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(view1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
                                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel40)
                                     .addComponent(jLabel49)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel38))
+                                    .addComponent(jLabel16))
                                 .addGap(24, 24, 24))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, view1Layout.createSequentialGroup()
                                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -480,17 +469,8 @@ Connection con = null;
                                         .addComponent(m_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(l_name2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(view1Layout.createSequentialGroup()
-                                        .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(view1Layout.createSequentialGroup()
-                                        .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(v2, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(a_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(c_no, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(86, 86, 86))
+                                    .addComponent(a_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(86, 113, Short.MAX_VALUE))
                             .addGroup(view1Layout.createSequentialGroup()
                                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(gen1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -504,7 +484,18 @@ Connection con = null;
                                     .addGroup(view1Layout.createSequentialGroup()
                                         .addComponent(jLabel48)
                                         .addGap(18, 18, 18)
-                                        .addComponent(ms2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))))
+                                        .addComponent(ms2, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE))))
+                            .addGroup(view1Layout.createSequentialGroup()
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(t2, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                                    .addComponent(s2))
+                                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(view1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(view1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(v2))))))
                     .addGroup(view1Layout.createSequentialGroup()
                         .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(view1Layout.createSequentialGroup()
@@ -555,27 +546,21 @@ Connection con = null;
                     .addComponent(jLabel43)
                     .addComponent(age1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(dob1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(24, 24, 24)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(a_no1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(c_no, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(26, 26, 26)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel49)
                     .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(view1Layout.createSequentialGroup()
                         .addComponent(s2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(d2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(v2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(v2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -624,11 +609,10 @@ Connection con = null;
         conn c = new conn();
         con=c.getconn();
         st = con.createStatement();
-        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,Aadhar_no,Contact,DOB FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
+        String sql = "SELECT  First_name,Middle_name,Last_name,VILLAGE,TALUKA,DISTRICT,STATE,Income_annum,Gender,Marital_status,Aadhar_no,DOB FROM APPLICANTS WHERE Applicant_no = '"+app_no1.getText()+"'";
         rs = st.executeQuery(sql);
         while(rs.next())
         {   
-        c_no.setText(rs.getString("Contact"));
         a_no1.setText(rs.getString("Aadhar_no"));
         f_name2.setText(rs.getString("First_name"));
         m_name2.setText(rs.getString("Middle_name"));
@@ -786,7 +770,6 @@ Connection con = null;
     private javax.swing.JLabel app_no1;
     private javax.swing.JLabel app_no2;
     private javax.swing.ButtonGroup bc;
-    private javax.swing.JTextField c_no;
     private javax.swing.JTextField d2;
     private javax.swing.ButtonGroup dc;
     private javax.swing.JTextField dob1;
@@ -802,7 +785,6 @@ Connection con = null;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
